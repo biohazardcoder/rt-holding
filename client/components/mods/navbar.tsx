@@ -15,7 +15,7 @@ export const Navbar = () => {
   ]
 
   return (
-    <div className={cn(`w-full h-[10vh] absolute top-0 left-0 border-b border-[#ffffff26] flex items-center justify-between px-[10%]`)}>
+    <div className={cn(`w-full h-[10vh] z-40 absolute top-0 left-0 border-b border-[#ffffff26] flex items-center justify-between px-[10%]`)}>
 
       <div className="flex items-center gap-2">
         <Image src={"/image.png"} alt="Logo" width={50} height={50}/>
