@@ -1,24 +1,24 @@
 import Image from "next/image";
 
-export const OurServices = () => {
+export const OurStory = () => {
   const timeline = [
     {
       year: "1990",
       title: "Savee was founded",
       text: "The company was founded with a focus on personalized financial advice.",
-      image: "/service/office.avif", 
+      image: "/story/office.avif", 
     },
     {
       year: "2005 - 2015",
       title: "Grow and expand",
       text: "Expanded services to include investment management and retirement planning.",
-      image: "/service/bussiness.png",
+      image: "/story/bussiness.png",
     },
     {
       year: "2023",
       title: "Lead the industry",
       text: "Continues to be a leading financial consulting company, offering innovative solutions.",
-      image: "/service/bman.jpg",
+      image: "/story/bman.jpg",
     },
   ];
 

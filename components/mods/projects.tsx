@@ -36,7 +36,7 @@ const images = [
 
 
   return (
-    <div className="h-[33vh] bg-[#f9f9f9] px-[10%]">
+    <div className=" bg-[#f9f9f9] px-[10%]">
       <h1 className="text-center text-4xl">
         Our Projects
       </h1>

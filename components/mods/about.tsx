@@ -2,7 +2,7 @@ import { Button } from "../ui/button"
 
 export const About = () => {
   return (
-    <div className="h-[50vh] bg-[#f9f9f9] grid grid-cols-4 px-[10%] gap-8 py-16">
+    <div className=" bg-[#f9f9f9] grid grid-cols-4 px-[10%] gap-8 py-16">
         <div>
             <span className="bg-[#434343] text-white py-2 px-3 font-semibold">About Us</span>
             <p className="mt-4 text-lg">Securing Your <br /> Financial Legacy</p>

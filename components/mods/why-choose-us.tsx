@@ -31,7 +31,7 @@ export const WhyChooseUs = () => {
       </p>
       <div className="grid grid-cols-4  gap-12 mt-8">
         {items.map(({title,count}, index) => (
-        <div key={index} className="w-full flex flex-col bg-white  justify-center items-center p-8 rounded-md">
+        <div key={index} className="w-full flex flex-col bg-white border  justify-center items-center p-8 rounded-md">
           <h1 className="text-5xl font-bold text-black">
             {count}
           </h1>
