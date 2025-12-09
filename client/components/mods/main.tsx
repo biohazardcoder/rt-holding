@@ -5,10 +5,8 @@ import { Navbar } from "./navbar";
 
 export const Main = () => {
   return (
-    <div className="relative h-screen px-[10%] grid grid-cols-1 md:grid-cols-2 items-center 
-      bg-linear-to-br from-[#0f3d3a] via-[#0a2c2a] to-[#06201e] overflow-hidden">
-      <Navbar />
-
+    <div className="relative h-[90vh] mt-[10vh] px-[10%] grid grid-cols-1 md:grid-cols-2 items-center 
+      bg-linear-to-br from-[#123f3d] via-[#0a2c2a] to-[#06201e] overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full flex justify-between px-[10%] z-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => (
           <div
@@ -29,14 +27,14 @@ export const Main = () => {
         </p>
       </div>
 
-      <div className="relative z-10 flex justify-end">
-        <div className="rounded-xl overflow-hidden shadow-2xl border border-white/10">
+      <div className="relative z-10 h-full  flex justify-center items-center">
+        <div className="rounded-xl flex items-center justify-center overflow-hidden ">
           <Image
             src="/ceo.jpg"
             alt="CEO"
             width={500}
             height={500}
-            className="object-cover object-center w-96 h-96 md:w-[500px] md:h-[500px]"
+            className="object-cover object-center w-96 h-96 md:w-[480px] md:h-[480px]"
           />
         </div>
       </div>
