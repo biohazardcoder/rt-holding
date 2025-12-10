@@ -29,7 +29,7 @@ export const OurStory = () => {
           Our Story
         </span>
 
-        <h1 className="text-center text-5xl mt-4 font-semibold">
+        <h1 className="text-center text-[#0f3d3a] text-5xl mt-4 font-semibold">
           A story of our dedication, <br /> expertise, and lasting results
         </h1>
 

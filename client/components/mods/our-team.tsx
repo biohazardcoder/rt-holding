@@ -43,14 +43,14 @@ export const OurTeam = () => {
     <div className="px-[10%] bg-[#f7f7f7] py-10">
         <div>
             <span className="bg-[#434343] text-white py-2 px-3 font-semibold">Our Team</span>
-            <p className="mt-4 text-4xl font-semibold">The Team Behind Your  <br /> Financial Succes</p>
+            <p className="mt-4 text-4xl font-semibold  text-[#0f3d3a]">The Team Behind Your  <br /> Financial Succes</p>
         </div>
         <div className="grid grid-cols-4 gap-8">
             {
                 members.map((member, index) => (
-                    <div key={index} className="mt-8 flex flex-col  bg-white ">
-                        <img src={member.avatar} alt={member.name} className="w-full h-96  object-cover"/>
-                        <div className="p-2">
+                    <div key={index} className="mt-8 flex flex-col rounded-md bg-white ">
+                        <img src={member.avatar} alt={member.name} className="w-full h-96  object-cover rounded-t-md"/>
+                        <div className="p-3">
                             <h2 className="text-xl font-bold">{member.name}</h2>
                             <p className="text-gray-600">{member.role}</p>
                         </div>

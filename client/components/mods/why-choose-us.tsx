@@ -23,7 +23,7 @@ export const WhyChooseUs = () => {
   return (
     <div className=" bg-[#f7f7f7] flex flex-col items-center px-[10%] py-10">
         <span className="bg-[#434343] text-white m-auto py-2 px-3 font-semibold">Why Choose Us</span>
-      <h1 className="text-center text-5xl mt-4 font-semibold">
+      <h1 className="text-center text-5xl mt-4 font-semibold  text-[#0f3d3a]" >
         Expertice, secure, success
       </h1>
       <p className="text-center mt-4 text-gray-500">

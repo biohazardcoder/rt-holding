@@ -1,4 +1,5 @@
 import { About } from "@/components/mods/about";
+import { Comments } from "@/components/mods/comments";
 import Footer from "@/components/mods/footer";
 import { Main } from "@/components/mods/main";
 import { Navbar } from "@/components/mods/navbar";
@@ -17,6 +18,7 @@ export default function Home() {
     <OurStory/>
     <WhyChooseUs/>
     <OurTeam/>
+    <Comments/>
     <Footer/>
    </div>
   );
