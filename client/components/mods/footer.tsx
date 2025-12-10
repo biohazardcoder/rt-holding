@@ -6,7 +6,7 @@ import Link from 'next/link';
 function Footer() {
     // const { t} = useTranslation();
   return (
-    <div className='bg-black pt-8 px-[5%]'>
+    <div className='bg-[#0f3d3a] pt-8 px-[5%]'>
         <section>
             <div className='grid grid-cols-1 md:grid-cols-6 pt-5 pb-10'>
                 <div className=''>

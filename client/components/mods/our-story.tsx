@@ -23,7 +23,7 @@ export const OurStory = () => {
   ];
 
   return (
-    <div className="bg-[#f9f9f9] px-[10%] py-16">
+    <div className="bg-[#f7f7f7] px-[10%] py-16">
       <div className="flex items-center flex-col">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
           Our Story

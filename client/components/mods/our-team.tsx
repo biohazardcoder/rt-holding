@@ -40,7 +40,7 @@ export const OurTeam = () => {
 ];
 
   return (
-    <div className="px-[10%] bg-[#f9f9f9] py-10">
+    <div className="px-[10%] bg-[#f7f7f7] py-10">
         <div>
             <span className="bg-[#434343] text-white py-2 px-3 font-semibold">Our Team</span>
             <p className="mt-4 text-4xl font-semibold">The Team Behind Your  <br /> Financial Succes</p>
