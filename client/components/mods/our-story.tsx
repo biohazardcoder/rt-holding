@@ -20,6 +20,7 @@ export const OurStory = () => {
       text: "Continues to be a leading financial consulting company, offering innovative solutions.",
       image: "/story/bman.jpg",
     },
+    
   ];
 
   return (

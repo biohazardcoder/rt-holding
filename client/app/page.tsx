@@ -6,6 +6,7 @@ import { Navbar } from "@/components/mods/navbar";
 import { OurStory } from "@/components/mods/our-story";
 import { OurTeam } from "@/components/mods/our-team";
 import { Projects } from "@/components/mods/projects";
+import { WhatSets } from "@/components/mods/what-sets";
 import { WhyChooseUs } from "@/components/mods/why-choose-us";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
    <div>
     <Navbar />
     <Main/>
+    <WhatSets/>
     <About/>
     <Projects/>
     <OurStory/>

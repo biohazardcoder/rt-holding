@@ -50,7 +50,7 @@ export const OurTeam = () => {
                 members.map((member, index) => (
                     <div key={index} className="mt-8 flex flex-col rounded-md bg-white ">
                         <img src={member.avatar} alt={member.name} className="w-full h-96  object-cover rounded-t-md"/>
-                        <div className="p-3">
+                        <div className="p-3 ">
                             <h2 className="text-xl font-bold">{member.name}</h2>
                             <p className="text-gray-600">{member.role}</p>
                         </div>

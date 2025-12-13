@@ -30,8 +30,8 @@ export const Comments = () => {
 
         <div className="flex items-center gap-4 mt-10">
           <img 
-            src="/profile.jpg" 
-            className="w-12 h-12 rounded-full object-cover"
+            src="/team/c1.jpg" 
+            className="w-14 h-14 rounded-full object-cover"
             alt="User"
           />
           <div>
