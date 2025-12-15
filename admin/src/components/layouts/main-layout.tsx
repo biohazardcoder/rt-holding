@@ -5,6 +5,7 @@ import { Navbar } from "../shared/navbar"
 import { AddAdmin } from "@/modules/AddAdmin"
 import { AddBlog } from "@/modules/AddBlog"
 import { AddService } from "@/modules/AddService"
+import { AddStory } from "@/modules/AddStory"
 
 export default function Layout() {
 
@@ -17,6 +18,10 @@ export default function Layout() {
     {
       path: "/blogs",
       button: <AddBlog />
+    },
+    {
+      path: "/stories",
+      button: <AddStory />
     },
     {
       path: "/admins",

@@ -41,3 +41,12 @@ export interface ServiceTypes {
   text:string;
   image?:string;
 }
+
+export interface StoryTypes {
+  _id?: string;
+  createdAt?: string;
+  title: string;
+  text:string;
+  image?:string;
+  year:string
+}

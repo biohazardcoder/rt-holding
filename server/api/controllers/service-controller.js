@@ -83,18 +83,6 @@ export const deleteService = async (req, res) => {
                 console.error("Error deleting image file:", err.message);
             }
         }
-
-        if (service.video) {
-            const fileName = getFileNameFromUrl(service.video);
-            const videoPath = path.join(VIDEOS_DIR, fileName);
-
-            try {
-                await fs.unlink(videoPath);
-            } catch (err) {
-                console.error("Error deleting video file:", err.message);
-            }
-        }
-
         res.status(200).json({ message: "Service deleted" });
     } catch (error) {
         res.status(400).json({ message: "Problem deleting service" });

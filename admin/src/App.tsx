@@ -15,6 +15,8 @@ import { setAdmins, setAdminsError, setAdminsLoading } from "./toolkit/adminsSli
 import { setBlog, setBlogLoading,setBlogError } from "./toolkit/blogSlicer";
 import { setService, setServiceError, setServiceLoading } from "./toolkit/serviceSlicer";
 import { Service } from "./pages/service";
+import { Story } from "./pages/story";
+import { setStory, setStoryError, setStoryLoading } from "./toolkit/storySlicer";
 
 function App() {
   const dispatch = useDispatch();
@@ -67,10 +69,22 @@ function App() {
           console.log(error);
       }
     }
+    async function getStory() {
+      try {
+          dispatch(setStoryLoading())
+          const response = (await Fetch.get("story")).data
+          dispatch(setStory(response))
+      } catch (error) {
+          const err = error as ErrorTypes
+          dispatch(setStoryError(err.response.data.message|| "Error in get all stories"))
+          console.log(error);
+      }
+    }
     getMyData();
     getAdmins();
     getBlogs()
     getServices()
+    getStory()
   }, [dispatch]);
 
   const router = useMemo(() => {
@@ -100,6 +114,10 @@ function App() {
       {
         path: "blogs",
         element: <Blog />,
+      },
+       {
+        path: "stories",
+        element: <Story />,
       },
       {
         path: "admins",

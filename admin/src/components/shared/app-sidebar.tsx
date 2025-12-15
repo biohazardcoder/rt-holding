@@ -1,4 +1,4 @@
-import {  Blocks,  FolderCog,  FolderSearch,  LogOut,   Users } from "lucide-react"
+import {  Blocks,  FolderClock,  FolderCog,  FolderSearch,  LogOut,   Users } from "lucide-react"
 
 import {
   Sidebar,
@@ -24,6 +24,11 @@ const items = [
     title: "Services",
     url: "/services",
     icon: FolderCog,
+  },
+   {
+    title: "Story",
+    url: "/stories",
+    icon: FolderClock,
   },
   {
     title: "Blogs",

@@ -84,17 +84,6 @@ export const deleteBlog = async (req, res) => {
             }
         }
 
-        if (blog.video) {
-            const fileName = getFileNameFromUrl(blog.video);
-            const videoPath = path.join(VIDEOS_DIR, fileName);
-
-            try {
-                await fs.unlink(videoPath);
-            } catch (err) {
-                console.error("Error deleting video file:", err.message);
-            }
-        }
-
         res.status(200).json({ message: "Blog deleted" });
     } catch (error) {
         res.status(400).json({ message: "Problem deleting blog" });

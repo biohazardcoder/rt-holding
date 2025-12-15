@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import adminRoutes from './api/routes/admin-route.js';
 import blogRoutes from './api/routes/blog-route.js';
 import serviceRoutes from './api/routes/service-route.js';
+import storyRoutes from './api/routes/story-route.js';
 dotenv.config();
 
 const app = express(); 
@@ -21,6 +22,7 @@ app.get('/', (_, res) => {
 app.use('/api/admin',adminRoutes)
 app.use('/api/blog',blogRoutes)
 app.use('/api/service',serviceRoutes)
+app.use('/api/story',storyRoutes)
 
 mongoose.connect(MONGO_URL, 
     console.log("✅ Connected to MongoDB")
