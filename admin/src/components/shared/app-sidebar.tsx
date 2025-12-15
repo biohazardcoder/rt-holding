@@ -1,4 +1,4 @@
-import {  Blocks,  LogOut, Package, Users } from "lucide-react"
+import {  Blocks,  FolderCog,  FolderSearch,  LogOut,   Users } from "lucide-react"
 
 import {
   Sidebar,
@@ -21,9 +21,14 @@ const items = [
     icon: Blocks,
   },
   {
-    title: "Mahsulotlar",
-    url: "/products",
-    icon: Package,
+    title: "Services",
+    url: "/services",
+    icon: FolderCog,
+  },
+  {
+    title: "Blogs",
+    url: "/blogs",
+    icon: FolderSearch,
   },
   {
     title: "Administratorlar",

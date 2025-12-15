@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import { Navbar } from "./navbar";
 
 export const Main = () => {
   return (
@@ -16,18 +15,15 @@ export const Main = () => {
           ></div>
         ))}
       </div>
-
-      <div className="relative z-10 flex flex-col gap-6">
-        <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight drop-shadow-xl">
-          Your Trusted <br /> Financial Partner
-        </h1>
-
-        <p className="text-[#e7e7e7] text-lg md:text-xl max-w-md">
-          Financial success, guaranteed. We provide expert financial solutions for individuals and businesses.
+      <div>
+        <p className="main text-white">
+          <span>
+            Your choice is important for us
+          </span>
+          &mdash; no JavaScript required &mdash;
         </p>
       </div>
-
-      <div className="relative z-10 h-full  flex justify-center items-center">
+      <div className="relative z-10 h-full  flex justify-end items-center">
         <div className="rounded-xl flex items-center justify-center overflow-hidden ">
           <Image
             src="/ceo.jpg"

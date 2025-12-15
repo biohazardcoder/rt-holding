@@ -38,7 +38,7 @@ const images = [
   return (
     <div className=" bg-[#f7f7f7] px-[10%]">
       <h1 className="text-center text-4xl">
-        Our Projects
+        Our Companies
       </h1>
       <div className="grid grid-cols-5  gap-8">
         {images.map(({alt,height,src,width}, index) => (

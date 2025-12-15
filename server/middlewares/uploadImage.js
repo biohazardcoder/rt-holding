@@ -3,7 +3,9 @@ import crypto from "crypto";
 import path from "path";
 import sharp from "sharp";
 import fs from "fs";
+import dotenv from "dotenv"
 
+dotenv.config()
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
     const dir = "uploads/images";

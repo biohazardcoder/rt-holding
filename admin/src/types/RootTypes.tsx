@@ -1,13 +1,11 @@
 
 export interface AdminTypes {
   id: string;
-  first_name: string;
-  last_name: string;
-  phone_number: string;
+  firstName: string;
+  email: string;
   role?: string;
-  lang: string;
-  created_at?: string;
-  updated_at?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface UserTypes {
@@ -28,28 +26,18 @@ export interface ErrorTypes{
   }
 }
 
-export interface CategoriesTypes {
-  id: string;
-  image_url: string | null;
-  is_active: boolean;
-  translations: {
-    id: number;
-    language: string;
-    title: string;
-    description: string | null;
-  }[];
-  created_at: string;
-  updated_at: string;
+export interface BlogTypes {
+  _id?: string;
+  createdAt?: string;
+  title: string;
+  text:string;
+  image?:string;
 }
 
-export interface ProductsTypes {
-  id: string;
-  price: number;
-  category_id: string;
-  image_urls: string[];
-  stock: number;
-  translations: {
-    language: string;
-    title: string;
-  }[];
+export interface ServiceTypes {
+  _id?: string;
+  createdAt?: string;
+  title: string;
+  text:string;
+  image?:string;
 }

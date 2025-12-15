@@ -7,11 +7,14 @@ import Layout from "./components/layouts/main-layout";
 import Loading from "./pages/loading";
 import Login from "./pages/login";
 import { Error } from "./pages/error";
-import { Categories } from "./pages/categories";
 import type { RootState } from "./store/RootStore";
-import { Products } from "./pages/products";
 import type { ErrorTypes } from "./types/RootTypes";
 import { Admins } from "./pages/admins";
+import { Blog } from "./pages/blog";
+import { setAdmins, setAdminsError, setAdminsLoading } from "./toolkit/adminsSlicer";
+import { setBlog, setBlogLoading,setBlogError } from "./toolkit/blogSlicer";
+import { setService, setServiceError, setServiceLoading } from "./toolkit/serviceSlicer";
+import { Service } from "./pages/service";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +35,42 @@ function App() {
         dispatch(setError(err.response?.data?.message || "Unknown error"));
       }
     }
+    async function getAdmins() {
+      try{
+        dispatch(setAdminsLoading())
+        const response = (await Fetch.get("admin")).data
+        dispatch(setAdmins(response))
+      } catch (error) {
+        const err = error as ErrorTypes;
+        dispatch(setAdminsError(err.response?.data?.message || "Unknown error"));
+      }
+    }
+    async function getBlogs() {
+      try {
+          dispatch(setBlogLoading())
+          const response = (await Fetch.get("blog")).data
+          dispatch(setBlog(response))
+      } catch (error) {
+          const err = error as ErrorTypes
+          dispatch(setBlogError(err.response.data.message|| "Error in get all blogs"))
+          console.log(error);
+      }
+    }
+    async function getServices() {
+      try {
+          dispatch(setServiceLoading())
+          const response = (await Fetch.get("service")).data
+          dispatch(setService(response))
+      } catch (error) {
+          const err = error as ErrorTypes
+          dispatch(setServiceError(err.response.data.message|| "Error in get all services"))
+          console.log(error);
+      }
+    }
     getMyData();
+    getAdmins();
+    getBlogs()
+    getServices()
   }, [dispatch]);
 
   const router = useMemo(() => {
@@ -52,11 +90,16 @@ function App() {
     children: [
       {
         index: true,
-        element: <Categories />,
+        path:"/",
+        element: <div>RT-holding</div>,
       },
       {
-        path: "products",
-        element: <Products />,
+        path: "services",
+        element: <Service />,
+      },
+      {
+        path: "blogs",
+        element: <Blog />,
       },
       {
         path: "admins",

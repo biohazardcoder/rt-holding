@@ -2,21 +2,21 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "../shared/app-sidebar"
 import { Outlet, useLocation } from "react-router-dom"
 import { Navbar } from "../shared/navbar"
-import { AddCategory } from "@/modules/AddCategory"
-import { AddProduct } from "@/modules/AddProduct"
 import { AddAdmin } from "@/modules/AddAdmin"
+import { AddBlog } from "@/modules/AddBlog"
+import { AddService } from "@/modules/AddService"
 
 export default function Layout() {
 
   const {pathname} = useLocation()
   const buttonData = [
     {
-      path: "/",
-      button: <AddCategory />
+      path: "/services",
+      button: <AddService />
     },
     {
-      path: "/products",
-      button: <AddProduct />
+      path: "/blogs",
+      button: <AddBlog />
     },
     {
       path: "/admins",

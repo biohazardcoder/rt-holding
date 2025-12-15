@@ -1,4 +1,4 @@
-import Blog from '../models/blog-model.js';
+import Service from '../models/service-model.js';
 import fs from "fs/promises";
 import path from "path";
 
@@ -8,41 +8,41 @@ function getFileNameFromUrl(url) {
     return url.split("/").pop();
 }
 
-export const getAllBlog = async (_, res) => {
+export const getAllService = async (_, res) => {
     try {
-        const blogs = await Blog.find();
-        res.status(200).json(blogs);
+        const services = await Service.find();
+        res.status(200).json(services);
     } catch (error) {
-        res.status(500).json({ message: "Problem getting blogs" });
+        res.status(500).json({ message: "Problem getting services" });
     }
 };
 
-export const createBlog = async (req, res) => {
+export const createService = async (req, res) => {
     try {
-        const blog = new Blog({
+        const service = new Service({
             image: req.uploadedImages[0] || "", 
             title: req.body.title,
             text: req.body.text,
         });
-        await blog.save();
-        res.status(201).json(blog);
+        await service.save();
+        res.status(201).json(service);
     } catch (error) {
-        res.status(400).json({ message: "Problem creating blog" });
+        res.status(400).json({ message: "Problem creating service" });
     }
 };
 
-export const updateBlog = async (req, res) => {
+export const updateService = async (req, res) => {
     try {
-        const blog = await Blog.findById(req.params.id);
-        if (!blog) {
-            return res.status(404).json({ message: "Blog not found" });
+        const service = await Service.findById(req.params.id);
+        if (!service) {
+            return res.status(404).json({ message: "Service not found" });
         }
 
         let updatedData = req.body;
 
         if (req.uploadedImages && req.uploadedImages[0]) {
-            if (blog.image) {
-                const fileName = getFileNameFromUrl(blog.image);
+            if (service.image) {
+                const fileName = getFileNameFromUrl(service.image);
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
 
                 try {
@@ -54,27 +54,27 @@ export const updateBlog = async (req, res) => {
             updatedData.image = req.uploadedImages[0];
         }
 
-        const updatedBlog = await Blog.findByIdAndUpdate(
+        const updatedService = await Service.findByIdAndUpdate(
             req.params.id,
             updatedData,
             { new: true }
         );
 
-        res.status(200).json(updatedBlog);
+        res.status(200).json(updatedService);
     } catch (error) {
-        res.status(400).json({ message: "Problem updating blog" });
+        res.status(400).json({ message: "Problem updating service" });
     }
 };
 
-export const deleteBlog = async (req, res) => {
+export const deleteService = async (req, res) => {
     try {
-        const blog = await Blog.findByIdAndDelete(req.params.id);
-        if (!blog) {
-            return res.status(404).json({ message: "Blog not found" });
+        const service = await Service.findByIdAndDelete(req.params.id);
+        if (!service) {
+            return res.status(404).json({ message: "Service not found" });
         }
 
-        if (blog.image) {
-            const fileName = getFileNameFromUrl(blog.image);
+        if (service.image) {
+            const fileName = getFileNameFromUrl(service.image);
             const imagePath = path.join(IMAGES_DIR, fileName);
 
             try {
@@ -84,8 +84,8 @@ export const deleteBlog = async (req, res) => {
             }
         }
 
-        if (blog.video) {
-            const fileName = getFileNameFromUrl(blog.video);
+        if (service.video) {
+            const fileName = getFileNameFromUrl(service.video);
             const videoPath = path.join(VIDEOS_DIR, fileName);
 
             try {
@@ -95,8 +95,8 @@ export const deleteBlog = async (req, res) => {
             }
         }
 
-        res.status(200).json({ message: "Blog deleted" });
+        res.status(200).json({ message: "Service deleted" });
     } catch (error) {
-        res.status(400).json({ message: "Problem deleting blog" });
+        res.status(400).json({ message: "Problem deleting service" });
     }
 };
