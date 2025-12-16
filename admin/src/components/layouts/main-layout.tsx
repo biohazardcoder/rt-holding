@@ -6,6 +6,7 @@ import { AddAdmin } from "@/modules/AddAdmin"
 import { AddBlog } from "@/modules/AddBlog"
 import { AddService } from "@/modules/AddService"
 import { AddStory } from "@/modules/AddStory"
+import { AddComment } from "@/modules/AddComment"
 
 export default function Layout() {
 
@@ -22,6 +23,10 @@ export default function Layout() {
     {
       path: "/stories",
       button: <AddStory />
+    },
+     {
+      path: "/comments",
+      button: <AddComment />
     },
     {
       path: "/admins",

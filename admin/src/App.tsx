@@ -17,6 +17,10 @@ import { setService, setServiceError, setServiceLoading } from "./toolkit/servic
 import { Service } from "./pages/service";
 import { Story } from "./pages/story";
 import { setStory, setStoryError, setStoryLoading } from "./toolkit/storySlicer";
+import { Comment } from "./pages/comment";
+import { setComment, setCommentError, setCommentLoading } from "./toolkit/commentSlicer";
+import { setContact, setContactError, setContactLoading } from "./toolkit/contactSLicer";
+import { Contacts } from "./pages/contact";
 
 function App() {
   const dispatch = useDispatch();
@@ -80,11 +84,35 @@ function App() {
           console.log(error);
       }
     }
+     async function getComments() {
+      try {
+          dispatch(setCommentLoading())
+          const response = (await Fetch.get("comment")).data
+          dispatch(setComment(response))
+      } catch (error) {
+          const err = error as ErrorTypes
+          dispatch(setCommentError(err.response.data.message|| "Error in get all stories"))
+          console.log(error);
+      }
+    }
+        async function getContacts() {
+      try {
+          dispatch(setContactLoading())
+          const response = (await Fetch.get("contact")).data
+          dispatch(setContact(response))
+      } catch (error) {
+          const err = error as ErrorTypes
+          dispatch(setContactError(err.response.data.message|| "Error in get all stories"))
+          console.log(error);
+      }
+    }
     getMyData();
     getAdmins();
     getBlogs()
     getServices()
     getStory()
+    getComments()
+    getContacts()
   }, [dispatch]);
 
   const router = useMemo(() => {
@@ -105,7 +133,7 @@ function App() {
       {
         index: true,
         path:"/",
-        element: <div>RT-holding</div>,
+        element: <Contacts/>,
       },
       {
         path: "services",
@@ -118,6 +146,10 @@ function App() {
        {
         path: "stories",
         element: <Story />,
+      },
+        {
+        path: "comments",
+        element: <Comment />,
       },
       {
         path: "admins",

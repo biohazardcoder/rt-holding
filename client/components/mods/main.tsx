@@ -16,7 +16,7 @@ export const Main = () => {
         ))}
       </div>
       <div>
-        <p className="main text-white">
+        <p className="main text-white text-center">
           <span>
             Your choice is important for us
           </span>

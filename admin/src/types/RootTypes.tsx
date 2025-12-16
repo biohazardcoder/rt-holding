@@ -1,6 +1,6 @@
 
 export interface AdminTypes {
-  id: string;
+  _id: string;
   firstName: string;
   email: string;
   role?: string;
@@ -49,4 +49,22 @@ export interface StoryTypes {
   text:string;
   image?:string;
   year:string
+}
+
+export interface CommentTypes {
+  _id?: string;
+  createdAt?: string;
+  name: string;
+  text:string;
+  image?:string;
+  job:string
+}
+
+export interface ContactTypes {
+  _id?: string;
+  createdAt?: string;
+  name: string;
+  phone:string;
+  email:string;
+  service:string
 }

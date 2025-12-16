@@ -6,16 +6,16 @@ export const WhatSets = () => {
         <h1>What Sets Us Apart</h1>
         <ul className="flex items-center gap-12">
             <li className="flex items-center gap-2">
-                <CircleCheckBig/> Data-Driven Strategies
+                <CircleCheckBig/>  Slogan
             </li>
              <li className="flex items-center gap-2">
-                <CircleCheckBig/> Proven Results
+                <CircleCheckBig/>  Slogan
             </li>
              <li className="flex items-center gap-2">
-                <CircleCheckBig/> Scalable Growth
+                <CircleCheckBig/> Slogan
             </li>
              <li className="flex items-center gap-2">
-                <CircleCheckBig/> Trusted Expertise
+                <CircleCheckBig/>  Slogan
             </li>
         </ul>
     </div>

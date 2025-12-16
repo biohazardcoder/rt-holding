@@ -1,4 +1,4 @@
-import {  Blocks,  FolderClock,  FolderCog,  FolderSearch,  LogOut,   Users } from "lucide-react"
+import {   FolderArchive,  FolderClock,  FolderCog,  FolderGit2,  FolderLock, FolderOpen, FolderSearch,  LogOut } from "lucide-react"
 
 import {
   Sidebar,
@@ -16,9 +16,9 @@ import { Button } from "../ui/button"
 
 const items = [
   {
-    title: "Kategoriyalar",
+    title: "Contacts",
     url: "/",
-    icon: Blocks,
+    icon: FolderArchive,
   },
   {
     title: "Services",
@@ -36,9 +36,14 @@ const items = [
     icon: FolderSearch,
   },
   {
-    title: "Administratorlar",
+    title: "Comments",
+    url: "/comments",
+    icon: FolderGit2,
+  },
+  {
+    title: "Admins",
     url: "/admins",
-    icon: Users,
+    icon: FolderLock,
   },
 ]
 
@@ -60,23 +65,32 @@ export function AppSidebar({ title }: { title?: string }) {
           </SidebarGroupLabel>
           <SidebarGroupContent >
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className="h-full py-3 font-semibold px-6  text-lg rounded-none rounded-r-2xl">
-                    <Link
-                      to={item.url}
-                      className={
-                        pathname === item.url
-                          ? "flex items-center gap-2 bg-[#003939] text-white"
-                          : "flex items-center gap-2"
-                      }
+              {items.map((item) => {
+                const isActive = pathname === item.url
+                const Icon = isActive ? FolderOpen : item.icon
+
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      asChild
+                      className="h-full py-3 font-semibold px-6 text-lg rounded-none rounded-r-2xl"
                     >
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+                      <Link
+                        to={item.url}
+                        className={
+                          isActive
+                            ? "flex items-center gap-2 bg-[#003939] text-white"
+                            : "flex items-center gap-2"
+                        }
+                      >
+                        <Icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )
+              })}
+
               </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

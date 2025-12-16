@@ -6,9 +6,11 @@ import { Button } from "../ui/button"
 import { ArrowRight, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import { ContactModal } from "./contact"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false);
 
   const items = [
     { label: "Home", href: "/" },
@@ -45,7 +47,10 @@ export const Navbar = () => {
       </ul>
 
       <div className="hidden md:flex items-center gap-2">
-        <Button className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80">
+        <Button
+          onClick={() => setContactOpen(true)}
+          className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
+        >
           Contact Us <ArrowRight size={16} />
         </Button>
       </div>
@@ -71,15 +76,20 @@ export const Navbar = () => {
                 </Link>
               </li>
             ))}
-
-            <Button
-              className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80 mt-4"
-            >
-              Contact Us <ArrowRight size={16} />
-            </Button>
+           <Button
+            onClick={() => setContactOpen(true)}
+            className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
+          >
+            Contact Us <ArrowRight size={16} />
+          </Button>
           </ul>
         </div>
       )}
+      <ContactModal
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
+
     </div>
   )
 }

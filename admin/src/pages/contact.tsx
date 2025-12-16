@@ -3,56 +3,52 @@ import { Fetch } from "@/middlewares/Fetch";
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
 
-import {
-  setAdmins,
-  setAdminsError,
-  setAdminsLoading,
-} from "@/toolkit/adminsSlicer";
 
 import type { RootState } from "@/store/RootStore";
 
 import { Loader2, MoreVertical, Trash2 } from "lucide-react";
-import type { AdminTypes } from "@/types/RootTypes";
+import type { ContactTypes } from "@/types/RootTypes";
+import { setContact, setContactError, setContactLoading } from "@/toolkit/contactSLicer";
 
-export const Admins = () => {
+export const Contacts = () => {
   const dispatch = useDispatch();
 
-  const { data: admins, loading, error } = useSelector(
-    (state: RootState) => state.admins
+  const { data: contacts, loading, error } = useSelector(
+    (state: RootState) => state.contact
   );
   
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
-  const refreshAdmins = async () => {
+  const refreshContacts = async () => {
     try {
-      dispatch(setAdminsLoading());
-      const response = (await Fetch.get("admin")).data;
-      dispatch(setAdmins(response));
+      dispatch(setContactLoading());
+      const response = (await Fetch.get("contact")).data;
+      dispatch(setContact(response));
     } catch (err) {
-      dispatch(setAdminsError("Adminlarni yuklashda xatolik"));
+      dispatch(setContactError("Kontaktlarni yuklashda xatolik"));
       console.error(err);
     }
   };
 
-  const deleteAdmin = async (id: string) => {
+  const deleteContact = async (id: string) => {
     try {
-      await Fetch.delete(`admins/${id}`);
-      toast.success("Admin o‘chirildi");
-      refreshAdmins();
+      await Fetch.delete(`contacts/${id}`);
+      toast.success("Kontakt o'chirildi");
+      refreshContacts();
     } catch (err) {
-      toast.error("O‘chirishda xatolik");
+      toast.error("O'chirishda xatolik");
       console.log(err);
     }
   };
 
   useEffect(() => {
-    refreshAdmins();
+    refreshContacts();
   }, []);
 
   if (error)
     return (
       <div className="p-6 text-center  text-destructive bg-white rounded-md shadow-lg min-h-[calc(100vh-70px)]">
-        Adminlarni olishda xatolik yuz berdi
+        Kontaktlarni olishda xatolik yuz berdi
       </div>
     );
 
@@ -65,18 +61,18 @@ export const Admins = () => {
 
   return (
     <div className="p-4 bg-white rounded-md shadow-lg min-h-[calc(100vh-70px)]">
-      {admins.length > 0 ? (
+      {contacts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {admins.map(({email,firstName,createdAt,_id}: AdminTypes) => (
+          {contacts.map(({email, name, phone, service, _id}: ContactTypes) => (
             <div
               key={_id}
               className="p-4 border rounded-md relative hover:shadow transition"
             >
               <div className="flex justify-between">
-                <h3 className="text-lg font-medium">{firstName} </h3>
+                <h3 className="text-lg font-medium">{name}</h3>
 
                 <div className="relative">
-                  {_id !== _id && (
+                  {openMenuId === _id && (
                     <>
                       <button
                         className="p-1 rounded hover:bg-gray-200"
@@ -90,7 +86,7 @@ export const Admins = () => {
                       {openMenuId === _id && (
                         <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-md p-2 border z-20">
                           <button
-                            onClick={() => deleteAdmin(_id)}
+                            onClick={() => deleteContact(_id)}
                             className="flex items-center gap-2 text-red-600 hover:bg-red-50 w-full px-2 py-1 rounded-md"
                           >
                             <Trash2 size={16} /> O'chirish
@@ -106,17 +102,19 @@ export const Admins = () => {
                 Email: {email}
               </p>
               <p className="text-sm text-slate-600">
-                Created At: {createdAt?.slice(0, 10) || "N/A"}
+                Phone: {phone}
+              </p>
+              <p className="text-sm text-slate-600">
+                Service: {service}
               </p>
             </div>
           ))}
         </div>
       ) : (
         <div className="text-center text-slate-600 py-8">
-          Hozircha adminlar mavjud emas
+          Hozircha kontaktlar mavjud emas
         </div>
       )}
     </div>
   );
 };
-

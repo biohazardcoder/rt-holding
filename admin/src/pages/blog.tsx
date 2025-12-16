@@ -33,7 +33,6 @@ export const Blog = () => {
   const blogs = (data as BlogTypes[]) || [];
   const [editMenuOpen, setEditMenuOpen] = useState<boolean>(false);
   const [selectedMenu, setSelectedMenu] = useState<BlogTypes | null>(null);
-        console.log(blogs);
         
    if (error) return <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
             <h1 className="text-center text-destructive">Error loading blog data</h1>

@@ -7,6 +7,7 @@ import blogRoutes from './api/routes/blog-route.js';
 import serviceRoutes from './api/routes/service-route.js';
 import storyRoutes from './api/routes/story-route.js';
 import commentRoutes from './api/routes/comment-route.js';
+import contactRoutes from './api/routes/contact-route.js';
 dotenv.config();
 
 const app = express(); 
@@ -25,6 +26,7 @@ app.use('/api/blog',blogRoutes)
 app.use('/api/service',serviceRoutes)
 app.use('/api/story',storyRoutes)
 app.use('/api/comment',commentRoutes)
+app.use('/api/contact',contactRoutes)
 
 mongoose.connect(MONGO_URL, 
     console.log("✅ Connected to MongoDB")
