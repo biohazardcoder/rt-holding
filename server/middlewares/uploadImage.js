@@ -55,8 +55,9 @@ export default function (req, res, next) {
             return `${BASE_URL}/api/uploads/images/${outputFilename}`;
           })
         );
-
+        
         req.uploadedImages = optimizedFiles;
+        console.log(req.uploadedImages+" qq");
       } catch (error) {
         return res.status(500).json({
           message: "Image optimization failed",
