@@ -1,67 +1,72 @@
-import { Mail, MapPin, PhoneCall } from 'lucide-react';
-import Link from 'next/link';
-// import { useTranslation } from 'react-i18next';
-// import { HashLink } from 'react-router-hash-link';
+import { Mail, MapPin, PhoneCall } from "lucide-react";
+import Link from "next/link";
 
-function Footer() {
-    // const { t} = useTranslation();
+export default function Footer() {
   return (
-    <div className='bg-[#0f3d3a] pt-8 px-[5%]'>
-        <section>
-            <div className='grid grid-cols-1 md:grid-cols-6 pt-5 pb-10'>
-                <div className=''>
-                    <h1 className=' text-xl md:text-2xl text-white font-bold sm:text-left text-justify mb-1'>RT Holding</h1>
-                    {/* <p className='text-white text-lg font-semibold'>From Korea to the World</p> */}
-                </div>
-                <div className="flex flex-col lg:flex-row justify-start gap-4  lg:gap-10  md:pl-40 col-span-5">
-                    <div className='flex items-center gap-20'>
-                        <div className="mt-4 md:mt-0">
-                            <h1 className='text-xl font-bold mb-3 text-white text-center'>Quick Links</h1>
-                            <ul className='flex  flex-col text-sm  text-white gap-4 '>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-                                 <li>
-                                    <a href="#">Find</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                           
-                            </ul>
-                        </div>
-                    <div className="mt-4 md:mt-0">
-                            <h1 className='text-xl font-bold mb-3 text-white text-center'>Quick Links</h1>
-                            <ul className='flex  flex-col text-sm  text-white gap-4 '>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-                                 <li>
-                                    <a href="#">Find</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                           
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='border-t-2 py-8'>
-                <div className=' flex items-center flex-wrap gap-2 justify-end'>
-                    <span className='text-white text-sm font-semibold'>All rights reserved © 2025.</span>
-                </div>
-            </div>
-        </section>
-    </div>
-  )
-}
+    <footer className="bg-[#0f3d3a] text-white px-[5%] pt-14">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
+        
+        <div className="md:col-span-4">
+          <h1 className="text-3xl font-bold mb-3">
+            RT Holdings
+          </h1>
+          <p className="text-sm text-gray-300 max-w-xs">
+            Your choice is important for us          
+        </p>
 
-export default Footer
+        </div>
+
+        <div className="md:col-span-3">
+          <h3 className="text-gray-300 mb-5">Company</h3>
+
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            <ul className="space-y-3">
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/companies">Companies</Link></li>
+              <li><Link href="/services">Services</Link></li>
+              <li><Link href="/blogs">Blogs</Link></li>
+            </ul>
+
+          </div>
+        </div>
+        <div className="md:col-span-2">
+          <h3 className="text-gray-300 mb-5">Contact</h3>
+
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-center gap-3">
+              <PhoneCall size={16} />
+              <span>+1 800 356 8933</span>
+            </li>
+
+            <li className="flex items-center gap-3">
+              <Mail size={16} />
+              <span>info@rtholding.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
+          <h3 className="text-gray-300 mb-5">Address</h3>
+
+          <div className="flex items-start gap-3 text-sm">
+            <MapPin size={16} className="mt-1" />
+            <p>
+              Seventh Ave, 20th Floor,<br />
+              New York, NY 10018
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/30 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-4">
+        <span>©2013-2025 RT Holding. All rights reserved.</span>
+
+        <div className="flex gap-6">
+          <Link href="#" className="hover:underline">Telegram</Link>
+          <Link href="#" className="hover:underline">Instagram</Link>
+          <Link href="#" className="hover:underline">Whatsapp</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
