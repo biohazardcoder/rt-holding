@@ -1,8 +1,11 @@
-"use client"
-
 import Footer from "@/components/mods/footer";
 import { Navbar } from "@/components/mods/navbar";
-
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Our Team - RT Holdings',
+  description: 'Meet the dedicated professionals at RT Holding who are committed to driving your financial growth and success.',
+}
 export default function Team() {
 
 

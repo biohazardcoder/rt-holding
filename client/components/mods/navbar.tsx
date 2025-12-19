@@ -30,7 +30,7 @@ export const Navbar = () => {
     >
       <div className="flex items-center gap-2 relative">
         <Image src="/image.png" alt="Logo" width={45} height={45} />
-        <h1 className="text-white text-xl md:text-2xl">RT Holding</h1>
+        <h1 className="text-white text-xl md:text-2xl">RT Holdings</h1>
         <div className="bg-white w-7 h-7 absolute top-[5px] left-2.5 -z-10 rounded-full" />
       </div>
 
