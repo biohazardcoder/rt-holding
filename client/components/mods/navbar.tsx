@@ -16,6 +16,7 @@ export const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "Companies", href: "/companies" },
     { label: "Services", href: "/services" },
+    { label: "Team", href: "/team" },
     { label: "Blogs", href: "/blogs" },
   ]
 
