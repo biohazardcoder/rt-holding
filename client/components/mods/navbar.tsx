@@ -22,7 +22,7 @@ export const Navbar = () => {
     <div
       className={cn(
         "w-full h-[10vh] z-40 absolute top-0 left-0",
-        "bg-[#0f3d3a] border-b border-[#ffffff26]",
+        "bg-transparent ",
         "flex items-center justify-between px-[5%] md:px-[10%]"
       )}
     >
