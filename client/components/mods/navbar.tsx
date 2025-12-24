@@ -50,7 +50,7 @@ export const Navbar = () => {
           <Button
           className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
         >
-          Contact Us <ArrowRight size={16} />
+          Become a partner <ArrowRight size={16} />
         </Button>
         </Link>
       </div>
@@ -80,7 +80,7 @@ export const Navbar = () => {
               <Button
               className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
             >
-              Contact Us <ArrowRight size={16} />
+              Become a partner <ArrowRight size={16} />
             </Button>
             </Link>
           </ul>
