@@ -11,7 +11,9 @@ export default function Footer() {
             RT Holdings
           </h1>
           <p className="text-sm text-gray-300 max-w-xs">
-            Your choice is important for us          
+            We continues to earn the trust of customers in Uzbekistan and Central 
+            Asia by providing high-quality services and products. 
+            We strive to take construction and industry to a new level.         
         </p>
 
         </div>

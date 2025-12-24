@@ -16,8 +16,9 @@ export const Main = () => {
     <div
       className="relative min-h-[90vh] mt-[10vh] px-[6%] grid grid-cols-1 md:grid-cols-2 items-center
       bg-linear-to-br from-[#123f3d] via-[#0a2c2a] to-[#06201e] overflow-hidden"
+      style={{backgroundImage: `url("/main-bg.jpg")`, backgroundSize: 'cover', backgroundPosition: 'center'}}
     >
-      <div className="absolute inset-0 flex justify-between px-[6%] z-0 pointer-events-none">
+      {/* <div className="absolute inset-0 flex justify-between px-[6%] z-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
@@ -25,8 +26,8 @@ export const Main = () => {
             style={{ animationDelay: `${i * 0.4}s` }}
           />
         ))}
-      </div>
-
+      </div> */}
+{/* 
       <div className="relative z-10 flex justify-center md:justify-start py-4">
         <div className="flex items-end gap-6 sm:gap-8 md:h-[260px]">
           {stats.map((item, i) => (
@@ -48,8 +49,8 @@ export const Main = () => {
             </div>
           ))}
         </div>
-      </div>
-
+      </div> */}
+{/* 
       <div className="relative z-10 flex flex-col justify-center items-center rounded-xl md:justify-end mt-12 md:mt-0">
         <div className="">
           <Image
@@ -66,10 +67,10 @@ export const Main = () => {
           </span>
            Lorem ipsum dolor sit.
         </p>
-      </div>
+      </div> */}
 
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#c9f9a9]/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 left-10 w-60 h-60 bg-white/10 rounded-full blur-2xl animate-pulse" />
+      {/* <div className="absolute top-20 right-10 w-72 h-72 bg-[#c9f9a9]/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-10 left-10 w-60 h-60 bg-white/10 rounded-full blur-2xl animate-pulse" /> */}
     </div>
   );
 };

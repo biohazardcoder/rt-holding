@@ -1,7 +1,6 @@
 "use client"
 import { Fetch } from "@/middlewares/Fetch";
 import { useEffect, useState } from "react";
-import { Navbar } from "./navbar";
 import Footer from "./footer";
 
 export default function BlogsComponent() {
@@ -28,11 +27,9 @@ export default function BlogsComponent() {
 
   return (
     <div>
-      <Navbar />
+      
 
-      <div className="bg-[#0f3d3a] h-[10vh]" />
-
-      <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-8 flex flex-col items-center">
+      <div className="bg-white px-[5%] md:px-[10%] py-8 flex flex-col items-center">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
           Latest Blogs
         </span>

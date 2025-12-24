@@ -179,7 +179,7 @@ export default function Services() {
 
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 md:grid-cols-2">
           <div>
-            <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-lime-300 text-black text-xl font-bold">
+            <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#dff7cc] text-black text-xl font-bold">
               ×
             </span>
             <h2 className="mt-4 text-4xl uppercase font-serif md:text-5xl">
@@ -196,7 +196,7 @@ export default function Services() {
               recommendations to help businesses thrive.
             </p>
 
-            <button className="inline-flex items-center gap-3 rounded-lg bg-lime-300 px-6 py-3 text-sm font-medium text-black transition hover:bg-lime-200">
+            <button className="inline-flex items-center gap-3 rounded-lg px-6 py-3 text-sm font-medium text-black transition bg-[#c9f9a9]  hover:bg-[#c9f9a9]/80">
               Meet the Team
               <span className="text-lg">→</span>
             </button>

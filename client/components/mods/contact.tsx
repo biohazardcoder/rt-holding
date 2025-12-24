@@ -194,7 +194,7 @@ export const Contact = () => {
             <button
               onClick={submit}
               disabled={loading}
-              className="bg-lime-300 hover:bg-lime-400 transition px-6 py-3 rounded font-medium flex items-center gap-2"
+              className="bg-[#c9f9a9] hover:bg-[#c9f9a9]/80 transition px-6 py-3 rounded font-medium flex items-center gap-2"
             >
               {loading ? "Sending..." : "Submit"} →
             </button>
