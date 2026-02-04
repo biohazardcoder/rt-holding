@@ -5,16 +5,15 @@ export default function Footer() {
   return (
     <footer className="bg-[#0f3d3a] text-white px-[5%] pt-14">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
-        
+
         <div className="md:col-span-4">
           <h1 className="text-3xl font-bold mb-3">
             RT Holdings
           </h1>
           <p className="text-sm text-gray-300 max-w-xs">
-            We continues to earn the trust of customers in Uzbekistan and Central 
-            Asia by providing high-quality services and products. 
-            We strive to take construction and industry to a new level.         
-        </p>
+            Continues to earn the trust of customers in Uzbekistan and Central Asia by providing quality
+            services and products. We strive to take construction and industry to a new level.
+          </p>
 
         </div>
 
@@ -38,31 +37,37 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3">
               <PhoneCall size={16} />
-              <span>+1 800 356 8933</span>
+              <span>+99891-088-9595</span>
             </li>
 
+
             <li className="flex items-center gap-3">
-              <Mail size={16} />
-              <span>info@rtholding.com</span>
+              <PhoneCall size={16} />
+              <span>+8210-9687-9796</span>
             </li>
           </ul>
         </div>
 
         <div className="md:col-span-3">
-          <h3 className="text-gray-300 mb-5">Address</h3>
+          <h3 className="text-transparent mb-5">.</h3>
 
-          <div className="flex items-start gap-3 text-sm">
-            <MapPin size={16} className="mt-1" />
-            <p>
-              Seventh Ave, 20th Floor,<br />
-              New York, NY 10018
-            </p>
-          </div>
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-center gap-3">
+              <Mail size={16} />
+              <span>rtholdingsgroup@gmail.com</span>
+            </li>
+
+
+            <li className="flex items-center gap-3">
+              <MapPin size={16} />
+              <span>Korea</span>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="border-t border-white/30 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-4">
-        <span>©2013-2025 RT Holding. All rights reserved.</span>
+        <span>©2013-2025 RT Holdings. All rights reserved.</span>
 
         <div className="flex gap-6">
           <Link href="#" className="hover:underline">Telegram</Link>

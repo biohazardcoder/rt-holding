@@ -10,29 +10,33 @@ import commentRoutes from './api/routes/comment-route.js';
 import contactRoutes from './api/routes/contact-route.js';
 dotenv.config();
 
-const app = express(); 
+const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/uploads", express.static("uploads"));
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URL = process.env.MONGO_URL;
 
 app.get('/', (_, res) => {
-    res.send('Server is running'); 
+    res.send('Server is running');
 });
-app.use('/api/admin',adminRoutes)
-app.use('/api/blog',blogRoutes)
-app.use('/api/service',serviceRoutes)
-app.use('/api/story',storyRoutes)
-app.use('/api/comment',commentRoutes)
-app.use('/api/contact',contactRoutes)
+app.use('/api/admin', adminRoutes)
+app.use('/api/blog', blogRoutes)
+app.use('/api/service', serviceRoutes)
+app.use('/api/story', storyRoutes)
+app.use('/api/comment', commentRoutes)
+app.use('/api/contact', contactRoutes)
 
-mongoose.connect(MONGO_URL, 
-    console.log("✅ Connected to MongoDB")
-)
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('✅ MongoDB Connected!'))
+    .catch(err => {
+        console.error('❌ Ulanishda hali ham xato bor:');
+        console.error('Xato kodi:', err.code);
+        console.error('Xato matni:', err);
+    });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`); 
+    console.log(`🚀 Server is running on port ${PORT}`);
 });
 
