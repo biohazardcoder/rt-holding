@@ -18,21 +18,42 @@ export const getAllComments = async (_, res) => {
 };
 
 export const createComment = async (req, res) => {
+
     try {
         const comment = new Comment({
-            image: req.uploadedImages[0] || "", 
-            name: req.body.name,
-            text: req.body.text,
-            job: req.body.job,
+            image: req.uploadedImages?.[0] || "",
+            name: {
+                en: req.body.name.en,
+                uz: req.body.name.uz,
+                ru: req.body.name.ru,
+                kr: req.body.name.kr,
+            },
+            text: req.body.text
+                ? {
+                    en: req.body.text.en,
+                    uz: req.body.text.uz,
+                    ru: req.body.text.ru,
+                    kr: req.body.text.kr,
+                }
+                : undefined,
+            job: req.body.job
+                ? {
+                    en: req.body.job.en,
+                    uz: req.body.job.uz,
+                    ru: req.body.job.ru,
+                    kr: req.body.job.kr,
+                }
+                : undefined,
         });
+
         await comment.save();
         res.status(201).json(comment);
     } catch (error) {
         console.log(error);
-        
         res.status(400).json({ message: "Problem creating comment" });
     }
 };
+
 
 export const updateComment = async (req, res) => {
     try {
@@ -41,17 +62,33 @@ export const updateComment = async (req, res) => {
             return res.status(404).json({ message: "Comment not found" });
         }
 
-        let updatedData = {
-            name: req.body.name,
-            text: req.body.text,
-            job: req.body.job,
-        };
+        let updatedData = {};
 
-        if (req.uploadedImages && req.uploadedImages[0]) {
+        if (req.body.name) {
+            updatedData.name = {
+                ...comment.name,
+                ...req.body.name,
+            };
+        }
+
+        if (req.body.text) {
+            updatedData.text = {
+                ...comment.text,
+                ...req.body.text,
+            };
+        }
+
+        if (req.body.job) {
+            updatedData.job = {
+                ...comment.job,
+                ...req.body.job,
+            };
+        }
+
+        if (req.uploadedImages?.[0]) {
             if (comment.image) {
                 const fileName = getFileNameFromUrl(comment.image);
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
-
                 try {
                     await fs.unlink(oldImagePath);
                 } catch (err) {
@@ -72,6 +109,7 @@ export const updateComment = async (req, res) => {
         res.status(400).json({ message: "Problem updating comment" });
     }
 };
+
 
 export const deleteComment = async (req, res) => {
     try {

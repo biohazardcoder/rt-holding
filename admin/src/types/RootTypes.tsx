@@ -1,3 +1,10 @@
+export interface LangTypes {
+  en: string,
+  uz: string,
+  ru: string,
+  kr: string
+}
+
 
 export interface AdminTypes {
   _id: string;
@@ -17,11 +24,11 @@ export interface UserTypes {
   avatar: string
 }
 
-export interface ErrorTypes{
-  response:{
-    data:{
+export interface ErrorTypes {
+  response: {
+    data: {
       message: string
-      statusCode:number
+      statusCode: number
     }
   }
 }
@@ -29,42 +36,42 @@ export interface ErrorTypes{
 export interface BlogTypes {
   _id?: string;
   createdAt?: string;
-  title: string;
-  text:string;
-  image?:string;
+  title: LangTypes
+  text: LangTypes;
+  image?: string;
 }
 
 export interface ServiceTypes {
   _id?: string;
   createdAt?: string;
-  title: string;
-  text:string;
-  image?:string;
+  title: LangTypes;
+  text: LangTypes;
+  image?: string;
 }
 
 export interface StoryTypes {
   _id?: string;
   createdAt?: string;
   title: string;
-  text:string;
-  image?:string;
-  year:string
+  text: string;
+  image?: string;
+  year: string
 }
 
 export interface CommentTypes {
   _id?: string;
   createdAt?: string;
   name: string;
-  text:string;
-  image?:string;
-  job:string
+  text: string;
+  image?: string;
+  job: string
 }
 
 export interface ContactTypes {
   _id?: string;
   createdAt?: string;
   name: string;
-  phone:string;
-  email:string;
-  service:string
+  phone: string;
+  email: string;
+  service: string
 }

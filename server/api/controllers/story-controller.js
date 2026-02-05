@@ -20,17 +20,29 @@ export const getAllStory = async (_, res) => {
 export const createStory = async (req, res) => {
     try {
         const story = new Story({
-            image: req.uploadedImages[0] || "", 
-            title: req.body.title,
-            text: req.body.text,
+            image: req.uploadedImages?.[0] || "",
+            title: {
+                en: req.body.title.en,
+                uz: req.body.title.uz,
+                ru: req.body.title.ru,
+                kr: req.body.title.kr,
+            },
+            text: {
+                en: req.body.text.en,
+                uz: req.body.text.uz,
+                ru: req.body.text.ru,
+                kr: req.body.text.kr,
+            },
             year: req.body.year,
         });
+
         await story.save();
         res.status(201).json(story);
     } catch (error) {
         res.status(400).json({ message: "Problem creating story" });
     }
 };
+
 
 export const updateStory = async (req, res) => {
     try {
@@ -39,9 +51,27 @@ export const updateStory = async (req, res) => {
             return res.status(404).json({ message: "Story not found" });
         }
 
-        let updatedData = req.body;
+        let updatedData = {};
 
-        if (req.uploadedImages && req.uploadedImages[0]) {
+        if (req.body.title) {
+            updatedData.title = {
+                ...story.title,
+                ...req.body.title,
+            };
+        }
+
+        if (req.body.text) {
+            updatedData.text = {
+                ...story.text,
+                ...req.body.text,
+            };
+        }
+
+        if (req.body.year) {
+            updatedData.year = req.body.year;
+        }
+
+        if (req.uploadedImages?.[0]) {
             if (story.image) {
                 const fileName = getFileNameFromUrl(story.image);
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
@@ -66,6 +96,7 @@ export const updateStory = async (req, res) => {
         res.status(400).json({ message: "Problem updating story" });
     }
 };
+
 
 export const deleteStory = async (req, res) => {
     try {

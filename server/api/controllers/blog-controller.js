@@ -19,52 +19,74 @@ export const getAllBlog = async (_, res) => {
 
 export const createBlog = async (req, res) => {
     try {
+        const title = JSON.parse(req.body.title);
+        const text = JSON.parse(req.body.text);
+
         const blog = new Blog({
-            image: req.uploadedImages[0] || "", 
-            title: req.body.title,
-            text: req.body.text,
+            image: req.uploadedImages?.[0] || "",
+            title: {
+                en: title.en,
+                uz: title.uz,
+                ru: title.ru,
+                kr: title.kr,
+            },
+            text: {
+                en: text.en,
+                uz: text.uz,
+                ru: text.ru,
+                kr: text.kr,
+            },
         });
+
         await blog.save();
         res.status(201).json(blog);
     } catch (error) {
+        console.log(error);
         res.status(400).json({ message: "Problem creating blog" });
     }
 };
 
+
+
 export const updateBlog = async (req, res) => {
     try {
         const blog = await Blog.findById(req.params.id);
-        if (!blog) {
-            return res.status(404).json({ message: "Blog not found" });
+        if (!blog) return res.status(404).json({ message: "Blog not found" });
+
+        const updatedData = {};
+
+        if (req.body.title) {
+            updatedData.title =
+                typeof req.body.title === "string" ? JSON.parse(req.body.title) : req.body.title;
         }
 
-        let updatedData = req.body;
+        if (req.body.text) {
+            updatedData.text =
+                typeof req.body.text === "string" ? JSON.parse(req.body.text) : req.body.text;
+        }
 
-        if (req.uploadedImages && req.uploadedImages[0]) {
+        if (req.uploadedImages?.length) {
             if (blog.image) {
-                const fileName = getFileNameFromUrl(blog.image);
+                const fileName = blog.image.split("/").pop();
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
-
-                try {
-                    await fs.unlink(oldImagePath);
-                } catch (err) {
-                    console.error("Error deleting old image:", err.message);
-                }
+                try { await fs.unlink(oldImagePath); } catch { }
             }
             updatedData.image = req.uploadedImages[0];
         }
 
         const updatedBlog = await Blog.findByIdAndUpdate(
             req.params.id,
-            updatedData,
+            { $set: updatedData },
             { new: true }
         );
 
         res.status(200).json(updatedBlog);
     } catch (error) {
+        console.log(error);
         res.status(400).json({ message: "Problem updating blog" });
     }
 };
+
 
 export const deleteBlog = async (req, res) => {
     try {

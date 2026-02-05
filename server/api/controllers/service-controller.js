@@ -20,51 +20,61 @@ export const getAllService = async (_, res) => {
 export const createService = async (req, res) => {
     try {
         const service = new Service({
-            image: req.uploadedImages[0] || "", 
-            title: req.body.title,
-            text: req.body.text,
+            image: req.uploadedImages?.[0] || "",
+            title:
+                typeof req.body.title === "string" ? JSON.parse(req.body.title) : req.body.title,
+            text:
+                typeof req.body.text === "string" ? JSON.parse(req.body.text) : req.body.text,
         });
+
         await service.save();
         res.status(201).json(service);
     } catch (error) {
+        console.error(error);
         res.status(400).json({ message: "Problem creating service" });
     }
 };
 
+
 export const updateService = async (req, res) => {
     try {
         const service = await Service.findById(req.params.id);
-        if (!service) {
-            return res.status(404).json({ message: "Service not found" });
+        if (!service) return res.status(404).json({ message: "Service not found" });
+
+        const updatedData = {};
+
+        if (req.body.title) {
+            updatedData.title =
+                typeof req.body.title === "string" ? JSON.parse(req.body.title) : req.body.title;
+        }
+        if (req.body.text) {
+            updatedData.text =
+                typeof req.body.text === "string" ? JSON.parse(req.body.text) : req.body.text;
         }
 
-        let updatedData = req.body;
-
-        if (req.uploadedImages && req.uploadedImages[0]) {
+        if (req.uploadedImages?.length) {
             if (service.image) {
                 const fileName = getFileNameFromUrl(service.image);
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
-
-                try {
-                    await fs.unlink(oldImagePath);
-                } catch (err) {
-                    console.error("Error deleting old image:", err.message);
-                }
+                try { await fs.unlink(oldImagePath); } catch { }
             }
             updatedData.image = req.uploadedImages[0];
         }
 
         const updatedService = await Service.findByIdAndUpdate(
             req.params.id,
-            updatedData,
+            { $set: updatedData },
             { new: true }
         );
 
         res.status(200).json(updatedService);
     } catch (error) {
+        console.log(error);
         res.status(400).json({ message: "Problem updating service" });
     }
 };
+
+
 
 export const deleteService = async (req, res) => {
     try {
