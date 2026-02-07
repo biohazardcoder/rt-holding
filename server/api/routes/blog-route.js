@@ -1,5 +1,5 @@
 import express from "express";
-import isExisted from "../../middlewares/isExisted.js";
+import { isExisted } from "../../middlewares/isExisted.js";
 import uploadImage from "../../middlewares/uploadImage.js";
 import { createBlog, deleteBlog, getAllBlog, updateBlog } from "../controllers/blog-controller.js";
 

@@ -21,24 +21,21 @@ export const createStory = async (req, res) => {
     try {
         const story = new Story({
             image: req.uploadedImages?.[0] || "",
-            title: {
-                en: req.body.title.en,
-                uz: req.body.title.uz,
-                ru: req.body.title.ru,
-                kr: req.body.title.kr,
-            },
-            text: {
-                en: req.body.text.en,
-                uz: req.body.text.uz,
-                ru: req.body.text.ru,
-                kr: req.body.text.kr,
-            },
+            title:
+                typeof req.body.title === "string"
+                    ? JSON.parse(req.body.title)
+                    : req.body.title,
+            text:
+                typeof req.body.text === "string"
+                    ? JSON.parse(req.body.text)
+                    : req.body.text,
             year: req.body.year,
         });
 
         await story.save();
         res.status(201).json(story);
     } catch (error) {
+        console.error(error);
         res.status(400).json({ message: "Problem creating story" });
     }
 };
@@ -51,51 +48,50 @@ export const updateStory = async (req, res) => {
             return res.status(404).json({ message: "Story not found" });
         }
 
-        let updatedData = {};
+        const updatedData = {};
 
         if (req.body.title) {
-            updatedData.title = {
-                ...story.title,
-                ...req.body.title,
-            };
+            updatedData.title =
+                typeof req.body.title === "string"
+                    ? JSON.parse(req.body.title)
+                    : req.body.title;
         }
 
         if (req.body.text) {
-            updatedData.text = {
-                ...story.text,
-                ...req.body.text,
-            };
+            updatedData.text =
+                typeof req.body.text === "string"
+                    ? JSON.parse(req.body.text)
+                    : req.body.text;
         }
 
         if (req.body.year) {
             updatedData.year = req.body.year;
         }
 
-        if (req.uploadedImages?.[0]) {
+        if (req.uploadedImages?.length) {
             if (story.image) {
                 const fileName = getFileNameFromUrl(story.image);
                 const oldImagePath = path.join(IMAGES_DIR, fileName);
-
                 try {
                     await fs.unlink(oldImagePath);
-                } catch (err) {
-                    console.error("Error deleting old image:", err.message);
-                }
+                } catch { }
             }
             updatedData.image = req.uploadedImages[0];
         }
 
         const updatedStory = await Story.findByIdAndUpdate(
             req.params.id,
-            updatedData,
+            { $set: updatedData },
             { new: true }
         );
 
         res.status(200).json(updatedStory);
     } catch (error) {
+        console.log(error);
         res.status(400).json({ message: "Problem updating story" });
     }
 };
+
 
 
 export const deleteStory = async (req, res) => {

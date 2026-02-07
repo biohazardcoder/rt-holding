@@ -1,7 +1,7 @@
 import express from "express";
-import isExisted from "../../middlewares/isExisted.js";
+import { isExisted } from "../../middlewares/isExisted.js";
 import uploadImage from "../../middlewares/uploadImage.js";
-import { createService,deleteService,getAllService,updateService} from "../controllers/service-controller.js";
+import { createService, deleteService, getAllService, updateService } from "../controllers/service-controller.js";
 
 const router = express.Router();
 

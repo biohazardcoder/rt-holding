@@ -12,7 +12,7 @@ import type { ErrorTypes } from "./types/RootTypes";
 import { Admins } from "./pages/admins";
 import { Blog } from "./pages/blog";
 import { setAdmins, setAdminsError, setAdminsLoading } from "./toolkit/adminsSlicer";
-import { setBlog, setBlogLoading,setBlogError } from "./toolkit/blogSlicer";
+import { setBlog, setBlogLoading, setBlogError } from "./toolkit/blogSlicer";
 import { setService, setServiceError, setServiceLoading } from "./toolkit/serviceSlicer";
 import { Service } from "./pages/service";
 import { Story } from "./pages/story";
@@ -24,15 +24,18 @@ import { Contacts } from "./pages/contact";
 
 function App() {
   const dispatch = useDispatch();
-  const { isAuth, isPending } = useSelector((state: RootState) => state.user);
+  const { isAuth, isPending, data } = useSelector((state: RootState) => state.user);
+  console.log(isAuth, data);
+
   useEffect(() => {
     async function getMyData() {
       try {
         dispatch(setPending());
-        const response = (await Fetch.get(`admin/me`)).data;
+        const response = (await Fetch.get(`admin/get/me`)).data;
+
         (response);
-        if (response.data) {
-          dispatch(setUser(response.data));
+        if (response) {
+          dispatch(setUser(response));
         } else {
           dispatch(setError("Foydalanuvchi ma'lumotlari topilmadi"));
         }
@@ -42,7 +45,7 @@ function App() {
       }
     }
     async function getAdmins() {
-      try{
+      try {
         dispatch(setAdminsLoading())
         const response = (await Fetch.get("admin")).data
         dispatch(setAdmins(response))
@@ -53,57 +56,57 @@ function App() {
     }
     async function getBlogs() {
       try {
-          dispatch(setBlogLoading())
-          const response = (await Fetch.get("blog")).data
-          dispatch(setBlog(response))
+        dispatch(setBlogLoading())
+        const response = (await Fetch.get("blog")).data
+        dispatch(setBlog(response))
       } catch (error) {
-          const err = error as ErrorTypes
-          dispatch(setBlogError(err.response.data.message|| "Error in get all blogs"))
-          console.log(error);
+        const err = error as ErrorTypes
+        dispatch(setBlogError(err.response.data.message || "Error in get all blogs"))
+        console.log(error);
       }
     }
     async function getServices() {
       try {
-          dispatch(setServiceLoading())
-          const response = (await Fetch.get("service")).data
-          dispatch(setService(response))
+        dispatch(setServiceLoading())
+        const response = (await Fetch.get("service")).data
+        dispatch(setService(response))
       } catch (error) {
-          const err = error as ErrorTypes
-          dispatch(setServiceError(err.response.data.message|| "Error in get all services"))
-          console.log(error);
+        const err = error as ErrorTypes
+        dispatch(setServiceError(err.response.data.message || "Error in get all services"))
+        console.log(error);
       }
     }
     async function getStory() {
       try {
-          dispatch(setStoryLoading())
-          const response = (await Fetch.get("story")).data
-          dispatch(setStory(response))
+        dispatch(setStoryLoading())
+        const response = (await Fetch.get("story")).data
+        dispatch(setStory(response))
       } catch (error) {
-          const err = error as ErrorTypes
-          dispatch(setStoryError(err.response.data.message|| "Error in get all stories"))
-          console.log(error);
+        const err = error as ErrorTypes
+        dispatch(setStoryError(err.response.data.message || "Error in get all stories"))
+        console.log(error);
       }
     }
-     async function getComments() {
+    async function getComments() {
       try {
-          dispatch(setCommentLoading())
-          const response = (await Fetch.get("comment")).data
-          dispatch(setComment(response))
+        dispatch(setCommentLoading())
+        const response = (await Fetch.get("comment")).data
+        dispatch(setComment(response))
       } catch (error) {
-          const err = error as ErrorTypes
-          dispatch(setCommentError(err.response.data.message|| "Error in get all stories"))
-          console.log(error);
+        const err = error as ErrorTypes
+        dispatch(setCommentError(err.response.data.message || "Error in get all stories"))
+        console.log(error);
       }
     }
-        async function getContacts() {
+    async function getContacts() {
       try {
-          dispatch(setContactLoading())
-          const response = (await Fetch.get("contact")).data
-          dispatch(setContact(response))
+        dispatch(setContactLoading())
+        const response = (await Fetch.get("contact")).data
+        dispatch(setContact(response))
       } catch (error) {
-          const err = error as ErrorTypes
-          dispatch(setContactError(err.response.data.message|| "Error in get all stories"))
-          console.log(error);
+        const err = error as ErrorTypes
+        dispatch(setContactError(err.response.data.message || "Error in get all stories"))
+        console.log(error);
       }
     }
     getMyData();
@@ -127,40 +130,40 @@ function App() {
     if (isAuth) {
       return createBrowserRouter([
         {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        path:"/",
-        element: <Contacts/>,
-      },
-      {
-        path: "services",
-        element: <Service />,
-      },
-      {
-        path: "blogs",
-        element: <Blog />,
-      },
-       {
-        path: "stories",
-        element: <Story />,
-      },
-        {
-        path: "comments",
-        element: <Comment />,
-      },
-      {
-        path: "admins",
-        element: <Admins />,
-      },
-      {
-        path: "*",
-        element: <Error />,
-      },
-    ],
-  },
+          path: "/",
+          element: <Layout />,
+          children: [
+            {
+              index: true,
+              path: "/",
+              element: <Contacts />,
+            },
+            {
+              path: "services",
+              element: <Service />,
+            },
+            {
+              path: "blogs",
+              element: <Blog />,
+            },
+            {
+              path: "stories",
+              element: <Story />,
+            },
+            {
+              path: "comments",
+              element: <Comment />,
+            },
+            {
+              path: "admins",
+              element: <Admins />,
+            },
+            {
+              path: "*",
+              element: <Error />,
+            },
+          ],
+        },
       ]);
     } else {
       return createBrowserRouter([

@@ -52,8 +52,8 @@ export interface ServiceTypes {
 export interface StoryTypes {
   _id?: string;
   createdAt?: string;
-  title: string;
-  text: string;
+  title: LangTypes;
+  text: LangTypes;
   image?: string;
   year: string
 }
@@ -61,10 +61,10 @@ export interface StoryTypes {
 export interface CommentTypes {
   _id?: string;
   createdAt?: string;
-  name: string;
-  text: string;
+  name: LangTypes;
+  text: LangTypes;
   image?: string;
-  job: string
+  job: LangTypes
 }
 
 export interface ContactTypes {

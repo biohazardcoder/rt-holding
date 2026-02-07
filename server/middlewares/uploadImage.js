@@ -23,8 +23,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
+  limits: { fileSize: 10 * 1024 * 1024 },
   fileFilter: (_, file, cb) => {
+
     if (!file.mimetype.startsWith("image/")) {
       return cb(new Error("Only image files are allowed!"), false);
     }
@@ -33,6 +34,7 @@ const upload = multer({
 });
 
 export default function (req, res, next) {
+  req.files
   upload.array("images", 20)(req, res, async (err) => {
     if (err) return res.status(400).json({ message: err.message });
 
@@ -47,7 +49,7 @@ export default function (req, res, next) {
 
             await sharp(file.path)
               .resize({ width: 1200, withoutEnlargement: true })
-              .webp({ quality: 80 })
+              .webp({ quality: 60 })
               .toFile(outputPath);
 
             await fs.promises.unlink(file.path);
@@ -55,7 +57,7 @@ export default function (req, res, next) {
             return `${BASE_URL}/api/uploads/images/${outputFilename}`;
           })
         );
-        
+
         req.uploadedImages = optimizedFiles;
       } catch (error) {
         return res.status(500).json({

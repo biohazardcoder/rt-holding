@@ -1,7 +1,7 @@
 import express from "express";
-import isExisted from "../../middlewares/isExisted.js";
+import { isExisted } from "../../middlewares/isExisted.js";
 import uploadImage from "../../middlewares/uploadImage.js";
-import { getAllStory,createStory,deleteStory,updateStory } from "../controllers/story-controller.js";
+import { getAllStory, createStory, deleteStory, updateStory } from "../controllers/story-controller.js";
 
 const router = express.Router();
 

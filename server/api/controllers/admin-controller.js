@@ -3,13 +3,13 @@ import jwt from "jsonwebtoken";
 import Admin from "../models/admin-model.js";
 
 export const register = async (req, res) => {
-  const { firstName, email, password, type } = req.body;
+  const { firstName, email, password, role } = req.body;
 
   try {
     const existingUser = await Admin.findOne({ email });
     if (existingUser)
       return res.status(400).json({ message: "Email already exists" });
-    
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -17,10 +17,10 @@ export const register = async (req, res) => {
       firstName,
       email,
       password: hashedPassword,
-      type,
+      role: role || "admin",
     });
-    await newAdmin.save();
 
+    await newAdmin.save();
     res.status(201).json({ message: "Admin registered successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -35,8 +35,7 @@ export const login = async (req, res) => {
     if (!admin) return res.status(404).json({ message: "Admin not found" });
 
     const isMatch = await bcrypt.compare(password, admin.password);
-    if (!isMatch)
-      return res.status(400).json({ message: "Invalid credentials" });
+    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
     const token = jwt.sign(
       { _id: admin._id, role: admin.role },
@@ -44,14 +43,13 @@ export const login = async (req, res) => {
       { expiresIn: "30d" }
     );
 
-    res.json({ token, admin });
+    res.json({ token, admin: { _id: admin._id, firstName: admin.firstName, email: admin.email, role: admin.role } });
   } catch (error) {
     res.status(500).json({ message: error.message });
-    console.log(error);
   }
 };
 
-export const getAllAdmins = async (_, res) => {
+export const getAllAdmins = async (req, res) => {
   try {
     const admins = await Admin.find().select("-password");
     res.json(admins);
@@ -64,7 +62,6 @@ export const getAdmin = async (req, res) => {
   try {
     const admin = await Admin.findById(req.params.id).select("-password");
     if (!admin) return res.status(404).json({ message: "Admin not found" });
-
     res.json(admin);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -73,11 +70,20 @@ export const getAdmin = async (req, res) => {
 
 export const updateAdmin = async (req, res) => {
   try {
+    const { password, role, firstName, email } = req.body;
+    const updateData = { firstName, email, role };
+
+    if (password) {
+      const salt = await bcrypt.genSalt(10);
+      updateData.password = await bcrypt.hash(password, salt);
+    }
+
     const updatedAdmin = await Admin.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      updateData,
       { new: true }
     ).select("-password");
+
     res.json(updatedAdmin);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -86,6 +92,12 @@ export const updateAdmin = async (req, res) => {
 
 export const deleteAdmin = async (req, res) => {
   try {
+    const admin = await Admin.findById(req.params.id);
+    if (!admin) return res.status(404).json({ message: "Admin not found" });
+
+    if (admin.role === "superadmin")
+      return res.status(403).json({ message: "Cannot delete superadmin" });
+
     await Admin.findByIdAndDelete(req.params.id);
     res.json({ message: "Admin deleted" });
   } catch (error) {
@@ -93,18 +105,13 @@ export const deleteAdmin = async (req, res) => {
   }
 };
 
-
-
-export const GetMe = async (req, res) => {
+export const getMe = async (req, res) => {
   try {
-    const foundAdmin = await Admin.findById(req.userInfo.userId);
+    const admin = await Admin.findById(req.userInfo.userId).select("-password");
+    if (!admin) return res.status(404).json({ message: "Admin not found" });
 
-    if (!foundAdmin) {
-      return res.status(404).json({ message: "Admin not found" });
-    }
-
-    return res.status(200).json({ data: foundAdmin });
+    res.json(admin);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ message: error.message });
   }
 };

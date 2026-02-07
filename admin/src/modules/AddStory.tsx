@@ -12,56 +12,67 @@ import {
 } from "@/components/ui/sheet";
 import { toast } from "sonner";
 import { Fetch } from "@/middlewares/Fetch";
-import type { StoryTypes, ErrorTypes } from "@/types/RootTypes";
+import type { ErrorTypes } from "@/types/RootTypes";
 import { Textarea } from "@/components/ui/textarea";
 import { useDispatch } from "react-redux";
 import { setStory, setStoryError, setStoryLoading } from "@/toolkit/storySlicer";
 
+const languages = ["en", "uz", "ru", "kr"] as const;
+type Lang = (typeof languages)[number];
+
 export function AddStory() {
   const [images, setImages] = useState<FileList | null>(null);
-  const [formData, setFormData] = useState<Partial<StoryTypes>>({
-    title: "",
-    text: "",
+  const [step, setStep] = useState(0);
+  const currentLang = languages[step];
+
+  const [formData, setFormData] = useState<{
+    title: Record<Lang, string>;
+    text: Record<Lang, string>;
+    year: string;
+  }>({
+    title: { en: "", uz: "", ru: "", kr: "" },
+    text: { en: "", uz: "", ru: "", kr: "" },
     year: "",
   });
+
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
- const dispatch = useDispatch()
-    const GetStories = async () => {
-        try {
-            dispatch(setStoryLoading())
-            const response = (await Fetch.get("story")).data
-            dispatch(setStory(response))
-            console.log(response);
-            
-        } catch (error) {
-            const err = error as ErrorTypes
-            dispatch(setStoryError(err.response.data.message|| "Error in get all stories"))
-            console.log(error);
-        }
-    }
+  const dispatch = useDispatch();
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
-    if (!formData.title) newErrors.title = "Title is required.";
-    if (!formData.text) newErrors.text = "Text is required.";
-    if (!formData.year) newErrors.year = "Year is required.";
-    if (!images || images.length === 0) {
-      newErrors.media = "You must select an image.";
+  const GetStories = async () => {
+    try {
+      dispatch(setStoryLoading());
+      const response = (await Fetch.get("story")).data;
+      dispatch(setStory(response));
+    } catch (error) {
+      const err = error as ErrorTypes;
+      dispatch(setStoryError(err.response?.data?.message || "Error getting stories"));
     }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (
+  const handleLangChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: { ...prev[name as "title" | "text"], [currentLang]: value },
+    }));
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setImages(e.target.files);
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.title[currentLang]) newErrors.title = "Title is required.";
+    if (!formData.text[currentLang]) newErrors.text = "Text is required.";
+    if (!formData.year) newErrors.year = "Year is required.";
+    if (!images || images.length === 0) newErrors.media = "You must select an image.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async () => {
@@ -70,27 +81,30 @@ export function AddStory() {
 
     try {
       const body = new FormData();
-      body.append("title", formData.title || "");
-      body.append("text", formData.text || "");
-      body.append("year", formData.year || "");
+      body.append("title", JSON.stringify(formData.title));
+      body.append("text", JSON.stringify(formData.text));
+      body.append("year", formData.year);
 
-        if (images && images.length > 0) {
-        for (let i = 0; i < images.length; i++) {
-          body.append("images", images[i]);
-        }
+      if (images) {
+        Array.from(images).forEach(img => body.append("images", img));
       }
-
 
       await Fetch.post("/story", body, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+
       GetStories();
       toast.success("Story added successfully!");
       setIsSheetOpen(false);
-      setFormData({ title: "", text: "", year: "" });
+      setFormData({
+        title: { en: "", uz: "", ru: "", kr: "" },
+        text: { en: "", uz: "", ru: "", kr: "" },
+        year: "",
+      });
       setImages(null);
+      setStep(0);
     } catch (error) {
-      toast.error("Error adding Story.");
+      toast.error("Error adding story.");
       console.error(error);
     } finally {
       setIsLoading(false);
@@ -100,92 +114,80 @@ export function AddStory() {
   return (
     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
       <SheetTrigger asChild>
-        <Button className="bg-[#003939] hover:bg-[#005555] cursor-pointer">
+        <Button className="bg-[#003939] hover:bg-[#005555]">
           Add Story
         </Button>
       </SheetTrigger>
-      <SheetContent className="h-full w-full sm:max-w-md sm:h-auto bg-[#202020] text-white border-none">
+
+      <SheetContent className="h-full w-full sm:max-w-md bg-[#202020] text-white border-none">
         <SheetHeader>
           <SheetTitle className="text-white text-2xl">New Story</SheetTitle>
           <SheetDescription>
-            Fill in story info and choose <b>image OR video</b>
+            Fill story info and choose <b>image</b>
           </SheetDescription>
         </SheetHeader>
 
-        <div className="flex flex-col gap-4 px-4 mt-2">
-          <div className="space-y-1">
-            <Label htmlFor="title">Title *</Label>
+        <div className="flex flex-col gap-4 px-4">
+          <p className="text-sm text-gray-400">
+            Language: <b className="uppercase">{currentLang}</b>
+          </p>
+
+          <div>
+            <Label>Title ({currentLang}) *</Label>
             <Input
-              id="title"
               name="title"
-              type="text"
-              value={formData.title}
-              onChange={handleInputChange}
+              value={formData.title[currentLang]}
+              onChange={handleLangChange}
               className={errors.title ? "border-red-500" : ""}
             />
-            {errors.title && (
-              <span className="text-red-500 text-sm">{errors.title}</span>
-            )}
+            {errors.title && <span className="text-red-500 text-sm">{errors.title}</span>}
           </div>
 
-          <div className="space-y-1">
-            <Label htmlFor="text">Text *</Label>
+          <div>
+            <Label>Text ({currentLang}) *</Label>
             <Textarea
-              id="text"
               name="text"
-              value={formData.text}
-              onChange={handleInputChange}
-              className={`w-full ${errors.text ? "border-red-500" : ""}`}
+              value={formData.text[currentLang]}
+              onChange={handleLangChange}
+              className={errors.text ? "border-red-500" : ""}
               rows={4}
             />
-            {errors.text && (
-              <span className="text-red-500 text-sm">{errors.text}</span>
-            )}
+            {errors.text && <span className="text-red-500 text-sm">{errors.text}</span>}
           </div>
 
-          <div className="space-y-1">
-            <Label htmlFor="year">Year *</Label>
-            <Input
-              id="year"
-              name="year"
-              type="text"
-              value={formData.year}
-              onChange={handleInputChange}
-              className={errors.year ? "border-red-500" : ""}
-            />
-            {errors.year && (
-              <span className="text-red-500 text-sm">{errors.year}</span>
-            )}
-          </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="images">Choose Image</Label>
-            <Input id="images" type="file" className="file:cursor-pointer file:px-2 file:rounded file:border-0 file:bg-white file:text-sm file:text-black hover:file:bg-gray-200"  multiple onChange={handleImageChange} />
-            {images && (
-              <div className="mt-2 flex flex-wrap gap-2">
-                {Array.from(images).map((file, i) => (
-                  <img
-                    key={i}
-                    src={URL.createObjectURL(file)}
-                    alt="preview"
-                    className="w-20 h-20 object-cover rounded"
-                  />
-                ))}
+          {step === 0 && (
+            <>
+              <div>
+                <Label>Year *</Label>
+                <Input
+                  value={formData.year}
+                  onChange={e => setFormData({ ...formData, year: e.target.value })}
+                  className={errors.year ? "border-red-500" : ""}
+                />
+                {errors.year && <span className="text-red-500 text-sm">{errors.year}</span>}
               </div>
-            )}
-          </div>
-          {errors.media && (
-            <span className="text-red-500 text-sm">{errors.media}</span>
+
+              <div>
+                <Label>Image</Label>
+                <Input type="file" multiple onChange={handleImageChange} />
+                {errors.media && <span className="text-red-500 text-sm">{errors.media}</span>}
+              </div>
+            </>
           )}
 
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={handleSubmit}
-            disabled={isLoading}
-          >
-            {isLoading ? "Uploading..." : "Upload"}
-          </Button>
+          <div className="flex justify-between mt-6">
+            <Button variant="secondary" disabled={step === 0} onClick={() => setStep(step - 1)}>
+              Prev
+            </Button>
+
+            {step < languages.length - 1 ? (
+              <Button onClick={() => setStep(step + 1)}>Next</Button>
+            ) : (
+              <Button onClick={handleSubmit} disabled={isLoading}>
+                {isLoading ? "Uploading..." : "Upload"}
+              </Button>
+            )}
+          </div>
         </div>
       </SheetContent>
     </Sheet>

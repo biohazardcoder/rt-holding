@@ -1,7 +1,7 @@
 import express from "express";
-import isExisted from "../../middlewares/isExisted.js";
+import { isExisted } from "../../middlewares/isExisted.js";
 import uploadImage from "../../middlewares/uploadImage.js";
-import { createComment,deleteComment,getAllComments,updateComment} from "../controllers/comment-controller.js";
+import { createComment, deleteComment, getAllComments, updateComment } from "../controllers/comment-controller.js";
 
 const router = express.Router();
 

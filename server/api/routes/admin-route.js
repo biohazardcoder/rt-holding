@@ -1,23 +1,23 @@
 import express from "express";
 import {
-  deleteAdmin,
-  getAdmin,
-  getAllAdmins,
-  login,
   register,
+  login,
+  getAllAdmins,
+  getAdmin,
   updateAdmin,
-  GetMe,
+  deleteAdmin,
+  getMe
 } from "../controllers/admin-controller.js";
-import isExisted from "../../middlewares/isExisted.js";
+import { verifyRole, isExisted } from "../../middlewares/isExisted.js";
 
 const router = express.Router();
 
-router.get("/me", isExisted, GetMe);
-router.get("/", getAllAdmins);
-router.get("/:id", getAdmin);
-router.post("/register", register);
+router.post("/register", isExisted, verifyRole(["superadmin"]), register);
 router.post("/login", login);
-router.put("/:id", updateAdmin);
-router.delete("/:id", deleteAdmin);
+router.get("/", isExisted, verifyRole(["superadmin"]), getAllAdmins);
+router.get("/get/me", isExisted, getMe);
+router.get("/:id", isExisted, verifyRole(["superadmin"]), getAdmin);
+router.put("/:id", isExisted, verifyRole(["superadmin"]), updateAdmin);
+router.delete("/:id", isExisted, verifyRole(["superadmin"]), deleteAdmin);
 
 export default router;

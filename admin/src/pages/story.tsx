@@ -1,48 +1,55 @@
-import {  EllipsisVertical, Loader2, Pen, Trash2} from "lucide-react";
+import { EllipsisVertical, Loader2, Pen, Trash2 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import type { StoryTypes, ErrorTypes } from "@/types/RootTypes";
+import type { StoryTypes, ErrorTypes, BlogTypes } from "@/types/RootTypes";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Fetch } from "@/middlewares/Fetch";
-import {  useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/store/RootStore";
 import { setStory, setStoryError, setStoryLoading } from "@/toolkit/storySlicer";
 import { EditStory } from "@/modules/EditStory";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const Story = () => {
-   const dispatch = useDispatch()
-    const {data, loading,error } = useSelector((state:RootState)=>state.story)
-    const GetStories = async () => {
-        try {
-            dispatch(setStoryLoading())
-            const response = (await Fetch.get("story")).data
-            dispatch(setStory(response))
-        } catch (error) {
-            const err = error as ErrorTypes
-            dispatch(setStoryError(err.response.data.message|| "Error in get all stories"))
-            console.log(error);
-        }
-    }
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector(
+    (state: RootState) => state.story
+  );
 
   const stories = (data as StoryTypes[]) || [];
-  const [editMenuOpen, setEditMenuOpen] = useState<boolean>(false);
+  const [editMenuOpen, setEditMenuOpen] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState<StoryTypes | null>(null);
-        
-   if (error) return <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
-            <h1 className="text-center text-destructive">Error loading blog data</h1>
-        </div>;
+  const [selectedLang, setSelectedLang] =
+    useState<keyof BlogTypes["title"]>("en");
 
-        if (loading) return <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
-            <div className="flex items-center justify-center h-[calc(100vh-150px)]">
-                <Loader2 className="animate-spin text-blue-500" size={30}/>
-            </div>
-        </div>;
+  const GetStories = async () => {
+    try {
+      dispatch(setStoryLoading());
+      const response = (await Fetch.get("story")).data;
+      dispatch(setStory(response));
+    } catch (error) {
+      const err = error as ErrorTypes;
+      dispatch(
+        setStoryError(err.response?.data?.message || "Error getting stories")
+      );
+    }
+  };
+
+  useEffect(() => {
+    GetStories();
+  }, []);
 
   const handleDelete = async (id: string) => {
     try {
@@ -51,7 +58,6 @@ export const Story = () => {
       GetStories();
     } catch (error) {
       toast.error("Error deleting story.");
-      console.error(error);
     }
   };
 
@@ -60,25 +66,69 @@ export const Story = () => {
     setEditMenuOpen(true);
   };
 
+  if (error)
+    return (
+      <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
+        <h1 className="text-center text-destructive">
+          Error loading story data
+        </h1>
+      </div>
+    );
+
+  if (loading)
+    return (
+      <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
+        <div className="flex items-center justify-center h-[calc(100vh-150px)]">
+          <Loader2 className="animate-spin text-blue-500" size={30} />
+        </div>
+      </div>
+    );
+
   return (
-         <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-        {stories.map(({ _id, image,  title, text, year }) => (
+    <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
+      {/* LANGUAGE SELECT */}
+      <div className="mb-4 flex items-center gap-2">
+        <span className="font-semibold">Select Language:</span>
+        <Select
+          value={selectedLang}
+          onValueChange={(value) =>
+            setSelectedLang(value as keyof BlogTypes["title"])
+          }
+        >
+          <SelectTrigger className="max-w-52">
+            <SelectValue placeholder="Select language" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="uz">Uzbek</SelectItem>
+            <SelectItem value="ru">Russian</SelectItem>
+            <SelectItem value="kr">Korean</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* STORY CARDS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {stories.map(({ _id, image, title, text, year }) => (
           <div
             key={_id}
             className="bg-gray-50 border border-gray-200 rounded-lg shadow p-4 flex flex-col relative"
           >
-            {
-                <img
-                  src={image}
-                  alt={title}
-                  className="w-full h-40 object-cover object-center rounded-md mt-6"
-                />
-            }
+            {image && (
+              <img
+                src={image}
+                alt={title[selectedLang]}
+                className="w-full h-40 object-cover rounded-md mt-6"
+              />
+            )}
 
-            <h2 className="font-semibold text-lg mt-3">{title}</h2>
-            <p className="text-sm text-gray-600 mt-1 line-clamp-3">{text}</p>
-            <p className="mt-1 font-semibold ">Year: {year}</p>
+            <h2 className="font-semibold text-lg mt-3">
+              {title[selectedLang] || "No title"}
+            </h2>
+            <p className="text-sm text-gray-600 mt-1 line-clamp-3">
+              {text[selectedLang] || "No text"}
+            </p>
+            <p className="mt-1 font-semibold">Year: {year}</p>
 
             <div className="absolute top-2 right-2">
               <DropdownMenu>
@@ -89,8 +139,7 @@ export const Story = () => {
                   />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="border-none">
-                  
-                  <DropdownMenuItem className="flex items-center gap-2 text-blue-600 cursor-pointer">
+                  <DropdownMenuItem>
                     <Button
                       className="bg-blue-500 hover:bg-blue-600 w-full"
                       onClick={() =>
@@ -106,11 +155,11 @@ export const Story = () => {
                       <Pen className="text-white" />
                     </Button>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="flex items-center gap-2 text-red-600 cursor-pointer">
+                  <DropdownMenuItem>
                     <Button
-                      onClick={() => handleDelete(_id || "")}
-                      variant={"destructive"}
+                      variant="destructive"
                       className="w-full"
+                      onClick={() => handleDelete(_id!)}
                     >
                       <Trash2 className="text-white" />
                     </Button>
@@ -124,7 +173,7 @@ export const Story = () => {
 
       {editMenuOpen && selectedMenu && (
         <EditStory
-          story={selectedMenu!}
+          story={selectedMenu}
           open={editMenuOpen}
           onOpenChange={setEditMenuOpen}
         />

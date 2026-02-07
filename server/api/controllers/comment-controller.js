@@ -18,32 +18,28 @@ export const getAllComments = async (_, res) => {
 };
 
 export const createComment = async (req, res) => {
-
     try {
         const comment = new Comment({
             image: req.uploadedImages?.[0] || "",
-            name: {
-                en: req.body.name.en,
-                uz: req.body.name.uz,
-                ru: req.body.name.ru,
-                kr: req.body.name.kr,
-            },
-            text: req.body.text
-                ? {
-                    en: req.body.text.en,
-                    uz: req.body.text.uz,
-                    ru: req.body.text.ru,
-                    kr: req.body.text.kr,
-                }
-                : undefined,
-            job: req.body.job
-                ? {
-                    en: req.body.job.en,
-                    uz: req.body.job.uz,
-                    ru: req.body.job.ru,
-                    kr: req.body.job.kr,
-                }
-                : undefined,
+
+            name:
+                typeof req.body.name === "string"
+                    ? JSON.parse(req.body.name)
+                    : req.body.name,
+
+            text:
+                req.body.text
+                    ? typeof req.body.text === "string"
+                        ? JSON.parse(req.body.text)
+                        : req.body.text
+                    : undefined,
+
+            job:
+                req.body.job
+                    ? typeof req.body.job === "string"
+                        ? JSON.parse(req.body.job)
+                        : req.body.job
+                    : undefined,
         });
 
         await comment.save();
@@ -55,60 +51,51 @@ export const createComment = async (req, res) => {
 };
 
 
+
 export const updateComment = async (req, res) => {
     try {
         const comment = await Comment.findById(req.params.id);
-        if (!comment) {
-            return res.status(404).json({ message: "Comment not found" });
-        }
+        if (!comment) return res.status(404).json({ message: "Comment not found" });
 
-        let updatedData = {};
-
-        if (req.body.name) {
-            updatedData.name = {
-                ...comment.name,
-                ...req.body.name,
-            };
-        }
-
-        if (req.body.text) {
-            updatedData.text = {
-                ...comment.text,
-                ...req.body.text,
-            };
-        }
-
-        if (req.body.job) {
-            updatedData.job = {
-                ...comment.job,
-                ...req.body.job,
-            };
-        }
-
-        if (req.uploadedImages?.[0]) {
-            if (comment.image) {
-                const fileName = getFileNameFromUrl(comment.image);
-                const oldImagePath = path.join(IMAGES_DIR, fileName);
+        const updatedData = {};
+        console.log(req.uploadedImages[0]);
+        ["name", "text", "job"].forEach((field) => {
+            if (req.body[field]) {
                 try {
-                    await fs.unlink(oldImagePath);
+                    updatedData[field] =
+                        typeof req.body[field] === "string"
+                            ? JSON.parse(req.body[field])
+                            : req.body[field];
                 } catch (err) {
-                    console.error("Error deleting old image:", err.message);
+                    return res.status(400).json({ message: `Invalid JSON in ${field}` });
                 }
+            }
+        });
+
+        if (req.uploadedImages?.length) {
+            if (comment.image) {
+                const oldFile = getFileNameFromUrl(comment.image);
+                const oldPath = path.join(IMAGES_DIR, oldFile);
+                try {
+                    await fs.promises.unlink(oldPath);
+                } catch { }
             }
             updatedData.image = req.uploadedImages[0];
         }
 
         const updatedComment = await Comment.findByIdAndUpdate(
             req.params.id,
-            updatedData,
+            { $set: updatedData },
             { new: true }
         );
 
         res.status(200).json(updatedComment);
     } catch (error) {
-        res.status(400).json({ message: "Problem updating comment" });
+        console.error(error);
+        res.status(500).json({ message: "Problem updating comment" });
     }
 };
+
 
 
 export const deleteComment = async (req, res) => {
