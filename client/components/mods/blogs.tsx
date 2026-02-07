@@ -76,7 +76,7 @@ export default function BlogsComponent() {
               >
                 <img
                   src={image}
-                  alt={title.en}
+                  alt={title}
                   className="w-full h-48 object-cover"
                 />
 
@@ -86,11 +86,11 @@ export default function BlogsComponent() {
 
                 <div className="p-4">
                   <h2 className="text-xl font-semibold mt-2 line-clamp-2">
-                    {title.en}
+                    {title}
                   </h2>
 
                   <p className="mt-2 text-gray-600 line-clamp-3">
-                    {text.en}
+                    {text}
                   </p>
 
                 </div>
