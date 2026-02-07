@@ -54,7 +54,7 @@ export const Contact = () => {
       setForm({ firstName: "", lastName: "", phone: "", email: "", service: "" });
       setErrors({});
     } catch {
-      // Handle error
+      alert("Server error")
     } finally {
       setLoading(false);
     }
@@ -63,7 +63,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
-        
+
         <div>
           <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
             Contact Us
@@ -82,7 +82,7 @@ export const Contact = () => {
               <div>
                 <p className="font-medium">For career inquiries</p>
                 <p className="text-sm text-gray-600">
-                 example@gmail.com
+                  example@gmail.com
                 </p>
               </div>
               <span>→</span>
@@ -113,7 +113,7 @@ export const Contact = () => {
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="bg-[#0f3d3a] text-white px-6 py-4 font-medium">
+          <div className="bg-[#1E242C] text-white px-6 py-4 font-medium">
             Contact Form
           </div>
 
@@ -194,7 +194,7 @@ export const Contact = () => {
             <button
               onClick={submit}
               disabled={loading}
-              className="bg-[#c9f9a9] hover:bg-[#c9f9a9]/80 transition px-6 py-3 rounded font-medium flex items-center gap-2"
+              className="bg-[#F69419] hover:bg-[#F69419]/80 transition px-6 py-3 rounded font-semibold flex items-center gap-2 text-white "
             >
               {loading ? "Sending..." : "Submit"} →
             </button>

@@ -34,10 +34,10 @@ export default function ServicesSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, i) => (
-                    <Card key={i} className="relative">
+                    <Card key={i} className="relative bg-[#1E242C] text-white hover:scale-[1.03] duration-300 transition-transform hover:bg-[#1E242C]/93">
                         <CardContent className="p-6 flex items-center gap-4">
                             <span>
-                                <CheckCircle2 size={32} className=" text-emerald-600" />
+                                <CheckCircle2 size={32} className=" text-[#F69419]" />
                             </span>
                             <p className="font-medium leading-snug">{service}</p>
                         </CardContent>

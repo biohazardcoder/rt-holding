@@ -23,10 +23,10 @@ export const Accreditation = () => {
         {items.map((text, i) => (
           <div
             key={i}
-            className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
+            className="bg-[#1E242C] text-white rounded-xl p-6 shadow-sm hover:shadow-md duration-300 transition-transform hover:scale-[1.03]"
           >
-            <CheckCircle className="text-[#0f3d3a] mb-6" size={36} />
-            <p className="text-gray-800 leading-relaxed">{text}</p>
+            <CheckCircle className="text-[#F69419] mb-6" size={36} />
+            <p className="leading-relaxed">{text}</p>
           </div>
         ))}
       </div>

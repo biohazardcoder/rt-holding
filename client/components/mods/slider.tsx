@@ -3,165 +3,165 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-     const items = [
+const items = [
   {
-    title:"RT Medline",
-    image:{
-        src: "/rt-medline.png",
-        alt: "RT Medline",
-        width: 200,
-        height: 60,
+    title: "RT Medline",
+    image: {
+      src: "/rt-medline.png",
+      alt: "RT Medline",
+      width: 200,
+      height: 60,
     },
     description: "RT Medline is a leading healthcare provider, offering comprehensive medical services and innovative health solutions.",
-     team:[
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        }
+    team: [
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      }
     ]
   },
   {
-    title:"Aka Taxi",
-    image:{
-        src: "/aka-taxi.png",
-        alt: "Aka Taxi",
-        width: 300,
-        height: 60,
+    title: "Aka Taxi",
+    image: {
+      src: "/aka-taxi.png",
+      alt: "Aka Taxi",
+      width: 300,
+      height: 60,
     },
     description: "Aka Taxi is a premier transportation service, providing safe, reliable, and efficient taxi services across the city.",
-     team:[
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        }
+    team: [
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      }
     ]
   },
   {
-    title:"Dream Express",
-    image:{
-        src: "/dream-express.png",
-        alt: "Dream Express",
-        width: 300,
-        height: 80,
+    title: "Dream Express",
+    image: {
+      src: "/dream-express.png",
+      alt: "Dream Express",
+      width: 300,
+      height: 80,
     },
     description: "Dream Express is a leading logistics and delivery company, offering fast and reliable shipping solutions.",
-     team:[
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        }
+    team: [
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      }
     ]
   },
   {
-    title:"RT Motors",
-    image:{
-        src: "/rt-motors.png",
-        alt: "RT Motors",
-        width: 200,
-        height: 60,
+    title: "RT Motors",
+    image: {
+      src: "/rt-motors.png",
+      alt: "RT Motors",
+      width: 200,
+      height: 60,
     },
     description: "RT Motors is a leading automotive manufacturer, producing high-quality vehicles and innovative transportation solutions.",
-    team:[
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        }
+    team: [
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      }
     ]
   },
   {
-    title:"RT HS Group",
-    image:{
-        src: "/rt-hs-group.png",
-        alt: "RT HS Group",
-        width: 350,
-        height: 60,
+    title: "RT HS Group",
+    image: {
+      src: "/rt-hs-group.png",
+      alt: "RT HS Group",
+      width: 350,
+      height: 60,
     },
     description: "RT HS Group is a leading real estate and development company, offering innovative property solutions.",
-     team:[
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        },
-        {
-            image:"/team/c1.jpg",
-            name:"Mr. James Wilson",
-            role:"CEO"
-        }
+    team: [
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      },
+      {
+        image: "/team/c1.jpg",
+        name: "Mr. James Wilson",
+        role: "CEO"
+      }
     ]
   },
 ];
@@ -201,11 +201,11 @@ export default function Slider() {
             <div className="px-4 md:px-8 animate">
               <h1 className="md:text-4xl text-2xl font-medium text-black mb-2">{s.title}</h1>
               <p className="text-gray-600 mb-6 max-w-md text-xs md:text-base">{s.description}</p>
-              <button
-                className={`px-8 py-3 rounded-full text-white transition hover:opacity-80 bg-[#0f3d3a]`}
+              {/* <button
+                className={`px-8 py-3 rounded-full text-white transition hover:opacity-80 bg-[#1E242C]`}
               >
                 Check Now
-              </button>
+              </button> */}
             </div>
 
             <div className="hidden md:flex justify-center items-center">
@@ -217,15 +217,15 @@ export default function Slider() {
 
       <button
         onClick={prev}
-        className="absolute left-0 top-50 md:left-8 md:top-1/2 -translate-y-1/2  hover:opacity-100 text-white bg-[#0f3d3a] p-1 flex items-center justify-center rounded-full"
+        className="absolute left-0 top-50 md:left-8 md:top-1/2 -translate-y-1/2  hover:opacity-100 text-white bg-[#1E242C] p-1 flex items-center justify-center rounded-full"
       >
-        <ChevronLeft size={20}/>
+        <ChevronLeft size={20} />
       </button>
       <button
         onClick={next}
-        className="absolute right-0 top-50 md:right-8 md:top-1/2 -translate-y-1/2  hover:opacity-100 text-white bg-[#0f3d3a] p-1 flex items-center justify-center rounded-full"
+        className="absolute right-0 top-50 md:right-8 md:top-1/2 -translate-y-1/2  hover:opacity-100 text-white bg-[#1E242C] p-1 flex items-center justify-center rounded-full"
       >
-          <ChevronRight size={20}/>
+        <ChevronRight size={20} />
       </button>
 
       <div className="absolute bottom-0 md:bottom-14 left-1/2 -translate-x-1/2 flex gap-4">
@@ -233,9 +233,8 @@ export default function Slider() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`px-4 py-2 border-t-2 border-[#0f3d3a] transition text-[#0f3d3a] ${
-              index === i ? "opacity-100" : "opacity-40"
-            }`}
+            className={`px-4 py-2 border-t-2 border-[#1E242C] transition text-[#1E242C] ${index === i ? "opacity-100" : "opacity-40"
+              }`}
           >
             {i + 1}
           </button>

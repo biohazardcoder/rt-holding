@@ -23,7 +23,7 @@ const steps = [
 
 export default function BusinessProcessSection() {
     return (
-        <section className="bg-[#f6f7f3] py-8 md:py-16 px-4">
+        <section className="bg-[#F7F7F7] py-8 md:py-16 px-4">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 <div>
                     <span className="bg-[#434343] text-white py-2.5 px-3 font-semibold ">

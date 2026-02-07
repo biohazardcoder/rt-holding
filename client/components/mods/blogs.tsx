@@ -27,7 +27,7 @@ export default function BlogsComponent() {
 
   return (
     <div>
-      
+
 
       <div className="bg-white px-[5%] md:px-[10%] py-8 flex flex-col items-center">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
@@ -76,21 +76,21 @@ export default function BlogsComponent() {
               >
                 <img
                   src={image}
-                  alt={title}
+                  alt={title.en}
                   className="w-full h-48 object-cover"
                 />
 
-                <span className="bg-[#0f3d3a] text-white py-1 px-2 font-semibold text-sm absolute top-2 left-2">
+                <span className="bg-[#1E242C] text-white py-1 px-2 font-semibold text-sm absolute top-2 left-2">
                   Blog
                 </span>
 
                 <div className="p-4">
                   <h2 className="text-xl font-semibold mt-2 line-clamp-2">
-                    {title}
+                    {title.en}
                   </h2>
 
                   <p className="mt-2 text-gray-600 line-clamp-3">
-                    {text}
+                    {text.en}
                   </p>
 
                 </div>

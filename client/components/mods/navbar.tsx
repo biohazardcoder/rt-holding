@@ -37,7 +37,7 @@ export const Navbar = () => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="hover:border-[#c9f9a9] border-b-2 border-transparent pb-1 transition-colors"
+              className="hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors"
             >
               {item.label}
             </Link>
@@ -48,10 +48,10 @@ export const Navbar = () => {
       <div className="hidden md:flex items-center gap-2">
         <Link href={"/services/#contact"} >
           <Button
-          className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
-        >
-          Become a partner <ArrowRight size={16} />
-        </Button>
+            className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
+          >
+            Become a partner <ArrowRight size={16} />
+          </Button>
         </Link>
       </div>
 
@@ -63,7 +63,7 @@ export const Navbar = () => {
       </button>
 
       {open && (
-        <div className="absolute top-[10vh] left-0 w-full bg-[#0f3d3a] border-t border-[#ffffff26] md:hidden">
+        <div className="absolute top-[10vh] left-0 w-full bg-[#1E242C] border-t border-[#ffffff26] md:hidden">
           <ul className="flex flex-col items-center gap-6 py-6 text-white font-semibold">
             {items.map((item) => (
               <li key={item.href}>
@@ -76,17 +76,17 @@ export const Navbar = () => {
                 </Link>
               </li>
             ))}
-           <Link href={"/services/#contact"} >
+            <Link href={"/services/#contact"} >
               <Button
-              className="bg-[#c9f9a9] text-black hover:bg-[#c9f9a9]/80"
-            >
-              Become a partner <ArrowRight size={16} />
-            </Button>
+                className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
+              >
+                Become a partner <ArrowRight size={16} />
+              </Button>
             </Link>
           </ul>
         </div>
       )}
-     
+
 
     </div>
   )

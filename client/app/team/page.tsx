@@ -59,13 +59,13 @@ export default function Team() {
     <div>
       <Navbar />
 
-      <div className="bg-[#0f3d3a] h-[10vh]" />
+      <div className="bg-[#1E242C] h-[10vh]" />
       <div className="w-full bg-[#f7f7f7] px-[5%] md:px-[10%] py-16">
         <div className="max-w-7xl mx-auto flex flex-col gap-6">
 
           <div className="text-sm text-gray-500">
             <Link href="/">
-              <span className="hover:text-[#0f3d3a] cursor-pointer">
+              <span className="hover:text-[#1E242C] cursor-pointer">
                 Home
               </span>
             </Link>
@@ -75,8 +75,8 @@ export default function Team() {
 
           <div className="w-full h-px bg-gray-200" />
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl  lg:text-6xl font-serif text-[#0f3d3a] leading-tight max-w-4xl">
-            Meet Our Leaders
+          <h1 className="text-3xl sm:text-4xl md:text-5xl  lg:text-6xl font-sans text-[#234F72] leading-tight max-w-4xl">
+            Meet our leaders
           </h1>
 
           <p className="text-gray-600 max-w-2xl leading-relaxed">
@@ -111,7 +111,7 @@ export default function Team() {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-tight text-[#0f3d3a]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-tight text-[#1E242C]">
               Akhliddin Teshaboev
             </h2>
 

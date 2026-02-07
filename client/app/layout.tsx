@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Lato, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = Lato({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: "400"
 });
 
 const geistMono = Geist_Mono({
