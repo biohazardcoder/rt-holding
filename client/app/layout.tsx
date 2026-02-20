@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
+import { LangLayout } from "@/lang/lang-layout";
 
 const geistSans = Lato({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
-        {children}
+        <LangLayout>{children}</LangLayout>
       </body>
     </html>
   );

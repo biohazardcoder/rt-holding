@@ -32,12 +32,12 @@ export const About = () => {
                                 </div>
                                 <div className="mt-4 grid grid-cols-2 md:flex md:items-center gap-4">
                                         <Link href={"/services"}>
-                                                <Button className="text-white font-semibold border-2 bg-[#0f3d3a] border-[#0f3d3a] hover:bg-white rounded-[3px] hover:text-[#0f3d3a] cursor-pointer w-full md:w-auto">
+                                                <Button className="text-white font-semibold border-2 bg-[#F69419] border-border hover:bg-white rounded-[3px] hover:text-[#F69419] cursor-pointer w-full md:w-auto">
                                                         Our Services
                                                 </Button>
                                         </Link>
                                         <Link href={"/team"}>
-                                                <Button className="text-white font-semibold border-2 bg-[#0f3d3a] border-[#0f3d3a] hover:bg-white rounded-[3px] hover:text-[#0f3d3a] cursor-pointer w-full md:w-auto">
+                                                <Button className="text-white font-semibold border-2 bg-[#F69419] border-border hover:bg-white rounded-[3px] hover:text-[#F69419] cursor-pointer w-full md:w-auto">
                                                         Our Team
                                                 </Button>
                                         </Link>

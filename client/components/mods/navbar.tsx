@@ -5,17 +5,25 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { ArrowRight, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
+import { LanguageSelect } from "@/lang/language"
+import { useTranslation } from "react-i18next"
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const { t } = useTranslation("common")
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   const items = [
-    { label: "Home", href: "/" },
-    { label: "Companies", href: "/companies" },
-    { label: "Services", href: "/services" },
-    { label: "Team", href: "/team" },
-    { label: "Blogs", href: "/blogs" },
+    { label: "home", href: "/" },
+    { label: "companies", href: "/companies" },
+    { label: "services", href: "/services" },
+    { label: "team", href: "/team" },
+    { label: "blogs", href: "/blogs" },
   ]
 
   return (
@@ -39,18 +47,19 @@ export const Navbar = () => {
               href={item.href}
               className="hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors"
             >
-              {item.label}
+              {t(item.label)}
             </Link>
           </li>
         ))}
       </ul>
 
       <div className="hidden md:flex items-center gap-2">
+        <LanguageSelect />
         <Link href={"/services/#contact"} >
           <Button
             className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
           >
-            Become a partner <ArrowRight size={16} />
+            {t("become")} <ArrowRight size={16} />
           </Button>
         </Link>
       </div>
@@ -72,15 +81,16 @@ export const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className="text-lg"
                 >
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               </li>
             ))}
+            <LanguageSelect />
             <Link href={"/services/#contact"} >
               <Button
                 className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
               >
-                Become a partner <ArrowRight size={16} />
+                {t("become")} <ArrowRight size={16} />
               </Button>
             </Link>
           </ul>

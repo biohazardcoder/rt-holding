@@ -8,9 +8,9 @@ interface CommentTypes {
   _id?: string;
   createdAt?: string;
   name: string;
-  text:string;
-  image?:string;
-  job:string
+  text: string;
+  image?: string;
+  job: string
 }
 
 export const Comments = () => {
@@ -19,7 +19,7 @@ export const Comments = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   console.log(comments);
-  
+
   useEffect(() => {
     const getAllComments = async () => {
       try {
@@ -36,35 +36,35 @@ export const Comments = () => {
     getAllComments();
   }, []);
 
-const prev = () => {
-  if (index > 0) {
-    setIndex(index - 1);
-  }
-};
+  const prev = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+    }
+  };
 
-const next = () => {
-  if (index < comments.length - 1) {
-    setIndex(index + 1);
-  }
-};
+  const next = () => {
+    if (index < comments.length - 1) {
+      setIndex(index + 1);
+    }
+  };
 
-const hasPrev = index > 0;
-const hasNext = index < comments.length - 1;
+  const hasPrev = index > 0;
+  const hasNext = index < comments.length - 1;
 
   return (
     <div className="w-full px-[10%] py-20 grid grid-cols-1 lg:grid-cols-2 bg-[#f7f7f7] gap-10 items-center">
-      
+
       <div>
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
           Testimonials
         </span>
 
-        <h1 className="text-3xl md:text-5xl font-semibold leading-tight mt-6 text-[#1e3d38]">
-          Client <span className="text-[#8bc34a]">Experiences</span> <br />
+        <h1 className="text-3xl md:text-5xl font-semibold leading-tight mt-6">
+          Client <span className="text-[#F69419]">Experiences</span> <br />
           That Speak for Themselves
         </h1>
 
-        <button className="mt-10 bg-[#0f3d3a] text-white px-6 py-3 rounded-full font-semibold">
+        <button className="mt-10 bg-[#234F72] text-white px-6 py-3 rounded-full font-semibold">
           Contact Us
         </button>
       </div>
@@ -119,24 +119,24 @@ const hasNext = index < comments.length - 1;
                 onClick={prev}
                 disabled={!hasPrev}
                 className={`w-10 h-10 rounded-full shadow flex items-center justify-center transition
-                  ${hasPrev 
-                    ? "bg-[#0f3d3a] text-white hover:bg-[#0f3d3a]/80" 
+                  ${hasPrev
+                    ? "bg-[#0f3d3a] text-white hover:bg-[#0f3d3a]/80"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"}
                 `}
               >
-                <ChevronLeft size={20}/>
+                <ChevronLeft size={20} />
               </button>
 
               <button
                 onClick={next}
                 disabled={!hasNext}
                 className={`w-10 h-10 rounded-full shadow flex items-center justify-center transition
-                  ${hasNext 
-                    ? "bg-[#0f3d3a] text-white hover:bg-[#0f3d3a]/80" 
+                  ${hasNext
+                    ? "bg-[#0f3d3a] text-white hover:bg-[#0f3d3a]/80"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"}
                 `}
               >
-                <ChevronRight size={20}/>
+                <ChevronRight size={20} />
               </button>
             </div>
           </>

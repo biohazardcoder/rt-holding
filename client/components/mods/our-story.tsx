@@ -32,7 +32,7 @@ export const OurStory = () => {
           Our Story
         </span>
 
-        <h1 className="text-center text-[#0f3d3a] text-3xl md:text-5xl mt-4 font-semibold">
+        <h1 className="text-center text-[#234F72] text-3xl md:text-5xl mt-4 font-semibold">
           A story of our dedication, <br className="hidden md:block" />
           expertise, and lasting results
         </h1>
@@ -51,20 +51,20 @@ export const OurStory = () => {
 
       {loading && (
         <div className="mt-20 flex flex-col gap-20 animate-pulse">
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-            >
-              <div className="flex justify-center">
-                <div className="w-[420px] h-[250px] bg-gray-300 rounded-xl" />
-              </div>
-
-              <div>
-                <div className="h-4 w-20 bg-gray-300 rounded mb-3" />
-                <div className="h-6 w-2/3 bg-gray-300 rounded mb-4" />
-                <div className="h-4 w-full bg-gray-200 rounded mb-2" />
-                <div className="h-4 w-5/6 bg-gray-200 rounded" />
-              </div>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          >
+            <div className="flex justify-center">
+              <div className="w-[420px] h-[250px] bg-gray-300 rounded-xl" />
             </div>
+
+            <div>
+              <div className="h-4 w-20 bg-gray-300 rounded mb-3" />
+              <div className="h-6 w-2/3 bg-gray-300 rounded mb-4" />
+              <div className="h-4 w-full bg-gray-200 rounded mb-2" />
+              <div className="h-4 w-5/6 bg-gray-200 rounded" />
+            </div>
+          </div>
         </div>
       )}
 
@@ -73,15 +73,14 @@ export const OurStory = () => {
           <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 -translate-x-1/2" />
 
           <div className="flex flex-col gap-24">
-            {stories.map(({image,title,text,year}, index) => (
+            {stories.map(({ image, title, text, year }, index) => (
               <div
                 key={index}
                 className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative"
               >
                 <div
-                  className={`flex justify-center ${
-                    index % 2 === 0 ? "md:order-1" : "md:order-2"
-                  }`}
+                  className={`flex justify-center ${index % 2 === 0 ? "md:order-1" : "md:order-2"
+                    }`}
                 >
                   <img
                     src={image}
@@ -94,9 +93,8 @@ export const OurStory = () => {
 
                 <div className="hidden md:block absolute left-1/2 w-4 h-4 bg-white border-4 border-gray-400 rounded-full -translate-x-1/2" />
                 <div
-                  className={`${
-                    index % 2 === 0 ? "md:order-2" : "md:order-1"
-                  } md:pl-12`}
+                  className={`${index % 2 === 0 ? "md:order-2" : "md:order-1"
+                    } md:pl-12`}
                 >
                   <span className="text-sm bg-gray-100 px-2 py-1 rounded text-gray-500 font-semibold">
                     {year}

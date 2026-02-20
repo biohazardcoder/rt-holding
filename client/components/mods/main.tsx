@@ -1,9 +1,20 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 export const Main = () => {
+
+  const { t } = useTranslation("common")
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div
       className="relative h-screen px-[6%] flex flex-col justify-center gap-14 items-center overflow-hidden"
@@ -16,10 +27,10 @@ export const Main = () => {
             Your choice is important to us!
           </h1>
         </div> */}
-        <h1 className="text-lg md:text-4xl max-w-3xl text-center font-bold">
-          Our goals are to provide quality, reliable, and prompt service to our clients
+        <h1 className="text-lg md:text-4xl max-w-4xl text-center font-bold">
+          {t("main-title")}
         </h1>
-        <p className="max-w-xl text-center text-sm mx-auto">An individual approach to each client, high responsibility for each project — this is our work principle. RT Holdings always guarantees reliable equipment, professional service, and timely delivery.</p>
+        <p className="max-w-xl text-center text-sm mx-auto">{t("main-description")}</p>
         <div className="absolute bottom-0 left-0 right-0 h-80 bg-linear-to-t from-[#000000d9] to-transparent z-5" />
       </div>
     </div>
