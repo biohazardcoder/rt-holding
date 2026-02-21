@@ -13,5 +13,23 @@
     "why-sets-1": "Premium Koreys Mashinalari",
     "why-sets-2": "To'g'ridan-to'g'ri Eksport Yechimlari",
     "why-sets-3": "Ishonchli Global Hamkor",
-    "why-sets-4": "Ishonchli Og'ir Uskunalar"
+    "why-sets-4": "Ishonchli Og'ir Uskunalar",
+    "about": {
+        "title": "Biz haqimizda",
+        "description": "Kompaniyamizning faoliyati, qadriyatlari va maqsadlari bilan tanishing.",
+        "companyText1": "RT HOLDINGS 2013-yilda tashkil etilgan bo‘lib, O‘zbekiston va Janubiy Koreyada joylashgan. Kompaniya qurilish texnikalarini eksport qilish bilan shug‘ullanadi. Asosiy faoliyati — Janubiy Koreyadan Markaziy Osiyo davlatlariga, shuningdek Rossiya, Belarus, Ukraina va Arab mamlakatlariga ekskavator hamda maxsus texnikalarni yetkazib berish.",
+        "companyText2": "Bugungi kunda kompaniya bir nechta sho‘ba korxonalarni o‘z ichiga olgan yirik holding hisoblanadi.",
+        "subsidiaries": {
+            "rtMotors": "Avtomobil savdosi",
+            "kortexOil": "Motor moylari",
+            "dreamExpress": "Yuk tashish xizmatlari",
+            "akaTaxi": "O‘zbekiston bo‘ylab taksi xizmatlari",
+            "rtMedline": "Sog‘lomlashtirish markazi",
+            "rtHsLogistics": "Global uskunalar yetkazib berish"
+        },
+        "buttons": {
+            "services": "Xizmatlarimiz",
+            "team": "Jamoamiz"
+        }
+    }
 }

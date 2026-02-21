@@ -13,5 +13,23 @@
     "why-sets-1": "Premium Korean Machinery",
     "why-sets-2": "Direct Export Solutions",
     "why-sets-3": "Trusted Global Partner",
-    "why-sets-4": "Reliable Heavy Equipment"
+    "why-sets-4": "Reliable Heavy Equipment",
+    "about": {
+        "title": "About Us",
+        "description": "Get to know our company's activities, values, and goals.",
+        "companyText1": "RT HOLDINGS, founded in 2013 and located in Uzbekistan and South Korea, is engaged in the export of construction machinery. Its main activity is the sale of excavators and special equipment from South Korea to Central Asian countries, as well as to Russia, Belarus, Ukraine, and Arab countries.",
+        "companyText2": "Today, the company is a large holding that includes several subsidiary branches.",
+        "subsidiaries": {
+            "rtMotors": "Car sales",
+            "kortexOil": "Motor oils",
+            "dreamExpress": "Cargo services",
+            "akaTaxi": "Taxi services across Uzbekistan",
+            "rtMedline": "Wellness center",
+            "rtHsLogistics": "Global equipment delivery"
+        },
+        "buttons": {
+            "services": "Our Services",
+            "team": "Our Team"
+        }
+    }
 }
