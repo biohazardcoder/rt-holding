@@ -1,5 +1,9 @@
-export const OurTeam = () => {
+"use client";
 
+import { Trans, useTranslation } from "react-i18next";
+
+export const OurTeam = () => {
+  const { t } = useTranslation("common");
   const members = [
     {
       name: "Akhliddin Teshaboev",
@@ -41,8 +45,10 @@ export const OurTeam = () => {
   return (
     <div className="px-[10%] bg-[#f7f7f7] py-10">
       <div>
-        <span className="bg-[#434343] text-white py-2 px-3 font-semibold">Our Team</span>
-        <p className="mt-4 text-4xl font-semibold text-[#234F72]">The Team Behind Your <br /> Financial Success</p>
+        <span className="bg-[#434343] text-white py-2 px-3 font-semibold">{t('our-team.badge')}</span>
+        <p className="mt-4 text-xl md:text-3xl font-semibold text-[#234F72]">
+          <Trans i18nKey="our-team.title" components={{ br: <br /> }} />
+        </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {

@@ -31,5 +31,29 @@
             "services": "Our Services",
             "team": "Our Team"
         }
+    },
+    "our-comanies": "Our Companies",
+    "story": {
+        "badge": "Our Story",
+        "title": "A story of our dedication, expertise, and lasting results",
+        "description": "Our team has a proven track record of success and is dedicated to helping you achieve financial stability and security."
+    },
+    "why-choose-us": {
+        "badge": "Why Choose Us",
+        "title": "Expertise, secure, success",
+        "description": "we understand that choosing the right financial partner is crucial for your success and here are some reasons why RT Holding stands out from the rest.",
+        "expertise": "Expertise",
+        "clients": "Clients",
+        "projects": "Projects",
+        "support": "Support"
+    },
+    "our-team": {
+        "badge": "Our Team",
+        "title": "Meet our professional team dedicated <br/> to your financial success"
+    },
+    "testimonials": {
+        "badge": "What Our Clients Say",
+        "title": "Client Experiences That Speak for Themselves",
+        "contact": "Contact Us"
     }
 }

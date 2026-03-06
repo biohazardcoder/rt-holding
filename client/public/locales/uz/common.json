@@ -31,5 +31,29 @@
             "services": "Xizmatlarimiz",
             "team": "Jamoamiz"
         }
+    },
+    "our-comanies": "Kompaniyalarimiz",
+    "story": {
+        "badge": "Bizning hikoyamiz",
+        "title": "Bag'ishlanish, tajriba va barqaror natijalarning hikoyasi",
+        "description": "Jamoamiz muvaffaqiyatli natijalarga erishgan va sizga moliyaviy barqarorlik va xavfsizlikka erishishda yordam berishga bag'ishlangan."
+    },
+    "why-choose-us": {
+        "badge": "Nima uchun bizni tanlash kerak",
+        "title": "Tajriba, xavfsizlik, muvaffaqiyat",
+        "description": "To'g'ri moliyaviy hamkorni tanlash sizning muvaffaqiyatingiz uchun juda muhim ekanligini tushunamiz va RT Holding boshqalardan ajralib turadigan bir nechta sabablar mavjud.",
+        "expertise": "Tajriba",
+        "clients": "Mijozlar",
+        "projects": "Loyihalar",
+        "support": "Qo'llab-quvvatlash"
+    },
+    "our-team": {
+        "badge": "Jamoamiz",
+        "title": "Moliyaviy muvaffaqiyatingiz uchun bag'ishlangan <br/> professional jamoamiz bilan tanishing"
+    },
+    "testimonials": {
+        "badge": "Mijozlarimiz nima deydi",
+        "title": "Mijozlarimiz tajribalari o'zlari uchun gapiradi",
+        "contact": "Biz bilan bog'laning"
     }
 }

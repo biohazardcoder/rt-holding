@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const images = [
   {
@@ -34,13 +37,15 @@ const images = [
 ];
 
 export const Projects = () => {
+
+  const { t } = useTranslation("common")
   return (
     <div className="bg-[#f7f7f7] px-[5%] md:px-[10%]">
       <h1 className="text-center text-2xl md:text-4xl">
-        Our Companies
+        {t("our-comanies")}
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:gap-8">
-        {images.map(({alt, height, src, width}, index) => (
+        {images.map(({ alt, height, src, width }, index) => (
           <div key={index} className="w-full flex justify-center items-center">
             <Image
               src={src}

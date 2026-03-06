@@ -2,11 +2,21 @@
 
 import { Fetch } from "@/middlewares/Fetch";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+interface Lang {
+  en: string;
+  kr: string;
+  ru: string;
+  uz: string;
+}
 
 export const OurStory = () => {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const { t, i18n } = useTranslation("common", { keyPrefix: "story" });
+
 
   useEffect(() => {
     const getAllStory = async () => {
@@ -25,21 +35,20 @@ export const OurStory = () => {
     getAllStory();
   }, []);
 
+
   return (
     <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-16">
       <div className="flex items-center flex-col">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
-          Our Story
+          {t("badge")}
         </span>
 
-        <h1 className="text-center text-[#234F72] text-3xl md:text-5xl mt-4 font-semibold">
-          A story of our dedication, <br className="hidden md:block" />
-          expertise, and lasting results
+        <h1 className="text-center text-[#234F72] max-w-4xl text-xl md:text-4xl mt-4 font-semibold">
+          {t("title")}
         </h1>
 
-        <p className="text-center mt-4 text-gray-500 max-w-2xl">
-          Our team has a proven track record of success and is dedicated to
-          helping you achieve financial stability and security.
+        <p className="text-center text-sm md:text-base mt-4 text-gray-500 max-w-2xl">
+          {t("description")}
         </p>
       </div>
 
@@ -84,7 +93,7 @@ export const OurStory = () => {
                 >
                   <img
                     src={image}
-                    alt={title}
+                    alt={title[i18n.language as keyof Lang]}
                     width={420}
                     height={250}
                     className="rounded-xl object-cover"
@@ -101,11 +110,11 @@ export const OurStory = () => {
                   </span>
 
                   <h2 className="text-2xl md:text-3xl mt-3 font-semibold">
-                    {title}
+                    {title[i18n.language as keyof Lang]}
                   </h2>
 
                   <p className="text-gray-500 mt-2">
-                    {text}
+                    {text[i18n.language as keyof Lang]}
                   </p>
                 </div>
               </div>

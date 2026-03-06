@@ -1,31 +1,40 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
 export const WhyChooseUs = () => {
+
+  const { t } = useTranslation("common", { keyPrefix: "why-choose-us" });
+
   const items = [
     {
-      title: "Expertise",
+      title: t("expertise"),
       count: "10+",
     },
     {
-      title: "Clients",
+      title: t("clients"),
       count: "500+",
     },
     {
-      title: "Projects",
-      count: "1000+",
+      title: t("projects"),
+      count: "100+",
     },
     {
-      title: "Support",
+      title: t("support"),
       count: "24/7",
     },
   ]
 
+
+
   return (
     <div className="bg-[#f7f7f7] flex flex-col items-center px-[10%] py-10 md:px-[5%] sm:px-4">
       <span className="bg-[#434343] text-white m-auto py-2 px-3 font-semibold">Why Choose Us</span>
-      <h1 className="text-center text-5xl md:text-3xl sm:text-2xl mt-4 font-semibold text-[#234F72]">
-        Expertise, secure, success
+      <h1 className="text-center text-2xl md:text-3xl sm:text-2xl mt-4 font-semibold text-[#234F72]">
+        {t("title")}
       </h1>
-      <p className="text-center mt-4 text-gray-500 text-sm md:text-base">
-        we understand that choosing the right financial partner is crucial for your success and <br /> here are some reasons why RT Holding stands out from the rest.
+      <p className="text-center mt-4 max-w-5xl text-gray-500 text-sm md:text-base">
+        {t("description")}
       </p>
       <div className="grid  lg:grid-cols-4 grid-cols-2 gap-12 md:gap-6 mt-8">
         {items.map(({ title, count }, index) => (

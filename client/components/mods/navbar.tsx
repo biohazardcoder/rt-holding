@@ -5,19 +5,13 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { ArrowRight, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { LanguageSelect } from "@/lang/language"
 import { useTranslation } from "react-i18next"
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const { t } = useTranslation("common")
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
   const items = [
     { label: "home", href: "/" },
     { label: "companies", href: "/companies" },

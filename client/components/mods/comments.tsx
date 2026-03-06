@@ -2,7 +2,9 @@
 
 import { Fetch } from "@/middlewares/Fetch";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface CommentTypes {
   _id?: string;
@@ -18,8 +20,7 @@ export const Comments = () => {
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  console.log(comments);
-
+  const { t } = useTranslation("common", { keyPrefix: "testimonials" });
   useEffect(() => {
     const getAllComments = async () => {
       try {
@@ -56,17 +57,18 @@ export const Comments = () => {
 
       <div>
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
-          Testimonials
+          {t('badge')}
         </span>
 
         <h1 className="text-3xl md:text-5xl font-semibold leading-tight mt-6">
-          Client <span className="text-[#F69419]">Experiences</span> <br />
-          That Speak for Themselves
+          {t('title')}
         </h1>
 
-        <button className="mt-10 bg-[#234F72] text-white px-6 py-3 rounded-full font-semibold">
-          Contact Us
-        </button>
+        <Link href={"/services/#contact"} >
+          <button className="mt-10 bg-[#234F72] text-white px-6 py-3 rounded-full font-semibold">
+            {t('contact')}
+          </button>
+        </Link>
       </div>
 
       <div className="bg-white p-10 rounded-3xl shadow-sm relative min-h-[300px]">
