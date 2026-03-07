@@ -55,5 +55,17 @@
         "badge": "What Our Clients Say",
         "title": "Client Experiences That Speak for Themselves",
         "contact": "Contact Us"
+    },
+    "companies-page": {
+        "top-title": "Discover our companies",
+        "top-description": "Discover the diverse range of companies under RT Holding, each dedicated to excellence and innovation in their respective industries.",
+        "badge": "Our Companies",
+        "title": "We offer a full scale of services to meet your needs",
+        "description": "Stay informed with RT Holding’s latest updates, innovations, and strategic insights across all industries.",
+        "rt-medline": "RT Medline is a leading healthcare provider, offering comprehensive medical services and innovative health solutions.",
+        "aka-taxi": "Aka Taxi is a premier transportation service, providing safe, reliable, and efficient taxi services across the city.",
+        "dream-express": "Dream Express is a leading logistics and delivery company, offering fast and reliable shipping solutions.",
+        "rt-motors": "RT Motors is a leading automotive manufacturer, producing high-quality vehicles and innovative transportation solutions.",
+        "rt-hs-group": "RT HS Group is a leading real estate and development company, offering innovative property solutions."
     }
 }

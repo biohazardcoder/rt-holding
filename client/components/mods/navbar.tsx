@@ -28,11 +28,13 @@ export const Navbar = () => {
         "flex items-center justify-between px-[5%] md:px-[10%]"
       )}
     >
-      <div className="flex items-center gap-2 relative">
-        <Image src="/image.png" alt="Logo" width={45} height={45} />
-        <h1 className="text-white text-xl md:text-2xl">RT Holdings</h1>
-        <div className="bg-white w-7 h-7 absolute top-[5px] left-2.5 -z-10 rounded-full" />
-      </div>
+      <Link href={"/"}>
+        <div className="flex items-center gap-2 relative">
+          <Image src="/image.png" alt="Logo" width={45} height={45} />
+          <h1 className="text-white text-xl md:text-2xl">RT Holdings</h1>
+          <div className="bg-white w-7 h-7 absolute top-[5px] left-2.5 -z-10 rounded-full" />
+        </div>
+      </Link>
 
       <ul className="hidden md:flex items-center gap-8 text-white font-semibold">
         {items.map((item) => (

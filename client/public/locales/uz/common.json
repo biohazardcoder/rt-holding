@@ -55,5 +55,17 @@
         "badge": "Mijozlarimiz nima deydi",
         "title": "Mijozlarimiz tajribalari o'zlari uchun gapiradi",
         "contact": "Biz bilan bog'laning"
+    },
+    "companies-page": {
+        "top-title": "Bizning kompaniyalarimizni kashf eting",
+        "top-description": "RT Holding tarkibidagi turli kompaniyalarni kashf eting, har biri o'z sohasida mukammallik va innovatsiyaga bag'ishlangan.",
+        "badge": "Bizning kompaniyalarimiz",
+        "title": "Sizning ehtiyojlaringizni qondirish uchun to‘liq xizmatlar ko‘lamini taklif qilamiz",
+        "description": "RT Holding’ning barcha sohalardagi so‘nggi yangiliklari, innovatsiyalari va strategik qarashlaridan xabardor bo‘lib boring.",
+        "rt-medline": "RT Medline — yetakchi sog‘liqni saqlash xizmatlari ko‘rsatuvchi kompaniya bo‘lib, keng qamrovli tibbiy xizmatlar va innovatsion sog‘liqni saqlash yechimlarini taklif etadi.",
+        "aka-taxi": "Aka Taxi — shaharda xavfsiz, ishonchli va samarali taksi xizmatlarini taqdim etuvchi yetakchi transport xizmati.",
+        "dream-express": "Dream Express — tez va ishonchli yetkazib berish yechimlarini taqdim etuvchi yetakchi logistika va kuryer kompaniyasi.",
+        "rt-motors": "RT Motors — yuqori sifatli avtomobillar va innovatsion transport yechimlarini ishlab chiqaruvchi yetakchi avtomobil ishlab chiqaruvchisi.",
+        "rt-hs-group": "RT HS Group — innovatsion ko‘chmas mulk yechimlarini taklif qiluvchi yetakchi ko‘chmas mulk va rivojlantirish kompaniyasi."
     }
 }
