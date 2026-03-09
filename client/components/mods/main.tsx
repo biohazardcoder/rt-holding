@@ -28,7 +28,7 @@ export const Main = () => {
   return (
     <div className="relative h-screen flex items-center overflow-hidden">
 
-      <img src="/main.png" alt="Main Image" className="z-50 h-[110%] absolute bottom-0 right-0" />
+      <img src="/main.png" alt="Main Image" className="z-50 h-[102%] absolute -bottom-20 right-0" />
       <div className="absolute inset-0 bg-[#1E242C] clip-diagonal"></div>
       <div className="absolute -rotate-45 top-0 -left-92 z-10 inset-0 bg-[#1E242C] clip-diagonal"></div>
 

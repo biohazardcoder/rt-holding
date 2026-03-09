@@ -3,6 +3,7 @@ import Footer from "@/components/mods/footer";
 import { Navbar } from "@/components/mods/navbar";
 import type { Metadata } from 'next'
 import Link from "next/link";
+import { FaInstagram, FaLinkedin, FaTelegram } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   title: 'Our Team - RT Holdings',
@@ -134,8 +135,8 @@ export default function Team() {
 
       <Accreditation />
 
-      <div className="bg-white px-[5%] md:px-[10%] py-8 flex flex-col items-center">
-        <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
+      <div className="bg-white px-[5%] md:px-[10%] py-12 flex flex-col items-center">
+        <span className="bg-[#434343] text-white py-2 px-4 font-semibold rounded">
           Our Team
         </span>
 
@@ -144,56 +145,45 @@ export default function Team() {
         </h1>
 
         <p className="text-center mt-4 text-gray-500 max-w-2xl">
-          Meet the dedicated professionals at RT Holding who are committed to driving your financial growth and success.
+          Meet the dedicated professionals at RT Holding who are committed to driving
+          your financial growth and success.
         </p>
 
-
-
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10 w-full">
-          {members.map(({ name, role, avatar, social }, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 w-full">
+          {members.map(({ name, role, avatar }, index) => (
             <div
               key={index}
-              className="bg-white rounded-md overflow-hidden shadow-md relative"
+              className="flex items-center bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
             >
               <img
                 src={avatar}
                 alt={name}
-                className="w-full h-96 object-cover"
+                className="w-40 h-50 object-cover rounded-sm mr-6"
               />
 
-              {/* <span className="absolute top-3 left-0 flex items-center flex-col gap-2">
-                  {
-                  social.map((s, idx) => {
-                    const dimensions:any = {
-                    instagram: "w-10 h-10 ",
-                    telegram: "w-16 h-16 mt-2",
-                    whatsapp: "w-16 h-16 "
-                    };
-                    const key = s.image.split('/')[2].split('.')[0];
-                    return (
-                    <a key={idx} href={s.url} target="_blank" rel="noopener noreferrer">
-                      <img src={s.image} alt="social" className={dimensions[key] || "w-6 h-6"}/>
-                    </a>
-                    );
-                  })
-                  }
-                </span> */}
+              <div>
+                <h2 className="text-lg font-bold">{name}</h2>
 
-              <div className="p-4">
-                <h2 className="text-xl font-semibold mt-2 line-clamp-2">
-                  {name}
-                </h2>
-
-                <p className="mt-2 text-gray-600 line-clamp-3">
+                <p className="text-blue-600 text-sm font-medium mb-2">
                   {role}
                 </p>
 
+                <p className="text-gray-500 text-sm mb-3">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?
+                </p>
+
+                <div className="flex gap-3 text-gray-400">
+                  <FaTelegram className="cursor-pointer hover:text-blue-500" />
+                  <FaInstagram className="cursor-pointer hover:text-pink-500" />
+                  <FaLinkedin className="cursor-pointer hover:text-blue-600" />
+                </div>
               </div>
             </div>
           ))}
+
         </div>
       </div>
+
 
       <Footer />
     </div>
