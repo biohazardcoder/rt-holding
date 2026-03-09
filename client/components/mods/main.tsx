@@ -1,99 +1,52 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { useTranslation } from "react-i18next";
+import { Fog } from "./fog";
 
 export const Main = () => {
+  const { t } = useTranslation("common");
   const items = [
     {
       title: "Premium Car Service",
       desc: "Experience the best luxury transportation with our premium cars.",
-      image: "/no-photo.jpg",
-      bg: "/service/dse.jpg",
+      image: "/cars/car1.png",
+      bg: "/bg/bg1.jpg",
     },
     {
       title: "Business Travel",
       desc: "Reliable and comfortable rides for your business meetings.",
-      image: "/no-photo.jpg",
-      bg: "/main-bg.jpg",
+      image: "/cars/car2.png",
+      bg: "/bg/bg2.jpg",
     },
     {
       title: "Airport Transfer",
       desc: "Fast and safe airport transfers with professional drivers.",
-      image: "/no-photo.jpg",
-      bg: "/main1.jpg",
+      image: "/cars/car3.png",
+      bg: "/bg/bg3.jpg",
     },
   ];
-
-  const [active, setActive] = useState(0);
-
   return (
-    <div className="relative h-screen flex items-center overflow-hidden px-[5%]  py-16">
+    <div className="relative h-screen flex items-center overflow-hidden">
 
-      <img
-        src={items[active].bg}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      <img src="/main.png" alt="Main Image" className="z-50 h-[110%] absolute bottom-0 right-0" />
+      <div className="absolute inset-0 bg-[#1E242C] clip-diagonal"></div>
+      <div className="absolute -rotate-45 top-0 -left-92 z-10 inset-0 bg-[#1E242C] clip-diagonal"></div>
 
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute right-0 top-0 h-full w-[55%] bg-[#F7F7F7]"></div>
+      <div className="relative z-10 px-[6%] max-w-3xl text-white space-y-4">
+        <h1 className="text-3xl md:text-5xl font-bold">
+          {t("main-title")}
+        </h1>
 
-      <div className="relative z-10 w-full flex flex-col md:flex-row items-center px-[6%]">
+        <p className="max-w-xl text-sm md:text-base">
+          {t("main-description")}
+        </p>
 
-        <div className="md:w-1/2 text-white space-y-4">
-          <h1 className="text-3xl md:text-6xl font-bold">
-            {items[active].title}
-          </h1>
-
-          <p className="max-w-xl text-sm">
-            {items[active].desc}
-          </p>
-        </div>
-
-        <div className="w-7/8 md:w-1/2 flex justify-end">
-
-          <Carousel
-            className="w-[520px]"
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            setApi={(api: any) => {
-              if (!api) return;
-
-              api.on("select", () => {
-                setActive(api.selectedScrollSnap());
-              });
-            }}
-          >
-            <CarouselContent className="items-center">
-
-              {items.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className="basis-[50%] flex justify-center"
-                >
-                  <img
-                    src={item.image}
-                    className="h-[420px] object-contain transition-all duration-300"
-                  />
-                </CarouselItem>
-              ))}
-
-            </CarouselContent>
-
-            <CarouselPrevious />
-            <CarouselNext />
-
-          </Carousel>
-
-        </div>
+        {/* <button className="bg-white text-orange-500 font-semibold px-6 py-3 rounded-md">
+          BOOK NOW
+        </button> */}
       </div>
+      <Fog />
     </div>
   );
 };
