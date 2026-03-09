@@ -1,29 +1,98 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
-
+import { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const Main = () => {
+  const items = [
+    {
+      title: "Premium Car Service",
+      desc: "Experience the best luxury transportation with our premium cars.",
+      image: "/no-photo.jpg",
+      bg: "/service/dse.jpg",
+    },
+    {
+      title: "Business Travel",
+      desc: "Reliable and comfortable rides for your business meetings.",
+      image: "/no-photo.jpg",
+      bg: "/main-bg.jpg",
+    },
+    {
+      title: "Airport Transfer",
+      desc: "Fast and safe airport transfers with professional drivers.",
+      image: "/no-photo.jpg",
+      bg: "/main1.jpg",
+    },
+  ];
 
-  const { t } = useTranslation("common")
+  const [active, setActive] = useState(0);
 
   return (
-    <div
-      className="relative h-screen px-[6%] flex flex-col justify-center gap-14 items-center overflow-hidden"
-      style={{ backgroundImage: `url("/main-bg.jpg")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-    >
-      <div className="bg-black/50 w-full h-full absolute top-0 left-0" />
-      <div className="text-white z-10 space-y-2">
-        {/* <div className="flex items-center justify-center">
-          <h1 className="text-sm font-semibold  text-center bg-[#DFF7CC] text-black p-1 px-2">
-            Your choice is important to us!
+    <div className="relative h-screen flex items-center overflow-hidden px-[5%]  py-16">
+
+      <img
+        src={items[active].bg}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative z-10 w-full flex flex-col md:flex-row items-center px-[6%]">
+
+        <div className="md:w-1/2 text-white space-y-4">
+          <h1 className="text-3xl md:text-6xl font-bold">
+            {items[active].title}
           </h1>
-        </div> */}
-        <h1 className="text-lg md:text-4xl max-w-4xl text-center font-bold">
-          {t("main-title")}
-        </h1>
-        <p className="max-w-xl text-center text-sm mx-auto">{t("main-description")}</p>
-        <div className="absolute bottom-0 left-0 right-0 h-80 bg-linear-to-t from-[#000000d9] to-transparent z-5" />
+
+          <p className="max-w-xl text-sm">
+            {items[active].desc}
+          </p>
+        </div>
+
+        <div className="w-7/8 md:w-1/2 flex justify-end">
+
+          <Carousel
+            className="w-[520px]"
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            setApi={(api: any) => {
+              if (!api) return;
+
+              api.on("select", () => {
+                setActive(api.selectedScrollSnap());
+              });
+            }}
+          >
+            <CarouselContent className="items-center">
+
+              {items.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-[50%] flex justify-center"
+                >
+                  <img
+                    src={item.image}
+                    className="h-[420px] object-contain transition-all duration-300"
+                  />
+                </CarouselItem>
+              ))}
+
+            </CarouselContent>
+
+            <CarouselPrevious />
+            <CarouselNext />
+
+          </Carousel>
+
+        </div>
       </div>
     </div>
   );

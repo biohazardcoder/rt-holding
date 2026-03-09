@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { LanguageSelect } from "@/lang/language"
 import { useTranslation } from "react-i18next"
+import { usePathname } from "next/navigation"
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const { t } = useTranslation("common")
-
   const items = [
     { label: "home", href: "/" },
     { label: "companies", href: "/companies" },
@@ -29,9 +29,9 @@ export const Navbar = () => {
       )}
     >
       <Link href={"/"}>
-        <div className="flex items-center gap-2 relative">
+        <div className="flex items-center relative">
           <Image src="/image.png" alt="Logo" width={45} height={45} />
-          <h1 className="text-white text-xl md:text-2xl">RT Holdings</h1>
+          <h1 className={`text-white font-semibold text-xl md:text-2xl`}>RT Holdings</h1>
           <div className="bg-white w-7 h-7 absolute top-[5px] left-2.5 -z-10 rounded-full" />
         </div>
       </Link>
@@ -41,7 +41,7 @@ export const Navbar = () => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors"
+              className={`hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors text-white`}
             >
               {t(item.label)}
             </Link>

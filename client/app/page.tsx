@@ -11,17 +11,17 @@ import { WhyChooseUs } from "@/components/mods/why-choose-us";
 
 export default function Home() {
   return (
-   <div>
-    <Navbar />
-    <Main/>
-    <WhatSets/>
-    <About/>
-    <Projects/>
-    <OurStory/>
-    <WhyChooseUs/>
-    <OurTeam/>
-    <Comments/>
-    <Footer/>
-   </div>
+    <div>
+      <Navbar />
+      <Main />
+      <WhatSets />
+      <About />
+      <Projects />
+      <OurStory />
+      <WhyChooseUs />
+      <OurTeam />
+      <Comments />
+      <Footer />
+    </div>
   );
 }

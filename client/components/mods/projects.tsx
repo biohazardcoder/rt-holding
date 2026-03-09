@@ -40,7 +40,7 @@ export const Projects = () => {
 
   const { t } = useTranslation("common")
   return (
-    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%]">
+    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-16">
       <h1 className="text-center text-2xl md:text-4xl">
         {t("our-comanies")}
       </h1>

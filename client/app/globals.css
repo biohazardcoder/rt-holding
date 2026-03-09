@@ -116,61 +116,91 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-body{
-    font-family: var(--font-montserrat), sans-serif;
+body {
+  font-family: var(--font-montserrat), sans-serif;
 }
 
-a{
+a {
   scroll-behavior: smooth;
 }
 
 
 @keyframes moveDown {
-    0% { transform: translateY(-100%); opacity: 0; }
-    10% { opacity: 0.2; }
-    50% { opacity: 0.5; }
-    100% { transform: translateY(100%); opacity: 0; }
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 
+  10% {
+    opacity: 0.2;
+  }
 
-  .main {
-	text-transform: uppercase;
-	letter-spacing: .5em;
-	display: inline-block;
-  
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+
+.main {
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  display: inline-block;
+
   span {
 
-  	font: "Oswald", sans-serif;
-    font-weight: 700; 
+    font: "Oswald", sans-serif;
+    font-weight: 700;
     font-size: 24px;
-  	letter-spacing: 0;
-	  display: block; 
-	  margin: 0 auto;
-  	text-shadow: 0 0 80px rgba(255,255,255,.5);
+    letter-spacing: 0;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, .5);
 
 
-	  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-	  -webkit-background-clip: text;
-	  background-clip: text;
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
 
 
-	  -webkit-text-fill-color: transparent;
-	  -webkit-animation: aitf 80s linear infinite;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
 
 
-	  -webkit-transform: translate3d(0,0,0);
-	  -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
 
   }
 }
 
 
 @-webkit-keyframes aitf {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.moving-clouds {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 250.625em;
+  height: 43.75em;
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
 }
