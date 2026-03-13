@@ -4,7 +4,7 @@
     "services": "Xizmatlar",
     "contact": "Kontakt",
     "language": "Til",
-    "team": "Guruh",
+    "team": "Jamoamiz",
     "blogs": "Bloglar",
     "become": "Hamkor bo'lish",
     "main-title": "Maqsadlarimiz mijozlarimizga sifatli, ishonchli va tezkor xizmat ko'rsatishdir",
@@ -66,6 +66,183 @@
         "aka-taxi": "Aka Taxi — shaharda xavfsiz, ishonchli va samarali taksi xizmatlarini taqdim etuvchi yetakchi transport xizmati.",
         "dream-express": "Dream Express — tez va ishonchli yetkazib berish yechimlarini taqdim etuvchi yetakchi logistika va kuryer kompaniyasi.",
         "rt-motors": "RT Motors — yuqori sifatli avtomobillar va innovatsion transport yechimlarini ishlab chiqaruvchi yetakchi avtomobil ishlab chiqaruvchisi.",
-        "rt-hs-group": "RT HS Group — innovatsion ko‘chmas mulk yechimlarini taklif qiluvchi yetakchi ko‘chmas mulk va rivojlantirish kompaniyasi."
+        "rt-hs-group": "RT HS Group — innovatsion ko‘chmas mulk yechimlarini taklif qiluvchi yetakchi ko‘chmas mulk va rivojlantirish kompaniyasi.",
+        "rt-hs-logistics": "RT HS Logistics — global uskunalar yetkazib berish bo‘yicha yetakchi kompaniya, ishonchli va samarali logistika xizmatlarini taqdim etadi.",
+        "process": {
+            "badge": "Bizning Jarayon",
+            "title": "RT Holding loyihalarimiz muvaffaqiyatli amalga oshirilishi va mijozlarimiz mamnunligini ta'minlash uchun tizimli jarayonga amal qiladi.",
+            "steps": {
+                "first": {
+                    "title": "Boshlang‘ich konsultatsiya va dastlabki tadqiqot",
+                    "description": "Sizning biznesingiz va maqsadlaringizni tushunish"
+                },
+                "second": {
+                    "title": "Tahlil",
+                    "description": "Raqobatchilarni tahlil qilish, imkoniyatlarni aniqlash va muhim xulosalar"
+                },
+                "third": {
+                    "title": "Reja tuzish",
+                    "description": "Muvaffaqiyat uchun moslashtirilgan strategiya yaratish"
+                },
+                "fourth": {
+                    "title": "Amalga oshirish",
+                    "description": "Rejani aniq va samarali tarzda bajarish"
+                }
+            }
+        },
+        "services": {
+            "badge": "Xizmatlar",
+            "title": "Bizning Konsalting va Coaching Xizmatlarimiz",
+            "description": "Biz sizga maqsadlaringizga erishishda yordam beramiz: moslashtirilgan strategiyalar, amaliy yechimlar va samarali amalga oshirish orqali muvaffaqiyatga erishasiz.",
+            "list": {
+                "1": "Foydani maksimal oshirish va operatsion samaradorlikni kuchaytirish",
+                "2": "Biznes rejalashtirish, operatsiyalar va daromad o‘sishi",
+                "3": "Marketing, savdo, mijozlarni ushlab qolish va mijoz tajribasi",
+                "4": "Savdo va mijozlarga xizmat ko‘rsatish bo‘yicha trening",
+                "5": "Xodimlarni tanlash, staffing va kompaniya madaniyati",
+                "6": "Jarayonlar va ish oqimlari"
+            }
+        }
+    },
+    "blogs-page": {
+        "top": {
+            "badge": "So‘nggi bloglar",
+            "title": "Tahlillar va muvaffaqiyat hikoyalari",
+            "description": "Biznesingizda o‘sish va innovatsiyalarni rivojlantirish uchun ekspert tavsiyalari, real tajribalar va amaliy strategiyalarni o‘rganing."
+        },
+        "blogs": {
+            "blog": "Blog",
+            "title": "So‘nggi yangiliklar va tahlillarimizni o‘tkazib yubormang",
+            "description": "RT Holding'ning moliyaviy trendlar va strategiyalar haqidagi so‘nggi yangiliklari, maqolalari va ekspert fikrlari bilan xabardor bo‘lib boring."
+        }
+    },
+    "team-page": {
+        "badge": "Bizning jamoa",
+        "title": "Moliyaviy muvaffaqiyatingiz uchun ishlaydigan professional jamoamiz bilan tanishing",
+        "description": "Boshqaruv va mutaxassislar jamoasining tajribali uyg‘unligi orqali biz biznes muvaffaqiyati uchun strategik qarashlar va innovatsion yechimlarni taqdim etamiz.",
+        "ceo": {
+            "badge": "Bizning yetakchimiz",
+            "name": "Akhliddin Teshaboev",
+            "bio": "Biznes konsalting mutaxassislari kompaniyalarga muammolarni yengib o‘tish va yangi imkoniyatlardan foydalanishda yo‘l-yo‘riq beradi. Biz mijozlarimiz biznesini chuqur o‘rganish uchun vaqt ajratamiz, to‘g‘ri savollar beramiz va diqqat bilan tinglaymiz. \n\n Imkoniyatlar, byudjet, soha raqobati va biznes maqsadlarini hisobga olib, maksimal natija beradigan individual harakat rejasini ishlab chiqamiz. Amalga oshirish jarayonida sizga yo‘l ko‘rsatib, haqiqiy natijalarga erishishingizga yordam beramiz."
+        },
+        "accreditation": {
+            "badge": "Akkreditatsiya",
+            "title": "Nima uchun Execor Consulting Solutions ni tanlash kerak?",
+            "cards": {
+                "first": "BBB tomonidan A+ reyting va akkreditatsiya + yuqori baholangan konsalting kompaniyasi",
+                "second": "Akkreditatsiyadan o‘tgan kichik biznes konsultanti va sertifikatlangan moliyaviy xizmatlar",
+                "third": "Fayetteville shahrining yil tadbirkori",
+                "fourth": "Expertise va UpCity tomonidan eng yaxshi ijtimoiy tarmoq agentligi deb topilgan"
+            }
+        },
+        "our-team": {
+            "badge": "Bizning jarayon",
+            "title": "RT Holding loyihalarimiz muvaffaqiyati va mijozlarimiz mamnunligini ta’minlash uchun aniq tuzilgan jarayon asosida ishlaydi.",
+            "description": "Biznesingiz va maqsadlaringizni tushunish",
+            "team": {
+                "first": {
+                    "name": "Akhliddin Teshaboev",
+                    "role": "Bosh direktor",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "second": {
+                    "name": "Rakhmatilla Akhmedov",
+                    "role": "Operatsion menejer",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "third": {
+                    "name": "Bekmurod Abdullaev",
+                    "role": "Marketing menejer",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "fourth": {
+                    "name": "Fakhriddin Teshaboev",
+                    "role": "Savdo menejeri",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                }
+            }
+        }
+    },
+    "services-page": {
+        "top": {
+            "title": "Kompleks biznes konsalting",
+            "description": "Biz tashkilotlarga o‘z yo‘nalishini qayta belgilash va samaradorligini oshirishga yordam beramiz. Bizning konsultantlarimiz chuqur soha bilimlari va natijaga yo‘naltirilgan yondashuvga ega."
+        },
+        "line": {
+            "title": "Biz quyidagilarning faxrli a'zosimiz:",
+            "lines": {
+                "first": "Shior",
+                "second": "Shior"
+            }
+        },
+        "what-we-do": {
+            "badge": "Biz nima qilamiz",
+            "title": "Tahlildan natijaga olib boramiz",
+            "description": "Biznes konsalting mutaxassislari kompaniyalarga muammolarni yengib o‘tish va yangi imkoniyatlardan foydalanishda yo‘l ko‘rsatadi. Biz mijozlarimiz biznesini chuqur o‘rganish uchun vaqt ajratamiz, to‘g‘ri savollar beramiz va diqqat bilan tinglaymiz.\n\nImkoniyatlar, byudjet, soha raqobati va biznes maqsadlarini hisobga olib, maksimal natija beradigan individual harakat rejasini ishlab chiqamiz. Amalga oshirish jarayonida sizga yo‘l ko‘rsatib, haqiqiy natijalarga erishishingizga yordam beramiz."
+        },
+        "how-we-work": {
+            "badge": "Biz qanday ishlaymiz",
+            "title": "Shaffof.\nHamkorlikda.\nNatijaga yo‘naltirilgan.",
+            "description": "Kompaniyamizda har bir loyiha sizning ehtiyojlaringizni chuqur tushunishdan boshlanadi. Biz muvaffaqiyatli hamkorlik shaffof muloqot, hamkorlikdagi innovatsiya va muammolarni aniq natijalarga aylantiradigan tizimli yondashuvga asoslanadi deb hisoblaymiz.",
+            "lines": {
+                "first": {
+                    "title": "Tahlil va strategiya",
+                    "description": "Biz biznesingizni chuqur o‘rganib, aniq maqsadlarni belgilaymiz."
+                },
+                "second": {
+                    "title": "Rejalashtirish",
+                    "description": "Biz sizning maqsadlaringizga mos individual strategiyalar yaratamiz."
+                },
+                "third": {
+                    "title": "Amalga oshirish",
+                    "description": "Rejalarni tezkorlik va aniqlik bilan amalga oshiramiz."
+                },
+                "fourth": {
+                    "title": "Monitoring va optimizatsiya",
+                    "description": "Natijalarni o‘lchaymiz, takomillashtiramiz va barqaror muvaffaqiyatga erishamiz."
+                }
+            }
+        },
+        "banner": {
+            "title": "Bizning jamoamiz turli sohalarda katta tajribaga ega marketing mutaxassislaridan iborat. Eng so‘nggi marketing trendlar, eng yaxshi amaliyotlar va ijtimoiy platforma texnologiyalari bo‘yicha chuqur bilimga ega bo‘lgan holda, biz biznesingiz rivoji uchun muhim tavsiyalar va strategik yechimlar taqdim etamiz.",
+            "button": "Jamoa bilan tanishing"
+        },
+        "our-service": {
+            "badge": "Bizning xizmatlar",
+            "service": "Servis",
+            "title": "Biz sizning ehtiyojlaringiz uchun to‘liq xizmatlar paketini taklif qilamiz",
+            "description": "RT Holding tomonidan taqdim etiladigan xizmatlar bilan tanishing."
+        },
+        "contact-us": {
+            "badge": "Biz bilan bog‘laning",
+            "title": "Bizning mutaxassislar har doim\n siz bilan ishlashga tayyor",
+            "description": "Umumiy savollar bo‘yicha murojaat qiling. Iltimos, bizga xabar yuboring.",
+            "lines": {
+                "first": "Ish faoliyati bo‘yicha murojaatlar",
+                "second": "Boshqa barcha savollar uchun",
+                "third": "Jamoaning aniq a’zosi bilan bog‘lanish",
+                "third-description": "Iltimos, bizning jamoa sahifamizga qarang"
+            },
+            "form": {
+                "title": "Bizga xabar yuboring",
+                "successfully": "Sizning xabaringiz muvaffaqiyatli yuborildi!",
+                "name": "Ismingiz",
+                "last-name": "Familiyangiz",
+                "email": "Emailingiz",
+                "phone": "Telefon raqamingiz",
+                "select": "Xizmatni tanlang",
+                "button": "Xabar yuborish",
+                "sending": "Yuborilmoqda...",
+                "footer": "Ushbu formani yuborish orqali Maxfiylik siyosatimizga rozilik bildirasiz."
+            },
+            "required": {
+                "firstName": "Ism kiritilishi shart",
+                "lastName": "Familiya kiritilishi shart",
+                "email": "Email kiritilishi shart",
+                "emailInvalid": "Email noto‘g‘ri",
+                "phone": "Telefon kiritilishi shart",
+                "service": "Xizmat tanlanishi shart"
+            }
+        }
     }
 }

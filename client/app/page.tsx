@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <div className="bg-[#1E242C] h-[10vh]" />
       <Main />
       <About />
       <WhatSets />

@@ -66,6 +66,182 @@
         "aka-taxi": "Aka Taxi is a premier transportation service, providing safe, reliable, and efficient taxi services across the city.",
         "dream-express": "Dream Express is a leading logistics and delivery company, offering fast and reliable shipping solutions.",
         "rt-motors": "RT Motors is a leading automotive manufacturer, producing high-quality vehicles and innovative transportation solutions.",
-        "rt-hs-group": "RT HS Group is a leading real estate and development company, offering innovative property solutions."
+        "rt-hs-group": "RT HS Group is a leading real estate and development company, offering innovative property solutions.",
+        "process": {
+            "badge": "Our Process",
+            "title": "RT Holding follows a structured process to ensure the success of our projects and the satisfaction of our clients.",
+            "steps": {
+                "first": {
+                    "title": "Intro Consultation and Basic Research",
+                    "description": "Understanding your business and goals"
+                },
+                "second": {
+                    "title": "Discovery",
+                    "description": "Competitive analysis, identifying opportunities, and key insights"
+                },
+                "third": {
+                    "title": "Build Plan",
+                    "description": "Crafting a tailored strategy for success"
+                },
+                "fourth": {
+                    "title": "Execute",
+                    "description": "Implementing the plan with precision and focus"
+                }
+            }
+        },
+        "services": {
+            "badge": "Services Offered",
+            "title": "Our Consulting and Coaching Services",
+            "description": "We help you achieve your goals with customized strategies, practical solutions, and hands-on execution to drive success.",
+            "list": {
+                "1": "Maximize Profit & Increase Operational Efficiencies",
+                "2": "Business Planning, Operations, & Revenue Growth",
+                "3": "Marketing, Sales, Retention, & Customer Experience",
+                "4": "Sales & Customer Service Training",
+                "5": "Recruiting, Staffing, & Culture",
+                "6": "Processes & Workflows"
+            }
+        }
+    },
+    "blogs-page": {
+        "top": {
+            "badge": "Latest Blogs",
+            "title": "Insights and success stories",
+            "description": "Explore expert advice, real-world case studies, and actionable strategies to drive growth and innovation in your business."
+        },
+        "blogs": {
+            "blog": "Blog",
+            "title": "Don't miss our latest updates and insights",
+            "description": "Stay informed with RT Holding's latest news, articles, and expert insights on financial trends and strategies."
+        }
+    },
+    "team-page": {
+        "badge": "Our Team",
+        "title": "Meet our professional team dedicated to your financial success",
+        "description": "A skilled blend of management and a team of experts, we deliver strategic insights and innovative solutions to drive business success.",
+        "ceo": {
+            "badge": "Our Leader",
+            "name": "Akhliddin Teshaboev",
+            "bio": "Business consultants guide and advise businesses on overcoming challenges and capitalizing on opportunities. \n\n We take the time to research and deeply understand our clients’ businesses, asking the right questions and actively listening. Considering factors such as capacity, budget, industry competition, and business goals, our plan of action is customized for maximum impact. We guide you through execution, ensuring real results."
+        },
+        "accreditation": {
+            "badge": "Accreditation",
+            "title": "Why Hire Execor Consulting Solutions?",
+            "cards": {
+                "first": "A+ Rated & Accredited with the BBB + Top-Rated Consultancy",
+                "second": "Accredited Small Business Consultant and Financial Services Certified",
+                "third": "Fayetteville’s Businessperson of the Year",
+                "fourth": "Rated Top Social Media Agency by Expertise and UpCity"
+            }
+        },
+        "our-team": {
+            "badge": "Our Process",
+            "title": "RT Holding follows a structured process to ensure the success of our projects and the satisfaction of our clients.",
+            "description": "Understanding your business and goals",
+            "team": {
+                "first": {
+                    "name": "Akhliddin Teshaboev",
+                    "role": "CEO",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "second": {
+                    "name": "Rakhmatilla Akhmedov",
+                    "role": "Operation Manager",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "third": {
+                    "name": "Bekmurod Abdullaev",
+                    "role": "Marketing Manager",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                },
+                "fourth": {
+                    "name": "Fakhriddin Teshaboev",
+                    "role": "Sales Manager",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sed unde. Cum dolor ducimus minus perferendis, provident soluta illo ea?"
+                }
+            }
+        }
+    },
+    "services-page": {
+        "top": {
+            "title": "Comprehensive business consulting",
+            "description": "We help organizations redefine their direction, and improve performance. Our consultants bring deep industry knowledge and a results-oriented mindset."
+        },
+        "line": {
+            "title": "We are a proud member, of the:",
+            "lines": {
+                "first": "Slogan",
+                "second": "Slogan"
+            }
+        },
+        "what-we-do": {
+            "badge": "What We Do",
+            "title": "Transforming Insight into Impact",
+            "description": "Business consultants guide and advise businesses on overcoming challenges and capitalizing on opportunities. We take the time to research and deeply understand our clients’ businesses, asking the right questions and actively listening. \n\n Considering factors such as capacity, budget, industry competition, and business goals, our plan of action is customized for maximum impact. We guide you through execution, ensuring real results."
+        },
+        "how-we-work": {
+            "badge": "How We Work",
+            "title": "Transparent. \n Collaborative. \n Results-Driven.",
+            "description": "At our company, every project begins with a deep understanding of your unique needs. We believe that a successful partnership is built on transparent communication, collaborative innovation, and a methodical approach that transforms challenges into measurable results.",
+            "lines": {
+                "first": {
+                    "title": "Discovery & Strategy",
+                    "description": "We dive into your business to pinpoint clear objectives."
+                },
+                "second": {
+                    "title": "Planning",
+                    "description": "We create tailored strategies that align with your vision."
+                },
+                "third": {
+                    "title": "Execution & Implementation",
+                    "description": "We turn plans into action with agility and precision."
+                },
+                "fourth": {
+                    "title": "Monitoring & Optimization",
+                    "description": "We measure, refine, and enhance for sustained success."
+                }
+            }
+        },
+        "banner": {
+            "title": "Our team consists of experienced marketing professionals with a proven track record across various industries. With deep expertise in the latest marketing trends, best practices, and social platform technologies, we provide valuable insights and strategic recommendations to help businesses thrive.",
+            "button": "Meet the Team"
+        },
+        "our-service": {
+            "badge": "Our Services",
+            "service": "Service",
+            "title": "We offer a full scale of services to meet your needs",
+            "description": "Explore the range of services provided by RT Holding."
+        },
+        "contact-us": {
+            "badge": "Contact Us",
+            "title": "Our Experts Always Ready \n to Work With You",
+            "description": "Ask about general information. Please send us a message.",
+            "lines": {
+                "first": "For career inquiries",
+                "second": "For any other inquiries",
+                "third": "Connect with a specific team member",
+                "third-description": "Please see our team page"
+            },
+            "form": {
+                "title": "Contact Form",
+                "successfully": "Your message has been sent successfully!",
+                "name": "Your Name",
+                "last-name": "Your Last Name",
+                "email": "Your Email",
+                "phone": "Your Phone",
+                "select": "Select Service",
+                "button": "Send Message",
+                "sending": "Sending...",
+                "footer": "By submitting this form you agree to our Privacy Policy."
+            },
+            "required": {
+                "firstName": "First name is required",
+                "lastName": "Last name is required",
+                "email": "Email is required",
+                "emailInvalid": "Invalid email",
+                "phone": "Phone is required",
+                "service": "Service is required"
+            }
+        }
     }
 }

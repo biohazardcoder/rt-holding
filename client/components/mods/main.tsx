@@ -1,32 +1,12 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { Fog } from "./fog";
 
 export const Main = () => {
   const { t } = useTranslation("common");
-  const items = [
-    {
-      title: "Premium Car Service",
-      desc: "Experience the best luxury transportation with our premium cars.",
-      image: "/cars/car1.png",
-      bg: "/bg/bg1.jpg",
-    },
-    {
-      title: "Business Travel",
-      desc: "Reliable and comfortable rides for your business meetings.",
-      image: "/cars/car2.png",
-      bg: "/bg/bg2.jpg",
-    },
-    {
-      title: "Airport Transfer",
-      desc: "Fast and safe airport transfers with professional drivers.",
-      image: "/cars/car3.png",
-      bg: "/bg/bg3.jpg",
-    },
-  ];
+
   return (
-    <div className="relative h-screen flex items-center overflow-hidden">
+    <div className="relative h-[90vh] flex items-center overflow-hidden">
 
       <img src="/main.png" alt="Main Image" className="z-50 h-[102%] absolute -bottom-20 right-0" />
       <div className="absolute inset-0 bg-[#1E242C] clip-diagonal"></div>
@@ -46,7 +26,6 @@ export const Main = () => {
           BOOK NOW
         </button> */}
       </div>
-      <Fog />
     </div>
   );
 };

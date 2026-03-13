@@ -1,41 +1,43 @@
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
+"use client"
 
-const steps = [
-    {
-        title: "Intro Consultation and Basic Research",
-        description: "Understanding your business and goals",
-    },
-    {
-        title: "Discovery",
-        description:
-            "Competitive analysis, identifying opportunities, and key insights",
-    },
-    {
-        title: "Build Plan",
-        description: "Crafting a tailored strategy for success",
-    },
-    {
-        title: "Execute",
-        description: "Implementing the plan with precision and focus",
-    },
-]
+import Image from "next/image"
+import { useTranslation } from "react-i18next"
+
 
 export default function BusinessProcessSection() {
+
+    const { t } = useTranslation("common", { keyPrefix: "companies-page.process" })
+
+    const steps = [
+        {
+            title: t("steps.first.title"),
+            description: t("steps.first.description"),
+        },
+        {
+            title: t("steps.second.title"),
+            description: t("steps.second.description"),
+        },
+        {
+            title: t("steps.third.title"),
+            description: t("steps.third.description"),
+        },
+        {
+            title: t("steps.fourth.title"),
+            description: t("steps.fourth.description"),
+        },
+    ]
+
+
     return (
         <section className="bg-[#F7F7F7] py-8 md:py-16 px-4">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 <div>
                     <span className="bg-[#434343] text-white py-2.5 px-3 font-semibold ">
-                        Our Process
+                        {t("badge")}
                     </span>
 
                     <p className="text-muted-foreground max-w-xl mb-10 mt-4">
-                        We serve Northwest Arkansas, the entire state of Arkansas, and
-                        neighboring states, with consulting clients nationwide. Our
-                        flexible approach allows us to work with clients through
-                        in-person meetings, phone calls, webinars, emails, texts, and
-                        messaging.
+                        {t("title")}
                     </p>
 
                     <div className="space-y-8">

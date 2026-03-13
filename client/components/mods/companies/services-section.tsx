@@ -1,34 +1,38 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Check, CheckCircle, CheckCircle2 } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
+import { useTranslation } from "react-i18next";
 
-const services = [
-    "Maximize Profit & Increase Operational Efficiencies",
-    "Business Planning, Operations, & Revenue Growth",
-    "Marketing, Sales, Retention, & Customer Experience",
-    "Sales & Customer Service Training",
-    "Recruiting, Staffing, & Culture",
-    "Processes & Workflows",
-]
+
 
 export default function ServicesSection() {
+
+    const { t } = useTranslation("common", { keyPrefix: "companies-page.services" })
+
+    const services = [
+        t("list.1"),
+        t("list.2"),
+        t("list.3"),
+        t("list.4"),
+        t("list.5"),
+        t("list.6"),
+    ]
+
     return (
         <section className="container mx-auto  py-8 md:py-16 px-4">
             <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div>
                     <span className="bg-[#434343] text-white py-2.5 px-3 font-semibold ">
-                        Services Offered
+                        {t("badge")}
                     </span>
 
                     <h2 className="text-4xl  font-semibold leading-tight mt-2">
-                        Our Consulting and <br /> Coaching Services
+                        {t("title")}
                     </h2>
                 </div>
 
                 <p className="text-muted-foreground max-w-lg">
-                    We help you achieve your goals with customized strategies,
-                    practical solutions, and hands-on execution to drive success.
+                    {t("description")}
                 </p>
             </div>
 

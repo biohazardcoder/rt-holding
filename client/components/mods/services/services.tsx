@@ -1,20 +1,30 @@
 "use client"
+
 import { Fetch } from "@/middlewares/Fetch";
 import { useEffect, useState } from "react";
-import Footer from "./footer";
+import { useTranslation } from "react-i18next";
 
-export default function BlogsComponent() {
-  const [blogs, setBlogs] = useState([]);
+interface Lang {
+  en: string;
+  kr: string;
+  ru: string;
+  uz: string;
+}
+
+export const ServicesComponent = () => {
+  const { t, i18n } = useTranslation("common", { keyPrefix: "services-page.our-service" });
+  const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
   useEffect(() => {
-    const getAllBlogs = async () => {
+    const getAllServices = async () => {
       try {
         setLoading(true);
         setError("");
-        const response = (await Fetch.get("blog")).data;
-        setBlogs(response);
+        const response = (await Fetch.get("service")).data;
+        setServices(response);
       } catch (err) {
         setError("Something went wrong. Please try again later.");
       } finally {
@@ -22,25 +32,22 @@ export default function BlogsComponent() {
       }
     };
 
-    getAllBlogs();
+    getAllServices();
   }, []);
 
   return (
     <div>
-
-
-      <div className="bg-white px-[5%] md:px-[10%] py-8 flex flex-col items-center">
+      <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-8 flex flex-col items-center">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
-          Latest Blogs
+          {t("badge")}
         </span>
 
         <h1 className="text-center text-3xl md:text-4xl mt-4 font-semibold">
-          Don't miss our latest updates and insights
+          {t("title")}
         </h1>
 
         <p className="text-center mt-4 text-gray-500 max-w-2xl">
-          Stay informed with RT Holding's latest news, articles, and expert insights
-          on financial trends and strategies.
+          {t("description")}
         </p>
 
         {error && (
@@ -58,9 +65,9 @@ export default function BlogsComponent() {
               >
                 <div className="w-full h-48 bg-gray-300" />
                 <div className="p-4">
-                  <div className="h-5 bg-gray-300 rounded w-3/4 mb-3" />
+                  <div className="h-5 bg-gray-300 rounded w-2/3 mb-3" />
                   <div className="h-4 bg-gray-200 rounded w-full mb-2" />
-                  <div className="h-4 bg-gray-200 rounded w-5/6 mb-4" />
+                  <div className="h-4 bg-gray-200 rounded w-5/6" />
                 </div>
               </div>
             ))}
@@ -69,30 +76,28 @@ export default function BlogsComponent() {
 
         {!loading && !error && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full">
-            {blogs.map(({ title, text, image }, index) => (
+            {services.map(({ title, text, image }, index) => (
               <div
                 key={index}
                 className="bg-white rounded-md overflow-hidden shadow-md relative"
               >
                 <img
                   src={image}
-                  alt={title}
-                  className="w-full h-48 object-cover"
+                  alt={title[i18n.language as keyof Lang]}
+                  className="w-full h-48 object-cover rounded-t-md"
                 />
 
-                <span className="bg-[#1E242C] text-white py-1 px-2 font-semibold text-sm absolute top-2 left-2">
-                  Blog
+                <span className="bg-[#0f3d3a] text-white py-1 px-2 text-sm absolute top-2 left-2 rounded">
+                  {t('service')}
                 </span>
 
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold mt-2 line-clamp-2">
-                    {title}
+                  <h2 className="text-xl font-semibold line-clamp-2">
+                    {title[i18n.language as keyof Lang]}
                   </h2>
-
                   <p className="mt-2 text-gray-600 line-clamp-3">
-                    {text}
+                    {text[i18n.language as keyof Lang]}
                   </p>
-
                 </div>
               </div>
             ))}
@@ -100,7 +105,6 @@ export default function BlogsComponent() {
         )}
       </div>
 
-      <Footer />
     </div>
   );
 }

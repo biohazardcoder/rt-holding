@@ -2,6 +2,7 @@
 
 import { Fetch } from "@/middlewares/Fetch";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ServiceType {
   _id: string;
@@ -13,7 +14,7 @@ export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-
+  const { t } = useTranslation("common", { keyPrefix: "services-page.contact-us" });
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -30,12 +31,12 @@ export const Contact = () => {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
-    if (!form.email.trim()) newErrors.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Invalid email";
-    if (!form.phone.trim()) newErrors.phone = "Phone is required";
-    if (!form.service.trim()) newErrors.service = "Service is required";
+    if (!form.firstName.trim()) newErrors.firstName = t("required.firstName");
+    if (!form.lastName.trim()) newErrors.lastName = t("required.lastName");
+    if (!form.email.trim()) newErrors.email = t("required.email");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = t("required.emailInvalid");
+    if (!form.phone.trim()) newErrors.phone = t("required.phone");
+    if (!form.service.trim()) newErrors.service = t("required.service");
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -66,21 +67,21 @@ export const Contact = () => {
 
         <div>
           <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
-            Contact Us
+            {t("badge")}
           </span>
 
           <h2 className="text-4xl font-serif leading-tight my-4">
-            Our Experts Always <br /> Ready to Work With You
+            {t("title")}
           </h2>
 
           <p className="text-gray-600 mb-10">
-            Ask about general information. Please send us a message.
+            {t("description")}
           </p>
 
           <div className="space-y-4">
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
-                <p className="font-medium">For career inquiries</p>
+                <p className="font-medium">{t("form.lines.first")}</p>
                 <p className="text-sm text-gray-600">
                   example@gmail.com
                 </p>
@@ -90,7 +91,7 @@ export const Contact = () => {
 
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
-                <p className="font-medium">For any other inquiries</p>
+                <p className="font-medium">{t("form.lines.second")}</p>
                 <p className="text-sm text-gray-600">
                   example@gmail.com
                 </p>
@@ -101,10 +102,10 @@ export const Contact = () => {
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
                 <p className="font-medium">
-                  Connect with a specific team member
+                  {t("form.lines.third")}
                 </p>
                 <p className="text-sm text-gray-600">
-                  Please see our team page
+                  {t("form.lines.third-description")}
                 </p>
               </div>
               <span>→</span>
@@ -114,20 +115,20 @@ export const Contact = () => {
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="bg-[#1E242C] text-white px-6 py-4 font-medium">
-            Contact Form
+            {t("form.title")}
           </div>
 
           <div className="p-6 space-y-4">
             {success && (
               <p className="bg-green-500 p-2 text-white font-bold text-sm">
-                Message sent successfully!
+                {t("form.successfully")}
               </p>
             )}
 
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <input
-                  placeholder="First name"
+                  placeholder={t("form.name")}
                   className={`border rounded p-3 w-full ${errors.firstName ? "border-red-500" : ""}`}
                   value={form.firstName}
                   onChange={(e) =>
@@ -138,7 +139,7 @@ export const Contact = () => {
               </div>
               <div>
                 <input
-                  placeholder="Last name"
+                  placeholder={t("form.last-name")}
                   className={`border rounded p-3 w-full ${errors.lastName ? "border-red-500" : ""}`}
                   value={form.lastName}
                   onChange={(e) =>
@@ -151,7 +152,7 @@ export const Contact = () => {
 
             <div>
               <input
-                placeholder="Email"
+                placeholder={t("form.email")}
                 className={`border rounded p-3 w-full ${errors.email ? "border-red-500" : ""}`}
                 value={form.email}
                 onChange={(e) =>
@@ -163,7 +164,7 @@ export const Contact = () => {
 
             <div>
               <input
-                placeholder="Phone"
+                placeholder={t("form.phone")}
                 className={`border rounded p-3 w-full ${errors.phone ? "border-red-500" : ""}`}
                 value={form.phone}
                 onChange={(e) =>
@@ -181,7 +182,7 @@ export const Contact = () => {
                   setForm({ ...form, service: e.target.value })
                 }
               >
-                <option value="">Select service</option>
+                <option value="">{t("form.select")}</option>
                 {services.map((s) => (
                   <option key={s._id} value={s.title}>
                     {s.title}
@@ -196,12 +197,11 @@ export const Contact = () => {
               disabled={loading}
               className="bg-[#F69419] hover:bg-[#F69419]/80 transition px-6 py-3 rounded font-semibold flex items-center gap-2 text-white "
             >
-              {loading ? "Sending..." : "Submit"} →
+              {loading ? t("form.sending") : t("form.button")} →
             </button>
 
             <p className="text-xs text-gray-500 pt-4">
-              By submitting this form you agree to our{" "}
-              <span className="underline">Privacy Policy</span>.
+              {t("form.footer")}
             </p>
           </div>
         </div>

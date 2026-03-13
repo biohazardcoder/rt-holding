@@ -1,21 +1,24 @@
+"use client"
 import { CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Accreditation = () => {
+  const { t } = useTranslation("common", { keyPrefix: "team-page.accreditation" })
   const items = [
-    "A+ Rated & Accredited with the BBB + Top-Rated Consultancy",
-    "Accredited Small Business Consultant and Financial Services Certified",
-    "Fayetteville’s Businessperson of the Year",
-    "Rated Top Social Media Agency by Expertise and UpCity",
+    t("cards.first"),
+    t("cards.second"),
+    t("cards.third"),
+    t("cards.fourth"),
   ];
 
   return (
     <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-16">
       <div className="mb-12 max-w-2xl">
         <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
-          Accreditation
+          {t("badge")}
         </span>
         <h2 className="text-3xl md:text-5xl font-serif leading-tight mt-4">
-          Why Hire Execor Consulting Solutions?
+          {t("title")}
         </h2>
       </div>
 
