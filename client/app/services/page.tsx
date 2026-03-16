@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { ServicesComponent } from "@/components/mods/services/services";
 import { Navbar } from '@/components/mods/navbar';
-import { CircleCheckBig } from 'lucide-react';
 import Footer from '@/components/mods/footer';
 import { Contact } from '@/components/mods/services/contact';
 import { Top } from '@/components/mods/services/top';
@@ -30,7 +29,6 @@ export default function Services() {
       <div>
         <Contact />
       </div>
-
       <Footer />
     </div>
   );
