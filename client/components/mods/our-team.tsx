@@ -52,8 +52,9 @@ export const OurTeam = () => {
         { image: "/social/telegram.png", url: "#" },
         { image: "/social/whatsapp.png", url: "#" }
       ]
-    },
+    }
   ];
+
   const next = () => {
     setIndex((prev) => (prev + 1) % members.length);
   };
@@ -66,15 +67,15 @@ export const OurTeam = () => {
     const offset = (i - index + members.length) % members.length;
 
     if (offset === 0) return "z-20 scale-105";
-    if (offset === 1) return "translate-y-36 scale-90 opacity-70";
+    if (offset === 1) return "translate-x-40 md:translate-x-52 scale-90 opacity-70";
     if (offset === members.length - 1)
-      return "-translate-y-36 scale-90 opacity-70";
+      return "-translate-x-40 md:-translate-x-52 scale-90 opacity-70";
 
     return "opacity-0 pointer-events-none";
   };
 
   return (
-    <div className="px-[5%] md:px-[10%] bg-[#f7f7f7] py-16 overflow-hidden">
+    <div className="px-[5%] md:px-[10%] bg-[#f7f7f7] pt-16 overflow-hidden">
 
       <div className="text-center md:mb-12">
         <span className="bg-[#434343] text-white py-2 px-4 font-semibold rounded">
@@ -85,16 +86,18 @@ export const OurTeam = () => {
           <Trans i18nKey="our-team.title" components={{ br: <br /> }} />
         </p>
       </div>
-      <div className="flex flex-col md:grid md:grid-cols-2 max-w-5xl m-auto w-full gap-4 md:gap-16 items-center justify-center">
 
-        <div className="relative w-80 md:w-[450px] h-[70vh] flex flex-col items-center justify-center">
+      <div className="flex flex-col md:grid md:grid-cols-2 max-w-4xl m-auto w-full gap-10 md:gap-16 items-center justify-center">
 
-          <div className="relative w-full h-40 md:w-[400px] md:h-[300px] flex flex-wrap items-center justify-center">
+        <div className="relative w-[260px] h-[460px] flex items-center justify-center">
+
+          <div className="relative w-full h-full flex items-center justify-center">
+
             {members.map((member, i) => (
               <div
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`absolute w-full h-40 md:w-[400px] md:h-[300px] rounded-2xl overflow-hidden shadow-xl transition-all duration-700 cursor-pointer ${getPosition(i)}`}
+                className={`absolute w-60 h-80 rounded-2xl overflow-hidden shadow-xl transition-all duration-700 cursor-pointer ${getPosition(i)}`}
               >
                 <img
                   src={member.avatar}
@@ -102,8 +105,8 @@ export const OurTeam = () => {
                 />
               </div>
             ))}
-          </div>
 
+          </div>
 
         </div>
 
@@ -125,7 +128,7 @@ export const OurTeam = () => {
               onClick={prev}
               className="text-2xl text-gray-500 hover:text-[#234F72] transition"
             >
-              <ArrowLeftCircle size={26} />
+              <ArrowLeftCircle size={28} />
             </button>
 
             <div className="flex items-center gap-2">
@@ -145,12 +148,13 @@ export const OurTeam = () => {
               onClick={next}
               className="text-2xl text-gray-500 hover:text-[#234F72] transition"
             >
-              <ArrowRightCircle size={26} />
+              <ArrowRightCircle size={28} />
             </button>
 
           </div>
 
         </div>
+
       </div>
 
     </div>

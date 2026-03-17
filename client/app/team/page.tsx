@@ -4,7 +4,7 @@ import { Navbar } from "@/components/mods/navbar";
 import { Top } from "@/components/mods/team/top";
 import type { Metadata } from 'next'
 import { Ceo } from "../../components/mods/team/ceo";
-import { OurTeam } from "../../components/mods/team/our-team";
+import { OurTeam } from "@/components/mods/team/our-team";
 
 export const metadata: Metadata = {
   title: 'Our Team - RT Holdings',

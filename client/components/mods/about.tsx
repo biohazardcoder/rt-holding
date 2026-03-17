@@ -44,29 +44,23 @@ export const About = () => {
                                         </p>
 
                                         <ul className="space-y-1 list-none grid grid-cols-1 md:grid-cols-2">
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/rt-motors.png"} alt="RT MOTORS" width={40} height={40} />
-                                                        <span className="font-semibold text-sm">RT MOTORS</span>: {t("subsidiaries.rtMotors")}
+                                                <li >
+                                                        <span className="font-semibold">RT MOTORS</span>: {t("subsidiaries.rtMotors")}
                                                 </li>
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/kortex.png"} alt="Kortex Oil" width={60} height={40} className="bg-yellow-400 p-1" />
-                                                        <span className="font-semibold text-sm">Kortex Oil</span>: {t("subsidiaries.kortexOil")}
+                                                <li >
+                                                        <span className="font-semibold">Kortex Oil</span>: {t("subsidiaries.kortexOil")}
                                                 </li>
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/dream-express.png"} alt="Dream Express" width={50} height={40} />
-                                                        <span className="font-semibold text-sm">Dream Express</span>: {t("subsidiaries.dreamExpress")}
+                                                <li >
+                                                        <span className="font-semibold">Dream Express</span>: {t("subsidiaries.dreamExpress")}
                                                 </li>
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/aka-taxi.png"} alt="Aka Taxi" width={50} height={40} />
-                                                        <span className="font-semibold text-sm">Aka Taxi</span>: {t("subsidiaries.akaTaxi")}
+                                                <li >
+                                                        <span className="font-semibold">Aka Taxi</span>: {t("subsidiaries.akaTaxi")}
                                                 </li>
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/rt-medline.png"} alt="RT Medline" width={50} height={40} />
-                                                        <span className="font-semibold text-sm">RT Medline</span>: {t("subsidiaries.rtMedline")}
+                                                <li >
+                                                        <span className="font-semibold">RT Medline</span>: {t("subsidiaries.rtMedline")}
                                                 </li>
-                                                <li className="flex items-center gap-1">
-                                                        <Image src={"/rt-hs-group.png"} alt="RT HS Logistics" width={60} height={40} />
-                                                        <span className="font-semibold text-sm">RT HS Logistics</span>: {t("subsidiaries.rtHsLogistics")}
+                                                <li >
+                                                        <span className="font-semibold">RT HS Logistics</span>: {t("subsidiaries.rtHsLogistics")}
                                                 </li>
                                         </ul>
                                 </div>
