@@ -6,15 +6,20 @@ import { useTranslation } from "react-i18next";
 
 interface ServiceType {
   _id: string;
-  title: string;
+  title: Lang
 }
-
+interface Lang {
+  en: string;
+  kr: string;
+  ru: string;
+  uz: string;
+}
 export const Contact = () => {
   const [services, setServices] = useState<ServiceType[]>([]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const { t } = useTranslation("common", { keyPrefix: "services-page.contact-us" });
+  const { t, i18n } = useTranslation("common", { keyPrefix: "services-page.contact-us" });
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -184,8 +189,8 @@ export const Contact = () => {
               >
                 <option value="">{t("form.select")}</option>
                 {services.map((s) => (
-                  <option key={s._id} value={s.title}>
-                    {s.title}
+                  <option key={s._id} value={s.title[i18n.language as keyof Lang]}>
+                    {s.title[i18n.language as keyof Lang]}
                   </option>
                 ))}
               </select>
