@@ -1,7 +1,6 @@
 import axios from "axios";
-
+console.log(process.env.NEXT_PUBLIC_BASE_URL);
 
 export const Fetch = axios.create({
-  // baseURL: "https://rt-holdings-api.onrender.com/api/",
-  baseURL: "http://localhost:4000/api/",
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
 });

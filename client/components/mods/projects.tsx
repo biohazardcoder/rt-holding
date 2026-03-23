@@ -7,13 +7,13 @@ const images = [
   {
     src: "/rt-medline.png",
     alt: "RT Medline",
-    width: 80,
+    width: 100,
     height: 60,
   },
   {
     src: "/aka-taxi.png",
     alt: "Aka Taxi",
-    width: 150,
+    width: 160,
     height: 60,
   },
   {
@@ -29,9 +29,9 @@ const images = [
     height: 60,
   },
   {
-    src: "/rt-hs-group.png",
-    alt: "RT HS Group",
-    width: 220,
+    src: "/rt-logistics.png",
+    alt: "RT LOGISTICS",
+    width: 130,
     height: 60,
   },
 ];
