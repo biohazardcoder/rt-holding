@@ -5,14 +5,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+interface Lang {
+  en: string;
+  kr: string;
+  ru: string;
+  uz: string;
+}
 interface CommentTypes {
   _id?: string;
   createdAt?: string;
-  name: string;
-  text: string;
+  name: Lang;
+  text: Lang;
   image?: string;
-  job: string
+  job: Lang
 }
 
 export const Comments = () => {
@@ -20,7 +25,7 @@ export const Comments = () => {
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const { t } = useTranslation("common", { keyPrefix: "testimonials" });
+  const { t, i18n } = useTranslation("common", { keyPrefix: "testimonials" });
   useEffect(() => {
     const getAllComments = async () => {
       try {
@@ -97,7 +102,7 @@ export const Comments = () => {
             <div className="text-[#0f3d3a] text-4xl md:text-5xl h-full">“</div>
 
             <p className="md:mt-4 text-gray-700 leading-relaxed  md:text-lg">
-              {comments[index]?.text}
+              {comments[index]?.text[i18n.language as keyof Lang]}
             </p>
 
             <div className="flex items-center gap-4 mt-10">
@@ -108,10 +113,10 @@ export const Comments = () => {
               />
               <div>
                 <h3 className="font-semibold text-[#1e3d38]">
-                  {comments[index]?.name}
+                  {comments[index]?.name[i18n.language as keyof Lang]}
                 </h3>
                 <p className="text-sm text-gray-500">
-                  {comments[index]?.job}
+                  {comments[index]?.job[i18n.language as keyof Lang]}
                 </p>
               </div>
             </div>
