@@ -28,7 +28,7 @@
             "dreamExpress": "Yuk tashish xizmatlari",
             "akaTaxi": "O‘zbekiston bo‘ylab taksi xizmatlari",
             "rtMedline": "Sog‘lomlashtirish markazi",
-            "rtHsLogistics": "Uskunalar yetkazib berish"
+            "rtHsLogistics": "Global yuk tashish xizmati"
         },
         "buttons": {
             "services": "Xizmatlarimiz",
@@ -68,12 +68,11 @@
         "rt-medline": "RT Medline — yetakchi sog‘liqni saqlash xizmatlari ko‘rsatuvchi kompaniya bo‘lib, keng qamrovli tibbiy xizmatlar va innovatsion sog‘liqni saqlash yechimlarini taklif etadi.",
         "aka-taxi": "Aka Taxi — shaharda xavfsiz, ishonchli va samarali taksi xizmatlarini taqdim etuvchi yetakchi transport xizmati.",
         "dream-express": "Dream Express — tez va ishonchli yetkazib berish yechimlarini taqdim etuvchi yetakchi logistika va kuryer kompaniyasi.",
-        "rt-motors": "RT Motors — yuqori sifatli avtomobillar va innovatsion transport yechimlarini ishlab chiqaruvchi yetakchi avtomobil ishlab chiqaruvchisi.",
-        "rt-hs-group": "RT HS Group — innovatsion ko‘chmas mulk yechimlarini taklif qiluvchi yetakchi ko‘chmas mulk va rivojlantirish kompaniyasi.",
-        "rt-hs-logistics": "RT HS Logistics — global uskunalar yetkazib berish bo‘yicha yetakchi kompaniya, ishonchli va samarali logistika xizmatlarini taqdim etadi.",
+        "rt-motors": "RT Motors — yuqori sifatli avtomobillarni sotish va eksport qilishga ixtisoslashgan ishonchli kompaniya. Biz butun dunyo bo‘ylab mijozlarga ishonchli va samarali transport yechimlarini taqdim etamiz.",
+        "rt-hs-group": "RT Logistics Janubiy Koreyadan butun dunyoga professional logistika xizmatlarini taqdim etadi. Xavfsiz, tez va ishonchli yechimlar — barchasi bir joyda.",
         "process": {
             "badge": "Bizning Jarayon",
-            "title": "RT Holding loyihalarimiz muvaffaqiyatli amalga oshirilishi va mijozlarimiz mamnunligini ta'minlash uchun tizimli jarayonga amal qiladi.",
+            "title": "RT Holdings loyihalarimiz muvaffaqiyatli amalga oshirilishi va mijozlarimiz mamnunligini ta'minlash uchun tizimli jarayonga amal qiladi.",
             "steps": {
                 "first": {
                     "title": "Boshlang‘ich konsultatsiya va dastlabki tadqiqot",
@@ -189,20 +188,24 @@
             "description": "Kompaniyamizda har bir loyiha sizning ehtiyojlaringizni chuqur tushunishdan boshlanadi. Biz muvaffaqiyatli hamkorlik shaffof muloqot, hamkorlikdagi innovatsiya va muammolarni aniq natijalarga aylantiradigan tizimli yondashuvga asoslanadi deb hisoblaymiz.",
             "lines": {
                 "first": {
-                    "title": "Tahlil va strategiya",
-                    "description": "Biz biznesingizni chuqur o‘rganib, aniq maqsadlarni belgilaymiz."
+                    "title": "Tanlash va yetkazib berish",
+                    "description": "Biz Janubiy Koreyadagi ishonchli dilerlardan yuqori sifatli ekskavatorlarni raqobatbardosh narxlarda topib, mijozlarga eng yaxshi variantlarni taqdim etamiz."
                 },
                 "second": {
-                    "title": "Rejalashtirish",
-                    "description": "Biz sizning maqsadlaringizga mos individual strategiyalar yaratamiz."
+                    "title": "Tekshiruv va ochiqlik",
+                    "description": "Har bir texnika to‘liq tekshiruvdan o‘tadi. To‘liq shaffoflik uchun batafsil video va rasmlar taqdim etiladi."
                 },
                 "third": {
-                    "title": "Amalga oshirish",
-                    "description": "Rejalarni tezkorlik va aniqlik bilan amalga oshiramiz."
+                    "title": "Narx va to‘lov",
+                    "description": "Biz mijozlar bilan narxni kelishamiz va USD hamda KRWda qulay to‘lov imkoniyatlarini taqdim etamiz."
                 },
                 "fourth": {
-                    "title": "Monitoring va optimizatsiya",
-                    "description": "Natijalarni o‘lchaymiz, takomillashtiramiz va barqaror muvaffaqiyatga erishamiz."
+                    "title": "Yuklash va yetkazish",
+                    "description": "Ro-Ro yoki konteyner orqali xavfsiz yuklashni tashkil qilamiz, barcha eksport hujjatlarini tayyorlaymiz va yetkazilgunga qadar kuzatuvni ta’minlaymiz."
+                },
+                "fifth": {
+                    "title": "Kuzatuv va yakunlash",
+                    "description": "Buyurtmangiz tezkor tarzda jo‘natiladi. Biz barcha zarur eksport va bojxona hujjatlarini tayyorlaymiz hamda yetkazib berilgunga qadar kuzatuvni ta’minlaymiz."
                 }
             }
         },

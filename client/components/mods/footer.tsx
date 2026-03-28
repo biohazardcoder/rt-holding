@@ -39,7 +39,7 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3">
               <PhoneCall size={16} />
-              <span>+99891-088-9595</span>
+              <span>+99894-563-9595</span>
             </li>
 
 

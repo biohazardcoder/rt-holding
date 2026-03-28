@@ -86,7 +86,7 @@ export const Contact = () => {
           <div className="space-y-4">
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
-                <p className="font-medium">{t("form.lines.first")}</p>
+                <p className="font-medium">{t("lines.first")}</p>
                 <p className="text-sm text-gray-600">
                   example@gmail.com
                 </p>
@@ -96,7 +96,7 @@ export const Contact = () => {
 
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
-                <p className="font-medium">{t("form.lines.second")}</p>
+                <p className="font-medium">{t("lines.second")}</p>
                 <p className="text-sm text-gray-600">
                   example@gmail.com
                 </p>
@@ -107,10 +107,10 @@ export const Contact = () => {
             <div className="flex items-center justify-between p-5 rounded-xl bg-gray-50">
               <div>
                 <p className="font-medium">
-                  {t("form.lines.third")}
+                  {t("lines.third")}
                 </p>
                 <p className="text-sm text-gray-600">
-                  {t("form.lines.third-description")}
+                  {t("lines.third-description")}
                 </p>
               </div>
               <span>→</span>

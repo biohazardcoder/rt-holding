@@ -60,7 +60,7 @@ export const About = () => {
                                                         <span className="font-semibold">RT Medline</span>: {t("subsidiaries.rtMedline")}
                                                 </li>
                                                 <li >
-                                                        <span className="font-semibold">RT HS Logistics</span>: {t("subsidiaries.rtHsLogistics")}
+                                                        <span className="font-semibold">RT Logistics</span>: {t("subsidiaries.rtHsLogistics")}
                                                 </li>
                                         </ul>
                                 </div>

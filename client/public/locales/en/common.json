@@ -28,7 +28,7 @@
             "dreamExpress": "Cargo services",
             "akaTaxi": "Taxi services across Uzbekistan",
             "rtMedline": "Wellness center",
-            "rtHsLogistics": "Global equipment delivery"
+            "rtHsLogistics": "Global freight delivery"
         },
         "buttons": {
             "services": "Our Services",
@@ -68,11 +68,11 @@
         "rt-medline": "RT Medline is a leading healthcare provider, offering comprehensive medical services and innovative health solutions.",
         "aka-taxi": "Aka Taxi is a premier transportation service, providing safe, reliable, and efficient taxi services across the city.",
         "dream-express": "Dream Express is a leading logistics and delivery company, offering fast and reliable shipping solutions.",
-        "rt-motors": "RT Motors is a leading automotive manufacturer, producing high-quality vehicles and innovative transportation solutions.",
-        "rt-hs-group": "RT HS Group is a leading real estate and development company, offering innovative property solutions.",
+        "rt-motors": "RT Motors is a trusted automotive company specializing in the sale and export of high-quality vehicles. We provide reliable and efficient transportation solutions to customers worldwide.",
+        "rt-hs-group": "RT Logistics provides professional logistics services from South Korea to all over the world. Safe, fast, and reliable logistics solutions — all in one place with us.",
         "process": {
             "badge": "Our Process",
-            "title": "RT Holding follows a structured process to ensure the success of our projects and the satisfaction of our clients.",
+            "title": "RT Holdings follows a structured process to ensure the success of our projects and the satisfaction of our clients.",
             "steps": {
                 "first": {
                     "title": "Intro Consultation and Basic Research",
@@ -188,20 +188,24 @@
             "description": "At our company, every project begins with a deep understanding of your unique needs. We believe that a successful partnership is built on transparent communication, collaborative innovation, and a methodical approach that transforms challenges into measurable results.",
             "lines": {
                 "first": {
-                    "title": "Discovery & Strategy",
-                    "description": "We dive into your business to pinpoint clear objectives."
+                    "title": "Sourcing & Selection",
+                    "description": "We source high-quality excavators at competitive prices from trusted dealers in South Korea and present the best options to our clients."
                 },
                 "second": {
-                    "title": "Planning",
-                    "description": "We create tailored strategies that align with your vision."
+                    "title": "Inspection & Transparency",
+                    "description": "Every machine undergoes a thorough inspection. Detailed videos and photos are provided to ensure full transparency."
                 },
                 "third": {
-                    "title": "Execution & Implementation",
-                    "description": "We turn plans into action with agility and precision."
+                    "title": "Pricing & Payment",
+                    "description": "We finalize pricing with our clients and offer a simple, convenient payment process, accepting both USD and KRW."
                 },
                 "fourth": {
-                    "title": "Monitoring & Optimization",
-                    "description": "We measure, refine, and enhance for sustained success."
+                    "title": "Shipping & Delivery",
+                    "description": "We arrange safe loading via Ro-Ro or container shipping, prepare all export documents, and provide full tracking until delivery."
+                },
+                "fifth": {
+                    "title": "Tracking & Completion",
+                    "description": "Your order is shipped promptly. All necessary export and customs documents are prepared, and we provide continuous tracking until delivery."
                 }
             }
         },

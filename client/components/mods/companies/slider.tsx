@@ -111,7 +111,7 @@ export default function Slider() {
       image: {
         src: "/rt-motors.png",
         alt: "RT Motors",
-        width: 200,
+        width: 270,
         height: 60,
       },
       description: t("rt-motors"),
@@ -139,11 +139,11 @@ export default function Slider() {
       ]
     },
     {
-      title: "RT HS Group",
+      title: "RT Logistics",
       image: {
-        src: "/rt-hs-group.png",
-        alt: "RT HS Group",
-        width: 350,
+        src: "/rt-logistics.png",
+        alt: "RT Logistics",
+        width: 250,
         height: 60,
       },
       description: t("rt-hs-group"),
