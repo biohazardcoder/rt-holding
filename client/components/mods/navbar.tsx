@@ -8,12 +8,11 @@ import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { LanguageSelect } from "@/lang/language"
 import { useTranslation } from "react-i18next"
-import { usePathname } from "next/navigation"
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const { t } = useTranslation("common")
   const items = [
-    { label: "home", href: "/" },
+    { label: "about.title", href: "/" },
     { label: "companies", href: "/companies" },
     { label: "services", href: "/services" },
     { label: "team", href: "/team" },

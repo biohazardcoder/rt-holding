@@ -20,7 +20,7 @@
     "about": {
         "title": "About Us",
         "description": "Get to know our company's activities, values, and goals.",
-        "companyText1": "RT HOLDINGS, founded in 2013 and located in Uzbekistan and South Korea, is engaged in the export of construction machinery. Its main activity is the sale of excavators and special equipment from South Korea to Central Asian countries, as well as to Russia, Belarus, Ukraine, and Arab countries.",
+        "companyText1": "founded in 2013 and located in Uzbekistan and South Korea, is engaged in the export of construction machinery. Its main activity is the sale of excavators and special equipment from South Korea to Central Asian countries, as well as to Russia, Belarus, Ukraine, and Arab countries.",
         "companyText2": "Today, the company is a large holding that includes several subsidiary branches.",
         "subsidiaries": {
             "rtMotors": "Car sales",
@@ -44,8 +44,8 @@
     "why-choose-us": {
         "badge": "Why Choose Us",
         "title": "Expertise, secure, success",
-        "description": "we understand that choosing the right financial partner is crucial for your success and here are some reasons why RT Holding stands out from the rest.",
-        "expertise": "Expertise",
+        "description": "we understand that choosing the right financial partner is crucial for your success and here are some reasons why RT Holdings stands out from the rest.",
+        "countries": "Countries",
         "clients": "Clients",
         "projects": "Projects",
         "support": "Support"

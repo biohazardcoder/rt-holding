@@ -25,7 +25,7 @@ const images = [
   {
     src: "/rt-motors.png",
     alt: "RT Motors",
-    width: 100,
+    width: 150,
     height: 60,
   },
   {

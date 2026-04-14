@@ -8,17 +8,17 @@ export const WhyChooseUs = () => {
 
   const items = [
     {
-      title: t("expertise"),
+      title: t("countries"),
       count: "10+",
     },
     {
       title: t("clients"),
-      count: "500+",
+      count: "1000+",
     },
-    {
-      title: t("projects"),
-      count: "100+",
-    },
+    // {
+    //   title: t("projects"),
+    //   count: "100+",
+    // },
     {
       title: t("support"),
       count: "24/7",
@@ -33,13 +33,13 @@ export const WhyChooseUs = () => {
       <h1 className="text-center text-2xl md:text-3xl sm:text-2xl mt-4 font-semibold text-[#234F72]">
         {t("title")}
       </h1>
-      <p className="text-center mt-4 max-w-5xl text-gray-500 text-sm md:text-base">
+      <p className="text-center mt-4 max-w-3xl text-gray-500 text-sm md:text-base">
         {t("description")}
       </p>
-      <div className="grid  lg:grid-cols-4 grid-cols-2 gap-12 md:gap-6 mt-8">
+      <div className="grid grid-cols-3 gap-4 md:gap-10 mt-8">
         {items.map(({ title, count }, index) => (
           <div key={index} className="w-full flex flex-col bg-white border justify-center items-center p-8 md:p-6 sm:p-4 rounded-md">
-            <h1 className="text-3xl md:text-4xl sm:text-3xl font-bold text-black">
+            <h1 className="text-2xl md:text-4xl sm:text-3xl font-bold text-black">
               {count}
             </h1>
             <p className="mt-2 text-xs md:text-lg sm:text-base text-gray-500 font-semibold">

@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-[#1E242C] text-white px-[5%] pt-14">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
 
-        <div className="md:col-span-4">
+        <div className="md:col-span-3">
           <h1 className="text-3xl font-bold mb-3">
             RT Holdings
           </h1>
@@ -19,22 +19,21 @@ export default function Footer() {
 
         </div>
 
-        <div className="md:col-span-3">
-          <h3 className="text-gray-300 mb-5">{t("links")}</h3>
+        <div className="md:col-span-4">
+          <h3 className="text-gray-300 mb-5 text-start md:text-center font-bold">{t("links")}</h3>
 
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <ul className="space-y-3">
-              <li><Link href="/">{t("home")}</Link></li>
+          <div className="grid grid-cols-3 gap-2 text-sm">
+            <ul className="flex flex-col md:flex-row md:items-center gap-3">
+              <li className="whitespace-nowrap"><Link href="/">{t("about.title")}</Link></li>
               <li><Link href="/companies">{t("companies")}</Link></li>
               <li><Link href="/services">{t("services")}</Link></li>
               <li><Link href="/team">{t("team")}</Link></li>
               <li><Link href="/blogs">{t("blogs")}</Link></li>
             </ul>
-
           </div>
         </div>
         <div className="md:col-span-2">
-          <h3 className="text-gray-300 mb-5">{t("contact")}</h3>
+          <h3 className="text-gray-300 mb-5 font-bold">{t("contact")}</h3>
 
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3">

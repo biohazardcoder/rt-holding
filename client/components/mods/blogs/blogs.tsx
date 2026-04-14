@@ -85,7 +85,7 @@ export default function BlogsComponent() {
                 <img
                   src={image}
                   alt={title[i18n.language as keyof Lang]}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-96 object-cover"
                 />
 
                 <span className="bg-[#1E242C] text-white py-1 px-2 font-semibold text-sm absolute top-2 left-2">
@@ -93,11 +93,11 @@ export default function BlogsComponent() {
                 </span>
 
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold mt-2 line-clamp-2">
+                  <h2 className="font-semibold mt-2">
                     {title[i18n.language as keyof Lang]}
                   </h2>
 
-                  <p className="mt-2 text-gray-600 line-clamp-3">
+                  <p className="mt-2 text-gray-600 leading-5  text-xs">
                     {text[i18n.language as keyof Lang]}
                   </p>
 

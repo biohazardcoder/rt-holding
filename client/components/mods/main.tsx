@@ -6,7 +6,7 @@ export const Main = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="relative h-[90vh] pt-60 md:pt-0 flex flex-col md:flex-row md:items-center overflow-hidden">
+    <div className="relative h-[90vh] pt-40 md:pt-0 flex flex-col md:flex-row md:items-center overflow-hidden">
 
       <div className="hidden md:block absolute inset-0 bg-[#1E242C] clip-diagonal"></div>
       <div className="absolute -rotate-45 top-0 -left-92 z-10 inset-0 bg-[#1E242C] clip-diagonal"></div>

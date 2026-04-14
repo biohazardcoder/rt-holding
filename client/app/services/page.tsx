@@ -21,7 +21,7 @@ export default function Services() {
       <Navbar />
       <div className="bg-[#1E242C] h-[10vh]" />
       <Top />
-      <Line />
+      {/* <Line /> */}
       <WhatWeDo />
       <HowWeWork />
       <Banner />

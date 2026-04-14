@@ -105,7 +105,7 @@ export const Blog = () => {
               <img
                 src={image}
                 alt={title[language]}
-                className="w-full h-40 object-cover object-center rounded-md mt-6"
+                className="w-full h-64 object-cover object-center rounded-md mt-6"
               />
             )}
 

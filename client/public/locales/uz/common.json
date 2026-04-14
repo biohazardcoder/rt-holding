@@ -11,7 +11,7 @@
     "arr": "Barcha huquqlar himoyalangan.",
     "footer_desc": "O‘zbekiston va Markaziy Osiyoda sifatli xizmat va mahsulotlar taqdim etib, mijozlar ishonchini qozonishda davom etmoqda. Biz qurilish va sanoatni yangi bosqichga olib chiqishga intilamiz.",
     "main-title": "Maqsadlarimiz mijozlarimizga sifatli, ishonchli va tezkor xizmat ko'rsatishdir",
-    "main-description": "Har bir mijozga individual yondashuv, har bir loyiha uchun yuqori javobgarlik - bu bizning ish prinsipimiz. RT Holdings har doim ishonchli uskunalar, professional xizmat va o'z vaqtida etkazib berishni kafolatlaydi.",
+    "main-description": "Har bir mijozga individual yondashuv, har bir loyiha uchun yuqori javobgarlik - bu bizning ish prinsipimiz. RT Holdings har doim ishonchli texnikalar, professional xizmat va o'z vaqtida etkazib berishni kafolatlaydi.",
     "why-sets": "Nima bizni boshqalardan ajratib turadi",
     "why-sets-1": "Premium Koreys Mashinalari",
     "why-sets-2": "To'g'ridan-to'g'ri Eksport Yechimlari",
@@ -20,7 +20,7 @@
     "about": {
         "title": "Biz haqimizda",
         "description": "Kompaniyamizning faoliyati, qadriyatlari va maqsadlari bilan tanishing.",
-        "companyText1": "RT HOLDINGS 2013-yilda tashkil etilgan bo‘lib, O‘zbekiston va Janubiy Koreyada joylashgan. Kompaniya qurilish texnikalarini eksport qilish bilan shug‘ullanadi. Asosiy faoliyati — Janubiy Koreyadan Markaziy Osiyo davlatlariga, shuningdek Rossiya, Belarus, Ukraina va Arab mamlakatlariga ekskavator hamda maxsus texnikalarni yetkazib berish.",
+        "companyText1": "2013-yilda tashkil etilgan bo‘lib, O‘zbekiston va Janubiy Koreyada joylashgan. Kompaniya qurilish texnikalarini eksport qilish bilan shug‘ullanadi. Asosiy faoliyati — Janubiy Koreyadan Markaziy Osiyo davlatlariga, shuningdek Rossiya, Belarus, Ukraina va Arab mamlakatlariga ekskavator hamda maxsus texnikalarni yetkazib berish.",
         "companyText2": "Bugungi kunda kompaniya bir nechta sho‘ba korxonalarni o‘z ichiga olgan yirik holding hisoblanadi.",
         "subsidiaries": {
             "rtMotors": "Avtomobil savdosi",
@@ -44,8 +44,8 @@
     "why-choose-us": {
         "badge": "Nima uchun bizni tanlash kerak",
         "title": "Tajriba, xavfsizlik, muvaffaqiyat",
-        "description": "To'g'ri moliyaviy hamkorni tanlash sizning muvaffaqiyatingiz uchun juda muhim ekanligini tushunamiz va RT Holding boshqalardan ajralib turadigan bir nechta sabablar mavjud.",
-        "expertise": "Tajriba",
+        "description": "To'g'ri moliyaviy hamkorni tanlash sizning muvaffaqiyatingiz uchun juda muhim ekanligini tushunamiz va RT Holdings boshqalardan ajralib turadigan bir nechta sabablar mavjud.",
+        "countries": "Mamlakatlar",
         "clients": "Mijozlar",
         "projects": "Loyihalar",
         "support": "Qo'llab-quvvatlash"
