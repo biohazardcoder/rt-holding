@@ -34,15 +34,15 @@ export default function Login() {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailValue || !emailRegex.test(emailValue)) {
-      newErrors.email = "To'g'ri email kiriting.";
+      newErrors.email = "Please enter a valid email.";
       valid = false;
     }
 
     if (!password) {
-      newErrors.password = "Parol kiritilishi shart.";
+      newErrors.password = "Password is required.";
       valid = false;
     } else if (password.length < 4) {
-      newErrors.password = "Parol kamida 4 ta belgidan iborat bo'lishi kerak.";
+      newErrors.password = "Password must be at least 4 characters long.";
       valid = false;
     }
 
@@ -65,13 +65,13 @@ export default function Login() {
         password: formData.get("password"),
       });
 
-   
+
       localStorage.setItem("token", response.data.token);
-      toast.success("Muvaffaqiyatli kirildi!");
+      toast.success("Successfully logged in!");
       window.location.href = "/";
     } catch (error) {
       const err = error as ErrorTypes;
-      setGlobalError("Xatolik: " + (err.response?.data?.message || "Noma'lum xatolik"));
+      setGlobalError("Error: " + (err.response?.data?.message || "Unknown error"));
     } finally {
       setLoading(false);
     }
@@ -87,10 +87,10 @@ export default function Login() {
             {loading ? (
               <h1 className="flex items-center text-blue-500 gap-2 justify-center">
                 <Loader2 size={20} className="animate-spin" />
-                <span className="pb-1">Kirilmoqda...</span>
+                <span className="pb-1">Logging in...</span>
               </h1>
             ) : (
-              "Tizimga kirish"
+              "Sign in"
             )}
           </CardTitle>
         </CardHeader>
@@ -124,7 +124,7 @@ export default function Login() {
 
             {/* PASSWORD FIELD */}
             <div className="space-y-2">
-              <label className="text-sm font-medium">Parol</label>
+              <label className="text-sm font-medium">Password</label>
               <Input
                 id="password"
                 name="password"
@@ -141,7 +141,7 @@ export default function Login() {
               disabled={loading}
               className="w-full bg-[#003939] text-white hover:bg-[#003939]/80"
             >
-              Kirish
+              Login
             </Button>
 
           </form>

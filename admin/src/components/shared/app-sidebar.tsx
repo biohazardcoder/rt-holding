@@ -114,7 +114,7 @@ export function AppSidebar({ title }: { title?: string }) {
           className="justify-start cursor-pointer"
         >
           <LogOut size={20} />
-          <span className="font-semibold">Tizimdan chiqish</span>
+          <span className="font-semibold">Log Out</span>
         </Button>
       </SidebarFooter>
     </Sidebar>

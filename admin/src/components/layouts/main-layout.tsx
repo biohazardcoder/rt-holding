@@ -10,7 +10,7 @@ import { AddComment } from "@/modules/AddComment"
 
 export default function Layout() {
 
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
   const buttonData = [
     {
       path: "/services",
@@ -24,7 +24,7 @@ export default function Layout() {
       path: "/stories",
       button: <AddStory />
     },
-     {
+    {
       path: "/comments",
       button: <AddComment />
     },
@@ -36,12 +36,12 @@ export default function Layout() {
 
   return (
     <SidebarProvider>
-      <AppSidebar title="Admin panel" />
+      <AppSidebar title="RT Holdings" />
       <main className="flex-1 overflow-y-auto p-2 bg-[#e7e7e7]">
-           <div className="flex items-center ">
-            <SidebarTrigger/>
-        <Navbar button={true} component={buttonData.find(btn => btn.path === pathname)?.button} />
-           </div>
+        <div className="flex items-center ">
+          <SidebarTrigger />
+          <Navbar button={true} component={buttonData.find(btn => btn.path === pathname)?.button} />
+        </div>
         <Outlet />
       </main>
     </SidebarProvider>
