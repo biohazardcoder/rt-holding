@@ -8,7 +8,6 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": ".",
