@@ -8,7 +8,7 @@ import type { RootState } from "@/store/RootStore";
 
 import { Loader2, MoreVertical, Trash2 } from "lucide-react";
 import type { ContactTypes } from "@/types/RootTypes";
-import { setContact, setContactError, setContactLoading } from "@/toolkit/contactSLicer";
+import { setContact, setContactError, setContactLoading } from "@/toolkit/contactsSlicer";
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const Contacts = () => {
   const { data: contacts, loading, error } = useSelector(
     (state: RootState) => state.contact
   );
-  
+
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
   const refreshContacts = async () => {
@@ -63,7 +63,7 @@ export const Contacts = () => {
     <div className="p-4 bg-white rounded-md shadow-lg min-h-[calc(100vh-70px)]">
       {contacts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {contacts.map(({email, name, phone, service, _id}: ContactTypes) => (
+          {contacts.map(({ email, name, phone, service, _id }: ContactTypes) => (
             <div
               key={_id}
               className="p-4 border rounded-md relative hover:shadow transition"

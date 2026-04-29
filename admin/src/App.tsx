@@ -19,7 +19,7 @@ import { Story } from "./pages/story";
 import { setStory, setStoryError, setStoryLoading } from "./toolkit/storySlicer";
 import { Comment } from "./pages/comment";
 import { setComment, setCommentError, setCommentLoading } from "./toolkit/commentSlicer";
-import { setContact, setContactError, setContactLoading } from "./toolkit/contactSLicer";
+import { setContact, setContactError, setContactLoading } from "./toolkit/contactsSlicer";
 import { Contacts } from "./pages/contact";
 
 function App() {

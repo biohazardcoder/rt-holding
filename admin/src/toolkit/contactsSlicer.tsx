@@ -1,4 +1,4 @@
-import type {  ContactTypes } from "@/types/RootTypes";
+import type { ContactTypes } from "@/types/RootTypes";
 import { createSlice, type PayloadAction, } from "@reduxjs/toolkit";
 
 interface ContactState {
@@ -36,5 +36,5 @@ const ContactSlacer = createSlice({
   },
 });
 
-export const { setContact,setContactLoading, setContactError } = ContactSlacer.actions;
+export const { setContact, setContactLoading, setContactError } = ContactSlacer.actions;
 export default ContactSlacer.reducer;
