@@ -1,5 +1,6 @@
 {
     "home": "Bosh sahifa",
+    "feedback": "Mijozlar Fikri",
     "companies": "Kompaniyalar",
     "services": "Xizmatlar",
     "contact": "Kontakt",
@@ -56,7 +57,7 @@
     },
     "testimonials": {
         "badge": "Mijozlarimiz nima deydi",
-        "title": "Mijozlarimiz tajribalari o'zlari uchun gapiradi",
+        "title": "Mijozlarimiz ishimiz, xizmatlarimiz va umumiy tajribalari haqida nima deyishini bilib oling",
         "contact": "Biz bilan bog'laning"
     },
     "companies-page": {

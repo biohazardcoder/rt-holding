@@ -18,10 +18,8 @@ export default function Home() {
       <About />
       <WhatSets />
       <Projects />
-      <OurStory />
       <WhyChooseUs />
-      <OurTeam />
-      <Comments />
+      <OurStory />
       <Footer />
     </div>
   );

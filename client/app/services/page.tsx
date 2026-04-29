@@ -26,9 +26,6 @@ export default function Services() {
       <HowWeWork />
       <Banner />
       <ServicesComponent />
-      <div>
-        <Contact />
-      </div>
       <Footer />
     </div>
   );
