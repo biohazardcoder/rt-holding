@@ -21,7 +21,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "RT Holding",
+  title: "RT Holdings",
   description:
     "O‘zbekiston va Markaziy Osiyo davlatlari qurilish, sanoat, logistika va xizmat ko’rsatish sohalarida ishonchli hamkordir.",
 };

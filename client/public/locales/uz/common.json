@@ -20,20 +20,12 @@
     "why-sets-4": "Ishonchli Og'ir Uskunalar",
     "about": {
         "title": "Biz haqimizda",
-        "description": "Kompaniyamizning faoliyati, qadriyatlari va maqsadlari bilan tanishing.",
-        "companyText1": "2013-yilda tashkil etilgan bo‘lib, O‘zbekiston va Janubiy Koreyada joylashgan. Kompaniya qurilish texnikalarini eksport qilish bilan shug‘ullanadi. Asosiy faoliyati — Janubiy Koreyadan Markaziy Osiyo davlatlariga, shuningdek Rossiya, Belarus, Ukraina va Arab mamlakatlariga ekskavator hamda maxsus texnikalarni yetkazib berish.",
-        "companyText2": "Bugungi kunda kompaniya bir nechta sho‘ba korxonalarni o‘z ichiga olgan yirik holding hisoblanadi.",
-        "subsidiaries": {
-            "rtMotors": "Avtomobil savdosi",
-            "kortexOil": "Motor moylari",
-            "dreamExpress": "Yuk tashish xizmatlari",
-            "akaTaxi": "O‘zbekiston bo‘ylab taksi xizmatlari",
-            "rtMedline": "Sog‘lomlashtirish markazi",
-            "rtHsLogistics": "Global yuk tashish xizmati"
-        },
-        "buttons": {
-            "services": "Xizmatlarimiz",
-            "team": "Jamoamiz"
+        "companyText1": "2013-yilda tashkil etilgan va O‘zbekiston hamda Janubiy Koreyada faoliyat yurituvchi kompaniya qurilish texnikalarini eksport qilish bilan shug‘ullanadi. Asosiy yo‘nalish Janubiy Koreyadan Markaziy Osiyo davlatlari, shuningdek Rossiya, Belarus, Ukraina va Arab davlatlariga ekskavatorlar va maxsus texnikalarni yetkazib berishdir.",
+        "companyText2": "Bugungi kunda kompaniya bir nechta sho‘ba korxonalarni o‘z ichiga olgan yirik xoldingga aylangan.",
+        "button": "Batafsil",
+        "stats": {
+            "growth": "Yillik o‘sish",
+            "market": "Bozor ulushi"
         }
     },
     "our-comanies": "Kompaniyalarimiz",

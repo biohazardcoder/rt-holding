@@ -1,10 +1,15 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
-
 export const Fetch = axios.create({
-    baseURL: "https://rt-holdings-api.onrender.com/api/",
-    headers: {
-        Authorization: `Bearer ${token}`,
-    },
+    baseURL: import.meta.env.VITE_API_URL,
+});
+
+Fetch.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
 });

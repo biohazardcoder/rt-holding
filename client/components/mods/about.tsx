@@ -1,84 +1,79 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "../ui/button"
-import { useTranslation } from "react-i18next"
-import { useEffect, useState } from "react"
-import Image from "next/image"
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export const About = () => {
-        const { t } = useTranslation("common", { keyPrefix: "about" })
-        const [mounted, setMounted] = useState(false);
-
-        useEffect(() => {
-                setMounted(true);
-        }, []);
-
-        if (!mounted) return null;
-
-
+        const { t } = useTranslation("common", { keyPrefix: "about" });
 
         return (
-                <div className="bg-[#f7f7f7] grid grid-cols-1 md:grid-cols-4 px-4 md:px-[10%] gap-8 py-8 md:py-16">
-                        <div>
-                                <span className="bg-[#434343] text-white py-2 px-3 font-semibold block w-fit">
-                                        {t("title")}
-                                </span>
+                <div className="bg-[#f7f7f7] py-16 px-[5%] md:px-[10%]">
+                        <div className="grid md:grid-cols-2 gap-10 items-center">
 
-                                <p className="mt-4 text-lg">
-                                        {t("description")}
-                                </p>
-                        </div>
+                                <div className="relative">
+                                        <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-40 h-40 bg-[#2f5673] -z-10 rounded-md" />
 
-                        <div className="col-span-1 md:col-span-3">
-                                <div className="text-sm md:text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
-                                        <p className="mb-4">
-                                                <span className="font-semibold text-slate-900 dark:text-white">
-                                                        RT HOLDINGS
-                                                </span>{" "}
+                                        <Image
+                                                src="/worker.jpg"
+                                                alt="worker"
+                                                width={500}
+                                                height={500}
+                                                className="rounded-2xl object-cover"
+                                        />
+                                </div>
+
+                                <div>
+                                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                                {t("title")}
+                                        </h2>
+
+                                        <p className="text-gray-700 mb-4">
+                                                <span className="font-semibold">RT Holdings</span>{" "}
                                                 {t("companyText1")}
                                         </p>
 
-                                        <p className="mb-4">
+                                        <p className="text-gray-600 mb-6">
                                                 {t("companyText2")}
                                         </p>
 
-                                        <ul className="space-y-1 list-none grid grid-cols-1 md:grid-cols-2">
-                                                <li >
-                                                        <span className="font-semibold">RT MOTORS</span>: {t("subsidiaries.rtMotors")}
-                                                </li>
-                                                <li >
-                                                        <span className="font-semibold">Kortex Oil</span>: {t("subsidiaries.kortexOil")}
-                                                </li>
-                                                <li >
-                                                        <span className="font-semibold">Dream Express</span>: {t("subsidiaries.dreamExpress")}
-                                                </li>
-                                                <li >
-                                                        <span className="font-semibold">Aka Taxi</span>: {t("subsidiaries.akaTaxi")}
-                                                </li>
-                                                <li >
-                                                        <span className="font-semibold">RT Medline</span>: {t("subsidiaries.rtMedline")}
-                                                </li>
-                                                <li >
-                                                        <span className="font-semibold">RT Logistics</span>: {t("subsidiaries.rtHsLogistics")}
-                                                </li>
-                                        </ul>
-                                </div>
+                                        <button className="bg-[#F69419] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#F69419]/80 transition">
+                                                {t("button")}
+                                        </button>
 
-                                <div className="mt-4 grid grid-cols-2 md:flex md:items-center gap-4">
-                                        <Link href="/services">
-                                                <Button className="text-white font-semibold border-2 bg-[#F69419] hover:bg-white rounded-[3px] hover:text-[#F69419] w-full md:w-auto">
-                                                        {t("buttons.services")}
-                                                </Button>
-                                        </Link>
+                                        {/* STATS */}
+                                        <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex items-center gap-10 w-fit">
 
-                                        <Link href="/team">
-                                                <Button className="text-white font-semibold border-2 bg-[#F69419] hover:bg-white rounded-[3px] hover:text-[#F69419] w-full md:w-auto">
-                                                        {t("buttons.team")}
-                                                </Button>
-                                        </Link>
+                                                <div className="flex items-center gap-3">
+                                                        <div className="w-16 h-16 rounded-full border-[6px] border-purple-500 flex items-center justify-center font-bold">
+                                                                84%
+                                                        </div>
+                                                        <p className="font-medium text-center">
+                                                                {t("stats.growth").split(" ").map((word, i) => (
+                                                                        <span key={i}>
+                                                                                {word}{" "}
+                                                                                {i === 0 && <br />}
+                                                                        </span>
+                                                                ))}
+                                                        </p>
+                                                </div>
+
+                                                <div className="flex items-center gap-3">
+                                                        <div className="w-16 h-16 rounded-full border-[6px] border-pink-500 flex items-center justify-center font-bold">
+                                                                66%
+                                                        </div>
+                                                        <p className="font-medium text-center">
+                                                                {t("stats.market").split(" ").map((word, i) => (
+                                                                        <span key={i}>
+                                                                                {word}{" "}
+                                                                                {i === 0 && <br />}
+                                                                        </span>
+                                                                ))}
+                                                        </p>
+                                                </div>
+
+                                        </div>
                                 </div>
                         </div>
                 </div>
-        )
-}
+        );
+};
