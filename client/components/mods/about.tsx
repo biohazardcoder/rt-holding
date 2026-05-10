@@ -11,14 +11,12 @@ export const About = () => {
                         <div className="grid md:grid-cols-2 gap-10 items-center">
 
                                 <div className="relative">
-                                        <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-40 h-40 bg-[#2f5673] -z-10 rounded-md" />
-
                                         <Image
                                                 src="/worker.jpg"
                                                 alt="worker"
                                                 width={500}
                                                 height={500}
-                                                className="rounded-2xl object-cover"
+                                                className="rounded-2xl  object-cover"
                                         />
                                 </div>
 

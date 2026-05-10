@@ -18,7 +18,7 @@ export default function Team() {
       <div className="bg-[#1E242C] h-[10vh]" />
       <Top />
       <Ceo />
-      <Accreditation />
+      {/* <Accreditation /> */}
       <OurTeam />
       <Footer />
     </div>

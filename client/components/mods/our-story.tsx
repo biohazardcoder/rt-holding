@@ -47,9 +47,6 @@ export const OurStory = () => {
           {t("title")}
         </h1>
 
-        <p className="text-center text-sm md:text-base mt-4 text-gray-500 max-w-2xl">
-          {t("description")}
-        </p>
       </div>
 
       {error && (

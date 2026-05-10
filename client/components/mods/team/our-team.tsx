@@ -79,11 +79,11 @@ export const OurTeam = () => {
 
             <div className="text-center md:mb-12">
                 <span className="bg-[#434343] text-white py-2 px-4 font-semibold rounded">
-                    {t("team-page.our-team.badge")}
+                    {t("our-team.badge")}
                 </span>
 
-                <h1 className="text-center text-3xl md:text-4xl mt-4 font-semibold">
-                    {t("team-page.our-team.title")}
+                <h1 className="text-center text-3xl max-w-4xl mx-auto mt-4 font-semibold">
+                    <Trans i18nKey="our-team.title" components={{ br: <br /> }} />
                 </h1>
             </div>
 

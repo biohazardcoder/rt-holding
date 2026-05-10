@@ -19,28 +19,6 @@ export default function Slider() {
         height: 60,
       },
       description: t("rt-medline"),
-      team: [
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        }
-      ]
     },
     {
       title: "Aka Taxi",
@@ -51,28 +29,6 @@ export default function Slider() {
         height: 60,
       },
       description: t("aka-taxi"),
-      team: [
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        }
-      ]
     },
     {
       title: "Dream Express",
@@ -83,28 +39,6 @@ export default function Slider() {
         height: 80,
       },
       description: t("dream-express"),
-      team: [
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        }
-      ]
     },
     {
       title: "RT Motors",
@@ -115,28 +49,6 @@ export default function Slider() {
         height: 60,
       },
       description: t("rt-motors"),
-      team: [
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        }
-      ]
     },
     {
       title: "RT Logistics",
@@ -147,28 +59,6 @@ export default function Slider() {
         height: 60,
       },
       description: t("rt-hs-group"),
-      team: [
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        },
-        {
-          image: "/team/c1.jpg",
-          name: "Mr. James Wilson",
-          role: "CEO"
-        }
-      ]
     },
   ];
 

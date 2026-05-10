@@ -6,6 +6,7 @@ import { Navbar } from "@/components/mods/navbar";
 import ServicesSection from "@/components/mods/companies/services-section";
 
 import type { Metadata } from 'next'
+import CompaniesMap from "@/components/mods/companies/companies";
 
 export const metadata: Metadata = {
   title: 'Our Companies - RT Holdings',
@@ -19,8 +20,9 @@ export default function Companies() {
       <div className="bg-[#1E242C] h-[10vh]" />
       <Top />
       <OurCompanies />
-      <BusinessProcessSection />
-      <ServicesSection />
+      <CompaniesMap />
+      {/* <BusinessProcessSection /> */}
+      {/* <ServicesSection /> */}
       <Footer />
     </div>
   );

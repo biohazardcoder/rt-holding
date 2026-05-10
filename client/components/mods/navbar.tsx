@@ -217,7 +217,7 @@ export const Navbar = () => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-90 flex items-center justify-center bg-black/60">
 
           {/* modal box */}
           <div className="w-full max-w-2xl mx-auto">

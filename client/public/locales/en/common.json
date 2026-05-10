@@ -30,18 +30,27 @@
     },
     "our-comanies": "Our Companies",
     "story": {
-        "badge": "Our Story",
-        "title": "A story of our dedication, expertise, and lasting results",
-        "description": "Our team has a proven track record of success and is dedicated to helping you achieve financial stability and security."
+        "badge": "Our Achievements",
+        "title": "Our achievements so far and our goals for the future"
     },
     "why-choose-us": {
-        "badge": "Why Choose Us",
-        "title": "Expertise, secure, success",
-        "description": "we understand that choosing the right financial partner is crucial for your success and here are some reasons why RT Holdings stands out from the rest.",
-        "countries": "Countries",
-        "clients": "Clients",
-        "projects": "Projects",
-        "support": "Support"
+        "badge": "About RT Holdings",
+        "title": "Our commitment, experience, and trusted approach",
+        "description": "With more than 10 years of experience, we provide stability to every partner. RT Holdings has grown from a small trading company in 2013 into a multi-branch holding with six successful companies across diverse industries.",
+        "cards": {
+            "history": {
+                "title": "HISTORY",
+                "description": "RT Holdings began its journey in 2013, evolving from a small trading company into a major multi-branch holding. Today, six companies within the holding successfully operate across different industries."
+            },
+            "mission": {
+                "title": "MISSION",
+                "description": "RT Holdings’ mission is to combine diversified experience and international standards to deliver the highest quality equipment and systematic logistics solutions to our clients."
+            },
+            "values": {
+                "title": "VALUES",
+                "description": "At the core of RT Holdings are two key pillars: absolute trust and corporate reputation. We prioritize transparent relationships and long-term credibility over short-term profit."
+            }
+        }
     },
     "our-team": {
         "badge": "Our Team",

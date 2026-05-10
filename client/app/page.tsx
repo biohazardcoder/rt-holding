@@ -16,8 +16,8 @@ export default function Home() {
       <div className="bg-[#1E242C] h-[10vh]" />
       <Main />
       <About />
-      <WhatSets />
-      <Projects />
+      {/* <WhatSets /> */}
+      {/* <Projects /> */}
       <WhyChooseUs />
       <OurStory />
       <Footer />

@@ -30,18 +30,26 @@
     },
     "our-comanies": "Kompaniyalarimiz",
     "story": {
-        "badge": "Bizning hikoyamiz",
-        "title": "Bag'ishlanish, tajriba va barqaror natijalarning hikoyasi",
-        "description": "Jamoamiz muvaffaqiyatli natijalarga erishgan va sizga moliyaviy barqarorlik va xavfsizlikka erishishda yordam berishga bag'ishlangan."
+        "badge": "Bizning yutuqlarimiz",
+        "title": "Hozirgacha erishgan yutuqlarimiz va kelajakdagi maqsadlarimiz"
     },
     "why-choose-us": {
-        "badge": "Nima uchun bizni tanlash kerak",
-        "title": "Tajriba, xavfsizlik, muvaffaqiyat",
-        "description": "To'g'ri moliyaviy hamkorni tanlash sizning muvaffaqiyatingiz uchun juda muhim ekanligini tushunamiz va RT Holdings boshqalardan ajralib turadigan bir nechta sabablar mavjud.",
-        "countries": "Mamlakatlar",
-        "clients": "Mijozlar",
-        "projects": "Loyihalar",
-        "support": "Qo'llab-quvvatlash"
+        "title": "Bizning qatʼiyat, tajriba va ishonchga asoslangan yondashuvimiz",
+        "description": "Bizning 10 yildan ortiq tajribamiz har bir hamkorimiz uchun barqarorlik kafolatidir. RT Holdings 2013-yilda kichik savdo korxonasidan turli sohalarda muvaffaqiyatli faoliyat yuritayotgan 6 ta kompaniyani o‘z ichiga olgan yirik xoldingga aylandi.",
+        "cards": {
+            "history": {
+                "title": "TARIX",
+                "description": "RT Holdings oʻz faoliyatini 2013-yilda boshlagan boʻlib, oʻtgan vaqt mobaynida kichik savdo korxonasidan yirik koʻp tarmoqli xolding darajasiga koʻtarildi. Hozirda xolding tarkibiga kiruvchi 6 ta kompaniya turli sohalarda muvaffaqiyatli xizmat koʻrsatib kelmoqda."
+            },
+            "mission": {
+                "title": "MISSIYA",
+                "description": "RT Holdings missiyasi – koʻp tarmoqli tajriba va xalqaro standartlarni birlashtirib, mijozlarimizga eng sifatli texnika hamda tizimli logistika yechimlarini taqdim etish."
+            },
+            "values": {
+                "title": "QADRIYATLAR",
+                "description": "RT Holdings faoliyatining zamirida ikki muhim ustun yotadi: Mutlaq ishonch va Korporativ nufuz. Biz bergan vaʼdamiz va yetkazib berayotgan texnikamiz sifatiga toʻliq javob beramiz."
+            }
+        }
     },
     "our-team": {
         "badge": "Jamoamiz",

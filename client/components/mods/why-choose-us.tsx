@@ -3,51 +3,48 @@
 import { useTranslation } from "react-i18next";
 
 export const WhyChooseUs = () => {
-
   const { t } = useTranslation("common", { keyPrefix: "why-choose-us" });
 
-  const items = [
+  const cards = [
     {
-      title: t("countries"),
-      count: "10+",
+      title: t("cards.history.title"),
+      description: t("cards.history.description"),
     },
     {
-      title: t("clients"),
-      count: "1000+",
+      title: t("cards.mission.title"),
+      description: t("cards.mission.description"),
     },
-    // {
-    //   title: t("projects"),
-    //   count: "100+",
-    // },
     {
-      title: t("support"),
-      count: "24/7",
+      title: t("cards.values.title"),
+      description: t("cards.values.description"),
     },
-  ]
-
-
+  ];
 
   return (
-    <div className="bg-[#f7f7f7] flex flex-col items-center px-[10%] py-10 md:px-[5%] sm:px-4">
-      <span className="bg-[#434343] text-white m-auto py-2 px-3 font-semibold">Why Choose Us</span>
-      <h1 className="text-center text-2xl md:text-3xl sm:text-2xl mt-4 font-semibold text-[#234F72]">
-        {t("title")}
-      </h1>
-      <p className="text-center mt-4 max-w-3xl text-gray-500 text-sm md:text-base">
-        {t("description")}
-      </p>
-      <div className="grid grid-cols-3 gap-4 md:gap-10 mt-8">
-        {items.map(({ title, count }, index) => (
-          <div key={index} className="w-full flex flex-col bg-white border justify-center items-center p-8 md:p-6 sm:p-4 rounded-md">
-            <h1 className="text-2xl md:text-4xl sm:text-3xl font-bold text-black">
-              {count}
-            </h1>
-            <p className="mt-2 text-xs md:text-lg sm:text-base text-gray-500 font-semibold">
-              {title}
-            </p>
-          </div>
-        ))}
+    <section className="bg-[#f7f7f7] px-6 sm:px-4 md:px-10">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center">
+          <h2 className="text-2xl max-w-4xl mx-auto font-semibold text-[#102a43] sm:text-4xl">
+            {t("title")}
+          </h2>
+          <p className="mx-auto mt-4 whitespace-pre-line max-w-4xl text-base text-[#475569] sm:text-lg leading-7">
+            {t("description")}
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {cards.map(({ title, description }) => (
+            <div key={title} className="rounded-[28px] border border-[#d1dfea] bg-white p-8 shadow-[0_18px_40px_rgba(35,79,114,0.08)]">
+              <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
+                {title}
+              </span>
+              <p className="mt-6 text-sm leading-7 text-[#475569] sm:text-base">
+                {description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
