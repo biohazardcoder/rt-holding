@@ -47,7 +47,7 @@ export function AddStory() {
       dispatch(setStory(response));
     } catch (error) {
       const err = error as ErrorTypes;
-      dispatch(setStoryError(err.response?.data?.message || "Error getting stories"));
+      dispatch(setStoryError(err.response?.data?.message || "Error getting achievements"));
     }
   };
 
@@ -94,7 +94,7 @@ export function AddStory() {
       });
 
       GetStories();
-      toast.success("Story added successfully!");
+      toast.success("Achievement added successfully!");
       setIsSheetOpen(false);
       setFormData({
         title: { en: "", uz: "", ru: "", kr: "" },
@@ -104,7 +104,7 @@ export function AddStory() {
       setImages(null);
       setStep(0);
     } catch (error) {
-      toast.error("Error adding story.");
+      toast.error("Error adding achievement.");
       console.error(error);
     } finally {
       setIsLoading(false);
@@ -115,15 +115,15 @@ export function AddStory() {
     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
       <SheetTrigger asChild>
         <Button className="bg-[#003939] hover:bg-[#005555]">
-          Add Story
+          Add Achievement
         </Button>
       </SheetTrigger>
 
       <SheetContent className="h-full w-full sm:max-w-md bg-[#202020] text-white border-none">
         <SheetHeader>
-          <SheetTitle className="text-white text-2xl">New Story</SheetTitle>
+          <SheetTitle className="text-white text-2xl">New Achievement</SheetTitle>
           <SheetDescription>
-            Fill story info and choose <b>image</b>
+            Fill achievement info and choose <b>image</b>
           </SheetDescription>
         </SheetHeader>
 

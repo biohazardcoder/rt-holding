@@ -57,7 +57,7 @@ export function EditStory({ story, open, onOpenChange }: EditStoryProps) {
     } catch (error) {
       const err = error as ErrorTypes;
       dispatch(
-        setStoryError(err.response?.data?.message || "Error getting stories")
+        setStoryError(err.response?.data?.message || "Error getting achievements")
       );
     }
   };
@@ -96,13 +96,13 @@ export function EditStory({ story, open, onOpenChange }: EditStoryProps) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      toast.success("Story updated successfully");
+      toast.success("Achievement updated successfully");
       GetStories();
       onOpenChange(false);
     } catch (error) {
       console.error(error);
       const err = error as { response?: { data?: { message?: string } } };
-      toast.error(err.response?.data?.message || "Failed to update story");
+      toast.error(err.response?.data?.message || "Failed to update achievement");
     } finally {
       setLoading(false);
     }
@@ -121,7 +121,7 @@ export function EditStory({ story, open, onOpenChange }: EditStoryProps) {
           ✕
         </Button>
 
-        <h2 className="text-2xl mb-1">Edit Story</h2>
+        <h2 className="text-2xl mb-1">Edit Achievement</h2>
         <p className="text-sm text-gray-400 mb-2">
           Language: <b className="uppercase">{currentLang}</b>
         </p>

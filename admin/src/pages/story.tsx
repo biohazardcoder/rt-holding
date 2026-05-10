@@ -42,7 +42,7 @@ export const Story = () => {
     } catch (error) {
       const err = error as ErrorTypes;
       dispatch(
-        setStoryError(err.response?.data?.message || "Error getting stories")
+        setStoryError(err.response?.data?.message || "Error getting achievements")
       );
     }
   };
@@ -54,10 +54,10 @@ export const Story = () => {
   const handleDelete = async (id: string) => {
     try {
       await Fetch.delete(`/story/${id}`);
-      toast.success("Story deleted successfully!");
+      toast.success("Achievement deleted successfully!");
       GetStories();
     } catch (error) {
-      toast.error("Error deleting story.");
+      toast.error("Error deleting achievement.");
     }
   };
 
@@ -70,7 +70,7 @@ export const Story = () => {
     return (
       <div className="min-h-[calc(100vh-70px)] p-4 bg-white rounded-md shadow-lg">
         <h1 className="text-center text-destructive">
-          Error loading story data
+          Error loading achievement data
         </h1>
       </div>
     );

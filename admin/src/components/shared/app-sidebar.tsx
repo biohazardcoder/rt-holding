@@ -1,5 +1,5 @@
 import {
-  FolderArchive, FolderClock, FolderCog, FolderGit2, FolderLock, FolderOpen, FolderSearch, LogOut
+  FolderArchive, FolderClock, FolderCog, FolderGit2, FolderLock, FolderOpen, LogOut
 } from "lucide-react";
 
 import {
@@ -24,8 +24,8 @@ import type { AdminTypes } from "@/types/RootTypes";
 const items = [
   { title: "Contacts", url: "/", icon: FolderArchive },
   { title: "Services", url: "/services", icon: FolderCog },
-  { title: "Story", url: "/stories", icon: FolderClock },
-  { title: "Blogs", url: "/blogs", icon: FolderSearch },
+  { title: "Achievements", url: "/stories", icon: FolderClock },
+  // { title: "Blogs", url: "/blogs", icon: FolderSearch },
   { title: "Comments", url: "/comments", icon: FolderGit2 },
   { title: "Admins", url: "/admins", icon: FolderLock },
 ];
