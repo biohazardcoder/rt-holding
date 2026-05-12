@@ -14,9 +14,9 @@ export const About = () => {
                                         <Image
                                                 src="/worker.jpg"
                                                 alt="worker"
-                                                width={500}
-                                                height={500}
-                                                className="rounded-2xl  object-cover"
+                                                width={300}
+                                                height={300}
+                                                className="rounded-2xl md:w-[80%] object-cover"
                                         />
                                 </div>
 
@@ -38,14 +38,13 @@ export const About = () => {
                                                 {t("button")}
                                         </button>
 
-                                        {/* STATS */}
-                                        <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex items-center gap-10 w-fit">
+                                        <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex flex-col md:flex-row md:items-center gap-10 ">
 
                                                 <div className="flex items-center gap-3">
                                                         <div className="w-16 h-16 rounded-full border-[6px] border-purple-500 flex items-center justify-center font-bold">
                                                                 84%
                                                         </div>
-                                                        <p className="font-medium text-center">
+                                                        <p className="font-medium text-xl md:text-base text-center">
                                                                 {t("stats.growth").split(" ").map((word, i) => (
                                                                         <span key={i}>
                                                                                 {word}{" "}
@@ -59,7 +58,7 @@ export const About = () => {
                                                         <div className="w-16 h-16 rounded-full border-[6px] border-pink-500 flex items-center justify-center font-bold">
                                                                 66%
                                                         </div>
-                                                        <p className="font-medium text-center">
+                                                        <p className="font-medium text-xl md:text-base text-center">
                                                                 {t("stats.market").split(" ").map((word, i) => (
                                                                         <span key={i}>
                                                                                 {word}{" "}
