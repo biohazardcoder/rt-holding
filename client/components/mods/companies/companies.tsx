@@ -88,7 +88,7 @@ export default function CompaniesMap() {
             {items.map((item, index) => (
                 <section
                     key={index}
-                    className="py-4 md:py-8 px-4 md:px-10"
+                    className="py-4 min-h-[95vh] px-4 md:px-10"
                 >
                     <div
                         className={`

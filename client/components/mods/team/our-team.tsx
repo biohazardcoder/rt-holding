@@ -97,7 +97,7 @@ export const OurTeam = () => {
                             <div
                                 key={i}
                                 onClick={() => setIndex(i)}
-                                className={`absolute w-60 h-80 rounded-2xl overflow-hidden shadow-xl transition-all duration-700 cursor-pointer ${getPosition(i)}`}
+                                className={`absolute w-90 h-110 rounded-2xl overflow-hidden shadow-xl transition-all duration-700 cursor-pointer ${getPosition(i)}`}
                             >
                                 <img
                                     src={member.avatar}
@@ -110,14 +110,14 @@ export const OurTeam = () => {
 
                 </div>
 
-                <div className="flex flex-col items-center gap-8">
+                <div className="flex flex-col items-center md:ml-20 gap-8">
 
                     <div className="text-center">
-                        <h2 className="text-3xl font-bold text-blue-900">
+                        <h2 className="text-4xl font-bold text-blue-900">
                             {members[index].name}
                         </h2>
 
-                        <p className="uppercase tracking-widest text-gray-500 mt-2">
+                        <p className="uppercase tracking-widest text-gray-500 mt-2 text-lg">
                             {members[index].role}
                         </p>
                     </div>
@@ -128,7 +128,7 @@ export const OurTeam = () => {
                             onClick={prev}
                             className="text-2xl text-gray-500 hover:text-[#234F72] transition"
                         >
-                            <ArrowLeftCircle size={28} />
+                            <ArrowLeftCircle size={40} />
                         </button>
 
                         <div className="flex items-center gap-2">
@@ -136,7 +136,7 @@ export const OurTeam = () => {
                                 <div
                                     key={i}
                                     onClick={() => setIndex(i)}
-                                    className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${i === index
+                                    className={`w-4 h-4 rounded-full cursor-pointer transition-all duration-300 ${i === index
                                         ? "bg-[#234F72] scale-125"
                                         : "bg-gray-300 hover:bg-gray-400"
                                         }`}
@@ -148,7 +148,7 @@ export const OurTeam = () => {
                             onClick={next}
                             className="text-2xl text-gray-500 hover:text-[#234F72] transition"
                         >
-                            <ArrowRightCircle size={28} />
+                            <ArrowRightCircle size={40} />
                         </button>
 
                     </div>

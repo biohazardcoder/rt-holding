@@ -7,7 +7,7 @@ import { ArrowRight, CircleX, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSelect } from "@/lang/language";
 import { Fetch } from "@/middlewares/Fetch";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface ServiceType {
@@ -27,6 +27,8 @@ export const Navbar = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
   const { t, i18n } = useTranslation("common");
   const [form, setForm] = useState({
     firstName: "",
@@ -40,6 +42,23 @@ export const Navbar = () => {
     Fetch.get("service").then((res) => {
       setServices(res.data || []);
     });
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const validate = () => {
@@ -139,7 +158,9 @@ export const Navbar = () => {
         className={cn(
           "w-full h-[10vh] z-40 absolute top-0 left-0 shadow-[0_4px_6px_rgba(255,255,255,0.04)]",
           "bg-transparent",
-          "flex items-center justify-between px-[5%] md:px-[10%]"
+          "flex items-center justify-between px-[5%] md:px-[10%]",
+          "transition-transform duration-300",
+          showNavbar ? "fixed bg-[#1E242C]" : "-translate-y-full"
         )}
       >
         <Link href={"/"}>

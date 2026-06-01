@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="md:col-span-2">
-          <h3 className="text-gray-300 mb-5 font-bold">{t("contact")}</h3>
+          <h3 className="text-gray-300 mb-5 font-bold md:text-end">{t("contact")}</h3>
 
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3">
