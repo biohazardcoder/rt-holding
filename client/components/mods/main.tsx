@@ -11,7 +11,7 @@ const text = {
 export const Main = () => {
   const { i18n, t } = useTranslation("common");
   return (
-    <div className="relative md:h-screen pb-10 pt-40 md:pt-20 flex flex-col bg-gray-300 md:flex-row md:items-center overflow-hidden">
+    <div style={{ backgroundImage: "url('/canvas.png')", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} className=" relative md:h-screen pb-10 pt-40 md:pt-20 flex flex-col bg-white md:flex-row md:items-center overflow-hidden">
 
       <div className="relative z-10 px-[6%] max-w-5xl text-[#254E6F] space-y-2">
         <h1 className="text-4xl md:text-[80px] font-bold leading-[1.1] whitespace-pre-wrap">
@@ -28,7 +28,6 @@ export const Main = () => {
           BOOK NOW
           </button> */}
       </div>
-      {/* <img src="/main.png" alt="Main Image" className="z-50 h-[70%] md:h-[102%] md:absolute m-auto md:-bottom-20 md:right-0" /> */}
     </div>
   );
 };
