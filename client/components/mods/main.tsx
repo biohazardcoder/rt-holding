@@ -2,30 +2,33 @@
 
 import { useTranslation } from "react-i18next";
 
+const text = {
+  en: "Your trusted\npartner\nworldwide!",
+  kr: "전 세계에서\n신뢰할 수\n있는 파트너!",
+  ru: "Ваш надежный\nпартнер по\nвсему миру!",
+  uz: "Dunyo bo‘ylab\nishonchli\nhamkoringiz!",
+};
 export const Main = () => {
-  const { t } = useTranslation("common");
-
+  const { i18n, t } = useTranslation("common");
   return (
-    <div className="relative h-[90vh] pt-40 md:pt-0 flex flex-col md:flex-row md:items-center overflow-hidden">
+    <div className="relative md:h-screen pb-10 pt-40 md:pt-20 flex flex-col bg-gray-300 md:flex-row md:items-center overflow-hidden">
 
-      <div className="hidden md:block absolute inset-0 bg-[#1E242C] clip-diagonal"></div>
-      <div className="absolute -rotate-45 top-0 -left-92 z-10 inset-0 bg-[#1E242C] clip-diagonal"></div>
-
-      <div className="absolute right-0 top-0 h-full w-[55%] bg-[#F7F7F7]"></div>
-      <div className="relative z-10 px-[6%] max-w-3xl text-white space-y-4">
-        <h1 className="text-2xl md:text-4xl font-bold">
-          {t("main-title")}
+      <div className="relative z-10 px-[6%] max-w-5xl text-[#254E6F] space-y-2">
+        <h1 className="text-4xl md:text-[80px] font-bold leading-[1.1] whitespace-pre-wrap">
+          {text[i18n.language as keyof typeof text]}
         </h1>
-
-        <p className="max-w-xl text-xs md:text-sm">
+        <button className="bg-[#F69419] text-white mt-4 px-4 py-2 md:px-8 md:py-4 rounded-full font-semibold md:text-3xl hover:bg-[#F69419]/80 transition">
+          {t("about.button")}
+        </button>
+        {/* <p className="max-w-xl text-xs md:text-sm">
           {t("main-description")}
-        </p>
+        </p> */}
 
         {/* <button className="bg-white text-orange-500 font-semibold px-6 py-3 rounded-md">
           BOOK NOW
           </button> */}
       </div>
-      <img src="/main.png" alt="Main Image" className="z-50 h-[70%] md:h-[102%] md:absolute m-auto md:-bottom-20 md:right-0" />
+      {/* <img src="/main.png" alt="Main Image" className="z-50 h-[70%] md:h-[102%] md:absolute m-auto md:-bottom-20 md:right-0" /> */}
     </div>
   );
 };

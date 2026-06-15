@@ -22,7 +22,7 @@ export const LanguageSelect = () => {
 
   return (
     <Select value={lang} onValueChange={changeLanguage}>
-      <SelectTrigger className="w-25 text-black text-xs bg-white border border-border">
+      <SelectTrigger className="w-25 text-white text-xs bg-[#254E6F] border-none font-normal rounded-full">
         <SelectValue placeholder="Select Language" />
       </SelectTrigger>
       <SelectContent>

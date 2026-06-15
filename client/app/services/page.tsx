@@ -19,12 +19,12 @@ export default function Services() {
   return (
     <div>
       <Navbar />
-      <div className="bg-[#1E242C] h-[10vh]" />
-      <Top />
+      {/* <div className="bg-[#1E242C] h-[10vh]" /> */}
+      {/* <Top /> */}
       {/* <Line /> */}
       <WhatWeDo />
       <HowWeWork />
-      <Banner />
+      {/* <Banner /> */}
       <ServicesComponent />
       <Footer />
     </div>

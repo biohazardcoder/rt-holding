@@ -3,7 +3,7 @@
     "feedback": "Mijozlar Fikri",
     "companies": "Kompaniyalar",
     "services": "Xizmatlar",
-    "contact": "Kontakt",
+    "contact": "Bog'lanish",
     "language": "Til",
     "team": "Jamoamiz",
     "blogs": "Bloglar",
@@ -63,7 +63,7 @@
     "companies-page": {
         "top-title": "Bizning kompaniyalarimizni kashf eting",
         "top-description": "RT Holding tarkibidagi turli kompaniyalarni kashf eting, har biri o'z sohasida mukammallik va innovatsiyaga bag'ishlangan.",
-        "badge": "Bizning kompaniyalarimiz",
+        "badge": "Kompaniyalarimiz",
         "title": "Sizning ehtiyojlaringizni qondirish uchun to‘liq xizmatlar ko‘lamini taklif qilamiz",
         "description": "RT Holding’ning barcha sohalardagi so‘nggi yangiliklari, innovatsiyalari va strategik qarashlaridan xabardor bo‘lib boring.",
         "rt-medline": "RT Medline — yetakchi sog‘liqni saqlash xizmatlari ko‘rsatuvchi kompaniya bo‘lib, keng qamrovli tibbiy xizmatlar va innovatsion sog‘liqni saqlash yechimlarini taklif etadi.",

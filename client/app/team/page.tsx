@@ -1,4 +1,3 @@
-import { Accreditation } from "@/components/mods/team/accreditation";
 import Footer from "@/components/mods/footer";
 import { Navbar } from "@/components/mods/navbar";
 import { Top } from "@/components/mods/team/top";
@@ -15,8 +14,8 @@ export default function Team() {
   return (
     <div>
       <Navbar />
-      <div className="bg-[#1E242C] h-[10vh]" />
-      <Top />
+      {/* <div className="bg-[#1E242C] h-[10vh]" /> */}
+      {/* <Top /> */}
       <Ceo />
       {/* <Accreditation /> */}
       <OurTeam />

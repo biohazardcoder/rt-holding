@@ -15,8 +15,8 @@ export default function Feedback() {
         <div>
             <Navbar />
 
-            <div className="bg-[#1E242C] h-[10vh]" />
-            <TopBlog />
+            {/* <div className="bg-[#1E242C] h-[10vh]" /> */}
+            {/* <TopBlog /> */}
             <Comments />
             <Footer />
         </div>

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next"
 export const Ceo = () => {
     const { t, } = useTranslation("common", { keyPrefix: "team-page.ceo" })
     return (
-        <div className="bg-white px-[5%] md:px-[10%] py-20 flex flex-col items-center">
+        <div className="bg-white px-[5%] md:px-[10%] pt-40 pb-20 flex flex-col items-center">
             <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div className="relative w-full h-80 sm:h-[420px] lg:h-[520px] rounded-xl overflow-hidden">
                     <img

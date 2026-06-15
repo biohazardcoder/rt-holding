@@ -35,7 +35,12 @@ export const Comments = () => {
   const [error, setError] = useState("");
 
   const { i18n } = useTranslation();
-
+  const title = {
+    uz: "Mijozlarimizning fikrlari",
+    en: "What our clients say",
+    ru: "Отзывы наших клиентов",
+    kr: "고객의 소리",
+  }
   useEffect(() => {
     const getAllComments = async () => {
       try {
@@ -54,8 +59,10 @@ export const Comments = () => {
   }, []);
 
   return (
-    <div className="w-full px-[5%] md:px-[10%] pb-20 bg-[#f7f7f7]">
-
+    <div className="w-full px-[5%] md:px-[10%] pt-40 pb-20 bg-[#f7f7f7]">
+      <h2 className="text-4xl md:text-5xl font-semibold">
+        {title[i18n.language as keyof typeof title]}
+      </h2>
       {loading && (
         <Carousel className="w-full">
 

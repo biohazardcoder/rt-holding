@@ -110,7 +110,7 @@ export default function CompaniesMap() {
                                     alt={item.title}
                                     width={180}
                                     height={60}
-                                    className="object-cover w-full h-[40vh] md:w-[300px] md:h-auto md:object-contain md:mx-auto"
+                                    className="object-cover w-full h-[44vh] md:w-[300px] md:h-auto md:object-contain md:mx-auto"
                                 />
 
                                 <h1 className="text-3xl md:text-5xl font-bold leading-tight text-center w-full">

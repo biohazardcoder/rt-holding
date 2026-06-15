@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowRight, CircleX, Menu, X } from "lucide-react";
+import { CircleX, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSelect } from "@/lang/language";
 import { Fetch } from "@/middlewares/Fetch";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "next/navigation";
 
 interface ServiceType {
   _id: string;
@@ -27,6 +27,7 @@ export const Navbar = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const pathname = useParams().slug ? `/${useParams().slug}` : "/";
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollY = useRef(0);
   const { t, i18n } = useTranslation("common");
@@ -37,7 +38,6 @@ export const Navbar = () => {
     email: "",
     service: "",
   });
-
   useEffect(() => {
     Fetch.get("service").then((res) => {
       setServices(res.data || []);
@@ -151,54 +151,60 @@ export const Navbar = () => {
     { label: "team", href: "/team" },
     { label: "feedback", href: "/feedback" },
   ];
+  const isHome = pathname === "/";
 
+  const bgClass = open
+    ? "bg-[#1E242C]"
+    : isHome
+      ? "bg-transparent"
+      : "bg-white";
   return (
     <>
       <div
         className={cn(
-          "w-full h-[10vh] z-60 absolute top-0 left-0 shadow-[0_4px_6px_rgba(255,255,255,0.04)]",
-          "bg-transparent",
-          "flex items-center justify-between px-[5%] md:px-[10%]",
+          "w-full h-[16vh] z-60 absolute  top-0 left-0 ",
+          "flex items-center justify-between px-[5%] ",
           "transition-transform duration-300",
-          showNavbar ? "fixed bg-[#1E242C]" : "-translate-y-full"
+          // showNavbar ? "fixed bg-white" : "-translate-y-full",
+          pathname === "/" ? "bg-transparent" : "bg-[#FFFFFF]",
+          open && "bg-[#1E242C]",
         )}
       >
         <Link href={"/"}>
           <div className="flex items-center relative">
-            <Image src="/image.png" alt="Logo" width={45} height={45} />
-            <h1 className="text-white font-semibold text-xl md:text-2xl">
-              RT Holdings
-            </h1>
-            <div className="bg-white w-7 h-7 absolute top-[5px] left-2.5 -z-10 rounded-full" />
+            <Image src="/image.png" alt="Logo" width={90} height={90} />
+            <div className="bg-white w-14 h-14 absolute top-[8px] left-5 -z-10 rounded-full" />
           </div>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 text-white font-semibold">
+        <ul className="hidden md:flex items-center gap-12 text-black font-semibold">
           {items.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors"
+                className="hover:border-[#F69419] border-b-2 border-transparent pb-1 transition-colors text-lg"
               >
                 {t(item.label)}
               </Link>
             </li>
           ))}
-        </ul>
-
-        <div className="hidden md:flex items-center gap-2">
-          <LanguageSelect />
-
-          <Button
-            onClick={() => setShowModal(true)}
-            className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
+          <li
+            onClick={() => {
+              setShowModal(true);
+              setOpen(false);
+            }}
+            className="hover:border-[#F69419] border-b-2 border-transparent text-lg transition-colors font-semibold"
           >
-            {t("become")} <ArrowRight size={16} />
-          </Button>
+            {t("contact")}
+          </li>
+        </ul>
+        <div className="hidden md:block">
+          <LanguageSelect />
         </div>
 
+
         <button
-          className="md:hidden text-white"
+          className={`md:hidden ${open ? "text-white" : "text-black"}`}
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={28} /> : <Menu size={28} />}
@@ -206,7 +212,7 @@ export const Navbar = () => {
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="absolute top-[10vh] left-0 w-full bg-[#1E242C] border-t border-[#ffffff26] md:hidden">
+          <div className="absolute top-[16vh] left-0 w-full bg-[#1E242C] border-t border-[#ffffff26] md:hidden">
             <ul className="flex flex-col items-center gap-6 py-6 text-white font-semibold">
               {items.map((item) => (
                 <li key={item.href}>
@@ -219,26 +225,25 @@ export const Navbar = () => {
                   </Link>
                 </li>
               ))}
-
-              <LanguageSelect />
-
-              {/* MOBILE BUTTON */}
-              <Button
+              <li
                 onClick={() => {
                   setShowModal(true);
                   setOpen(false);
                 }}
-                className="bg-[#F69419] text-white font-semibold hover:bg-[#F69419]/80"
+                className="hover:border-[#F69419] border-b-2 border-transparent transition-colors"
               >
-                {t("become")} <ArrowRight size={16} />
-              </Button>
+                {t("contact")}
+              </li>
+              <LanguageSelect />
+
+
             </ul>
           </div>
         )}
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-90 flex items-center justify-center bg-black/60">
+        <div className="fixed  inset-0 z-90 flex items-center justify-center bg-black/60">
 
           {/* modal box */}
           <div className="w-full max-w-2xl mx-auto">
