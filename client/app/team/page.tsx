@@ -16,7 +16,7 @@ export default function Team() {
       <Navbar />
       {/* <div className="bg-[#1E242C] h-[10vh]" /> */}
       {/* <Top /> */}
-      <Ceo />
+      {/* <Ceo /> */}
       {/* <Accreditation /> */}
       <OurTeam />
       <Footer />

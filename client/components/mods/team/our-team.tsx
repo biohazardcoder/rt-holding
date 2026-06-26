@@ -1,13 +1,16 @@
 "use client";
 
-import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
-import { useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { Star, } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const OurTeam = () => {
-    const { t } = useTranslation("common");
-    const [index, setIndex] = useState(0);
-
+    const { t, i18n } = useTranslation("common");
+    const label = {
+        uz: "Jamoamiz\nbilan tanishing",
+        en: "Meet Our Team",
+        ru: "Познакомьтесь с\nнашей командой",
+        kr: "우리 팀을\n만나보세요",
+    };
     const members = [
         {
             name: t("team-page.our-team.team.first.name"),
@@ -55,108 +58,66 @@ export const OurTeam = () => {
         }
     ];
 
-    const next = () => {
-        setIndex((prev) => (prev + 1) % members.length);
-    };
-
-    const prev = () => {
-        setIndex((prev) => (prev - 1 + members.length) % members.length);
-    };
-
-    const getPosition = (i: number) => {
-        const offset = (i - index + members.length) % members.length;
-
-        if (offset === 0) return "z-20 scale-105";
-        if (offset === 1) return "translate-x-40 md:translate-x-52 scale-90 opacity-70";
-        if (offset === members.length - 1)
-            return "-translate-x-40 md:-translate-x-52 scale-90 opacity-70";
-
-        return "opacity-0 pointer-events-none";
-    };
-
     return (
-        <div className="px-[5%] md:px-[10%] bg-white py-16 overflow-hidden">
+        <div className="bg-[#F5F5F7] py-8 pt-40 px-[5%] min-h-screen flex items-center justify-center">
+            <div className="grid lg:grid-cols-5 gap-14 items-center">
+                <div className="md:col-span-2">
+                    <h2 className="text-6xl font-bold leading-tight whitespace-pre">
+                        {label[i18n.language as keyof typeof label]}
+                    </h2>
 
-            <div className="text-center md:mb-12">
-                <span className="bg-[#434343] text-white py-2 px-4 font-semibold rounded">
-                    {t("our-team.badge")}
-                </span>
-
-                <h1 className="text-center text-3xl max-w-4xl mx-auto mt-4 font-semibold">
-                    <Trans i18nKey="our-team.title" components={{ br: <br /> }} />
-                </h1>
-            </div>
-
-            <div className="flex flex-col md:grid md:grid-cols-2 max-w-4xl m-auto w-full gap-10 md:gap-16 items-center justify-center">
-
-                <div className="relative w-[260px] h-[460px] flex items-center justify-center">
-
-                    <div className="relative w-full h-full flex items-center justify-center">
-
-                        {members.map((member, i) => (
-                            <div
-                                key={i}
-                                onClick={() => setIndex(i)}
-                                className={`absolute w-90 h-110 rounded-2xl overflow-hidden shadow-xl transition-all duration-700 cursor-pointer ${getPosition(i)}`}
-                            >
-                                <img
-                                    src={member.avatar}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        ))}
-
-                    </div>
+                    <p className="text-gray-600 text-2xl mt-10 max-w-lg">
+                        {t("team-page.our-team.title")}
+                    </p>
 
                 </div>
 
-                <div className="flex flex-col items-center md:ml-20 gap-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-center gap-6 md:col-span-3">
 
-                    <div className="text-center">
-                        <h2 className="text-4xl font-bold text-blue-900">
-                            {members[index].name}
-                        </h2>
+                    {/* card 1 */}
+                    <div className="flex flex-col items-center">
+                        <img
+                            src="/team/o1.jpg"
+                            className=" md:w-[270px] h-[450px] md:h-[400px] rounded-[30px] object-cover"
+                        />
 
-                        <p className="uppercase tracking-widest text-gray-500 mt-2 text-lg">
-                            {members[index].role}
-                        </p>
+                        <div className="bg-[#F9A11B] mt-6 w-full rounded-full py-6 text-center text-white font-bold text-xl">
+                            {t("team-page.our-team.team.second.role")}
+                        </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    {/* center */}
+                    <div className="flex flex-col items-center md:mb-16 relative">
 
-                        <button
-                            onClick={prev}
-                            className="text-2xl text-gray-500 hover:text-[#234F72] transition"
-                        >
-                            <ArrowLeftCircle size={40} />
-                        </button>
-
-                        <div className="flex items-center gap-2">
-                            {members.map((_, i) => (
-                                <div
-                                    key={i}
-                                    onClick={() => setIndex(i)}
-                                    className={`w-4 h-4 rounded-full cursor-pointer transition-all duration-300 ${i === index
-                                        ? "bg-[#234F72] scale-125"
-                                        : "bg-gray-300 hover:bg-gray-400"
-                                        }`}
-                                />
-                            ))}
+                        <div className="absolute -top-6 right-0 w-16 h-16 rounded-full bg-[#244F74] flex items-center justify-center">
+                            <Star color="white" size={36} />
                         </div>
 
-                        <button
-                            onClick={next}
-                            className="text-2xl text-gray-500 hover:text-[#234F72] transition"
-                        >
-                            <ArrowRightCircle size={40} />
-                        </button>
+                        <img
+                            src="/team/c1.jpg"
+                            className=" md:w-[270px] h-[450px] md:h-[400px] rounded-[30px] object-cover"
+                        />
 
+                        <div className="bg-[#F9A11B] mt-6 w-full rounded-full py-6 text-center text-white font-bold text-xl">
+                            {t("team-page.our-team.team.first.role")}
+                        </div>
+                    </div>
+
+                    {/* card3 */}
+                    <div className="flex flex-col items-center">
+                        <img
+                            src="/team/sa1.jpg"
+                            className=" md:w-[270px] h-[450px] md:h-[400px] rounded-[30px] object-cover"
+                        />
+
+                        <div className="bg-[#F9A11B] mt-6 w-full rounded-full py-6 text-center text-white font-bold text-xl">
+                            {t("team-page.our-team.team.third.role")}
+                        </div>
                     </div>
 
                 </div>
 
             </div>
-
         </div>
     );
 };

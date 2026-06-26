@@ -15,7 +15,7 @@ export const OurStory = () => {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const { t, i18n } = useTranslation("common", { keyPrefix: "story" });
+  const { t, i18n } = useTranslation("common");
 
 
   useEffect(() => {
@@ -37,14 +37,14 @@ export const OurStory = () => {
 
 
   return (
-    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-16">
+    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] pb-16">
       <div className="flex items-center flex-col">
-        <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
-          {t("badge")}
-        </span>
+        {/* <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
+          {t("about.title")}
+        </span> */}
 
-        <h1 className="text-center text-[#234F72] max-w-4xl text-xl md:text-4xl mt-4 font-semibold">
-          {t("title")}
+        <h1 className="text-center text-[#234F72] max-w-4xl text-xl md:text-6xl mt-4 font-semibold">
+          {t("about.title")}
         </h1>
 
       </div>
@@ -102,15 +102,15 @@ export const OurStory = () => {
                   className={`${index % 2 === 0 ? "md:order-2" : "md:order-1"
                     } md:pl-12`}
                 >
-                  <span className="text-sm bg-gray-100 px-2 py-1 rounded text-gray-500 font-semibold">
+                  {/* <span className="text-sm bg-gray-100 px-2 py-1 rounded text-gray-500 font-semibold">
                     {year}
+                  </span> */}
+
+                  <span className="text-2xl md:text-6xl mt-2 font-semibold border-2 border-black rounded-full px-4">
+                    {title[i18n.language as keyof Lang]}
                   </span>
 
-                  <h2 className="text-2xl md:text-3xl mt-3 font-semibold">
-                    {title[i18n.language as keyof Lang]}
-                  </h2>
-
-                  <p className="text-gray-500 max-w-110 mt-2">
+                  <p className="text-gray-500 max-w-80 mt-4">
                     {text[i18n.language as keyof Lang]}
                   </p>
                 </div>

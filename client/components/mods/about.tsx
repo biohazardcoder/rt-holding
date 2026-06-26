@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 
 export const About = () => {
         const { t } = useTranslation("common", { keyPrefix: "about" });
-
+        const percent = 84;
+        const second = 66;
         return (
                 <div className="bg-[#f7f7f7] py-16 px-[5%] md:px-[10%]">
                         <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -41,8 +42,17 @@ export const About = () => {
                                         <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex flex-col md:flex-row md:items-center gap-10 ">
 
                                                 <div className="flex items-center gap-3">
-                                                        <div className="w-16 h-16 rounded-full border-[6px] border-purple-500 flex items-center justify-center font-bold">
-                                                                84%
+
+
+                                                        <div
+                                                                className="relative w-16 h-16 rounded-full"
+                                                                style={{
+                                                                        background: `conic-gradient(#a855f7 ${percent}%, #ec4899 0)`,
+                                                                }}
+                                                        >
+                                                                <div className="absolute inset-[6px] rounded-full bg-white flex items-center justify-center font-bold">
+                                                                        {percent}%
+                                                                </div>
                                                         </div>
                                                         <p className="font-medium text-xl md:text-base text-center">
                                                                 {t("stats.growth").split(" ").map((word, i) => (
@@ -55,8 +65,15 @@ export const About = () => {
                                                 </div>
 
                                                 <div className="flex items-center gap-3">
-                                                        <div className="w-16 h-16 rounded-full border-[6px] border-pink-500 flex items-center justify-center font-bold">
-                                                                66%
+                                                        <div
+                                                                className="relative w-16 h-16 rounded-full"
+                                                                style={{
+                                                                        background: `conic-gradient(#a855f7 ${second}%, #ec4899 0)`,
+                                                                }}
+                                                        >
+                                                                <div className="absolute inset-[6px] rounded-full bg-white flex items-center justify-center font-bold">
+                                                                        {second}%
+                                                                </div>
                                                         </div>
                                                         <p className="font-medium text-xl md:text-base text-center">
                                                                 {t("stats.market").split(" ").map((word, i) => (

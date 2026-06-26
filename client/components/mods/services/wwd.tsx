@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next"
 
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 const Hexagon = ({ children, color }: { children: React.ReactNode; color: string }) => (
     <div
@@ -17,20 +18,20 @@ const texts = {
         uz: "Xizmatlarimiz",
         en: "Our Services",
         ru: "Наши услуги",
-        ch: "我们的服务"
+        kr: "서비스"
     },
     delivery: {
         title: {
             uz: "Maxsus texnikalarni yetkazib berish",
             en: "Delivery of special equipment",
             ru: "Доставка специального оборудования",
-            ch: "交付特殊设备",
+            kr: "특수 장비 배송",
         },
         description: {
             uz: "Zamonaviy va ishonchli maxsus texnikalarni tezkor hamda xavfsiz yetkazib beramiz.",
             en: "We provide fast and secure delivery of modern and reliable special equipment.",
             ru: "Мы обеспечиваем быструю и безопасную доставку современного и надежного специального оборудования.",
-            ch: "我们提供现代可靠的特殊设备的快速安全交付。",
+            kr: "최신의 신뢰할 수 있는 특수 장비를 신속하고 안전하게 배송합니다.",
         }
     },
     logistics: {
@@ -38,13 +39,13 @@ const texts = {
             uz: "Logistika va yetkazib berish xizmati",
             en: "Logistics and delivery service",
             ru: "Логистика и служба доставки",
-            ch: "物流和交付服务",
+            kr: "물류 및 배송 서비스",
         },
         description: {
             uz: "Yuklarni to’g’ri rejalashtirish va o‘z vaqtida manzilga yetkazishni ta’minlaymiz.",
             en: "We ensure proper planning of cargo and timely delivery to the destination.",
             ru: "Мы обеспечиваем правильное планирование грузов и своевременную доставку до места назначения.",
-            ch: "我们确保货物的正确规划和及时交付到目的地。",
+            kr: "화물의 효율적인 계획과 목적지까지의 적시 배송을 보장합니다.",
         }
     },
     service: {
@@ -52,13 +53,13 @@ const texts = {
             uz: "Texnik xizmat va kafolat",
             en: "Technical service and warranty",
             ru: "Техническое обслуживание и гарантия",
-            ch: "技术维修和保修",
+            kr: "기술 지원 및 보증",
         },
         description: {
             uz: "Texnikangizning uzluksiz ishlashi uchun professional servis va kafolat xizmatlarini taqdim etamiz",
             en: "We provide professional technical service and warranty to ensure the uninterrupted operation of your equipment.",
             ru: "Мы предоставляем профессиональное техническое обслуживание и гарантию, чтобы обеспечить бесперебойную работу вашего оборудования.",
-            ch: "我们提供专业的技术服务和保修，以确保您的设备不间断运行。",
+            kr: "장비의 안정적인 운영을 위해 전문적인 기술 지원과 보증 서비스를 제공합니다.",
         }
     },
     consulting: {
@@ -66,16 +67,16 @@ const texts = {
             uz: "Konsultatsiya va treninglar",
             en: "Consulting and training",
             ru: "Консультации и обучение",
-            ch: "咨询和培训",
+            kr: "컨설팅 및 교육",
         },
         description: {
             uz: "Mutaxassislarimiz tomonidan texnika tanlash, foydalanish va boshqarish bo‘yicha amaliy maslahatlar va treninglar beriladi",
             en: "Our experts provide practical advice and training on equipment selection, usage, and management.",
             ru: "Наши эксперты предоставляют практические советы и обучение по выбору, использованию и управлению оборудованием.",
-            ch: "我们的专家提供关于设备选择、使用和管理的实用建议和培训。",
+            kr: "전문가들이 장비 선택, 사용 및 관리에 관한 실질적인 상담과 교육을 제공합니다.",
         }
     }
-}
+};
 
 
 export const WhatWeDo = () => {
@@ -94,7 +95,8 @@ export const WhatWeDo = () => {
                     <div className="space-y-24 hidden md:block">
 
                         <div>
-                            <h3 className="text-3xl font-bold mb-5">
+                            <h3 className="text-3xl font-bold mb-5 leading-tight">
+                                <ChevronRight className="inline-block mr-2 bg-[#ec4899] rounded-full text-white  p-0.5 mt-2 align-top" />
                                 {texts.delivery.title[i18n.language as keyof typeof texts.delivery.title]}
                             </h3>
 
@@ -104,7 +106,8 @@ export const WhatWeDo = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-3xl font-bold mb-5">
+                            <h3 className="text-3xl font-bold mb-5 leading-tight">
+                                <ChevronRight className="inline-block mr-2 bg-[#ec4899] rounded-full  text-white p-0.5 mt-2 align-top" />
                                 {texts.service.title[i18n.language as keyof typeof texts.service.title]}
                             </h3>
 
@@ -151,7 +154,8 @@ export const WhatWeDo = () => {
                     <div className="space-y-24 text-right hidden md:block">
 
                         <div>
-                            <h3 className="text-3xl font-bold mb-5">
+                            <h3 className="text-3xl font-bold mb-5 leading-tight">
+                                <ChevronRight className="inline-block mr-2 bg-[#ec4899] rounded-full  text-white p-0.5 mt-2 align-top" />
                                 {texts.logistics.title[i18n.language as keyof typeof texts.logistics.title]}
                             </h3>
 
@@ -161,7 +165,8 @@ export const WhatWeDo = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-3xl font-bold mb-5">
+                            <h3 className="text-3xl font-bold mb-5 leading-tight">
+                                <ChevronRight className="inline-block mr-2 bg-[#ec4899] rounded-full  text-white p-0.5 mt-2 align-top" />
                                 {texts.consulting.title[i18n.language as keyof typeof texts.consulting.title]}
                             </h3>
 

@@ -19,24 +19,52 @@ export const LanguageSelect = () => {
     i18n.changeLanguage(selectedLang);
     Cookies.set("locale", selectedLang, { expires: 365 });
   };
-
+  const languages = {
+    en: {
+      en: "English",
+      uz: "Uzbek",
+      ru: "Russian",
+      kr: "Korean",
+    },
+    uz: {
+      en: "Inglizcha",
+      uz: "O'zbekcha",
+      ru: "Ruscha",
+      kr: "Koreyscha",
+    },
+    ru: {
+      en: "Английский",
+      uz: "Узбекский",
+      ru: "Русский",
+      kr: "Корейский",
+    },
+    kr: {
+      en: "영어",
+      uz: "우즈베크어",
+      ru: "러시아어",
+      kr: "한국어",
+    },
+  };
   return (
     <Select value={lang} onValueChange={changeLanguage}>
-      <SelectTrigger className="w-25 text-white text-xs bg-[#254E6F] border-none font-normal rounded-full">
+      <SelectTrigger className="w-30 text-white text-xs bg-[#254E6F] border-none font-normal rounded-full">
         <SelectValue placeholder="Select Language" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="en">
-          English
+          {languages[i18n.language as keyof typeof languages].en}
         </SelectItem>
+
         <SelectItem value="uz">
-          Uzbek
+          {languages[i18n.language as keyof typeof languages].uz}
         </SelectItem>
+
         <SelectItem value="ru">
-          Russian
+          {languages[i18n.language as keyof typeof languages].ru}
         </SelectItem>
+
         <SelectItem value="kr">
-          Korea
+          {languages[i18n.language as keyof typeof languages].kr}
         </SelectItem>
       </SelectContent>
     </Select>
