@@ -2,9 +2,14 @@
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-
+const location = {
+  uz: "Janubiy Koreya",
+  en: "South Korea",
+  ru: "Южная Корея",
+  kr: "대한민국",
+};
 export default function Footer() {
-  const { t } = useTranslation("common")
+  const { t, i18n } = useTranslation("common");
   return (
     <footer className="bg-[#1E242C] text-white px-[5%] pt-14">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
@@ -61,7 +66,7 @@ export default function Footer() {
 
             <li className="flex items-center gap-3">
               <MapPin size={16} />
-              <span>Korea</span>
+              <span>{location[i18n.language as keyof typeof location]}</span>
             </li>
           </ul>
         </div>
