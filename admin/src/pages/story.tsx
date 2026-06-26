@@ -128,7 +128,7 @@ export const Story = () => {
             <p className="text-sm text-gray-600 mt-1 line-clamp-3">
               {text[selectedLang] || "No text"}
             </p>
-            <p className="mt-1 font-semibold">Year: {year}</p>
+            {/* <p className="mt-1 font-semibold">Year: {year}</p> */}
 
             <div className="absolute top-2 right-2">
               <DropdownMenu>
