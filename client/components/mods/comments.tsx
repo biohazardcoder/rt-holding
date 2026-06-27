@@ -1,169 +1,105 @@
 "use client";
 
-import { Fetch } from "@/middlewares/Fetch";
-import { useEffect, useState } from "react";
+import { HandCoins, Icon } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Autoplay from "embla-carousel-autoplay"
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
-interface Lang {
-  en: string;
-  kr: string;
-  ru: string;
-  uz: string;
-}
-
-interface CommentTypes {
-  _id?: string;
-  createdAt?: string;
-  name: Lang;
-  text: Lang;
-  image?: string;
-  job: Lang;
-}
 
 export const Comments = () => {
-  const [comments, setComments] = useState<CommentTypes[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
   const { i18n } = useTranslation();
-  const title = {
-    uz: "Mijozlarimizning fikrlari",
-    en: "What our clients say",
-    ru: "Отзывы наших клиентов",
-    kr: "고객의 소리",
-  }
-  useEffect(() => {
-    const getAllComments = async () => {
-      try {
-        setLoading(true);
-        setError("");
-        const res = (await Fetch.get("comment")).data;
-        setComments(res || []);
-      } catch (err) {
-        setError("Failed to load comments");
-      } finally {
-        setLoading(false);
-      }
-    };
 
-    getAllComments();
-  }, []);
+  const title = {
+    uz: "Mijozlarimiz\nfikrlari",
+    en: "What our\nclients say",
+    ru: "Отзывы\nнаших клиентов",
+    kr: "고객의\n소리",
+  };
 
   return (
-    <div className="w-full px-[5%] md:px-[10%] pt-40 pb-20 bg-[#f7f7f7]">
-      <h2 className="text-4xl md:text-5xl font-semibold">
-        {title[i18n.language as keyof typeof title]}
-      </h2>
-      {loading && (
-        <Carousel className="w-full">
+    <section className="bg-[#F7F7F7] py-24 pt-40 px-[5%] relative overflow-hidden">
+      <div className="max-w-[1650px] mx-auto px-10">
 
-          <div className="flex justify-end gap-3 mb-4">
-            <div className="w-10 h-10 bg-gray-200 rounded-full animate-pulse" />
-            <div className="w-10 h-10 bg-gray-200 rounded-full animate-pulse" />
+        <div className="grid grid-cols-[1.05fr_0.8fr_0.9fr] gap-16">
+
+          {/* LEFT */}
+
+          <div className="flex flex-col gap-20">
+
+            <h2 className="text-7xl font-bold whitespace-pre-line">
+              {title[i18n.language as keyof typeof title]}
+            </h2>
+            <InfoCard
+              icon="/icons/delivery.svg"
+              title="Ishonchli yetkazib beruvchi"
+              text="RT Holdings har doim va'da qilingan muddatda va sifatda xizmat ko'rsatadigan ishonchli hamkor."
+            />
+            <div>
+            </div>
+
           </div>
 
-          <CarouselContent>
-            {[...Array(4)].map((_, idx) => (
-              <CarouselItem
-                key={idx}
-                className="md:basis-1/2 lg:basis-1/2"
-              >
-                <div className="p-2">
-                  <div className="flex gap-5 p-6 bg-white rounded-2xl shadow-sm h-full">
+          {/* CENTER */}
 
-                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 animate-pulse" />
+          <div className="flex flex-col gap-10">
 
-                    <div className="flex-1 space-y-3">
+            <img
+              src="/business.jpg"
+              className="aspect-square w-80 rounded-[34px] object-cover"
+            />
 
-                      <div className="h-4 w-1/3 bg-gray-200 rounded animate-pulse" />
+            <InfoCard
+              icon="/icons/chart.svg"
+              title="Bir necha yillik hamkor"
+              text="Ko'p yillik hamkorlik davomida kompaniya o'zini barqaror va mas'uliyatli sherik sifatida ko'rsatib kelmoqda."
+            />
 
-                      <div className="h-3 w-1/4 bg-gray-200 rounded animate-pulse" />
+          </div>
 
-                      <div className="h-4 w-full bg-gray-200 rounded animate-pulse mt-4" />
-                      <div className="h-4 w-5/6 bg-gray-200 rounded animate-pulse" />
-                      <div className="h-4 w-2/3 bg-gray-200 rounded animate-pulse" />
-                    </div>
+          {/* RIGHT */}
 
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      )}
+          <div className="flex flex-col gap-10">
 
-      {!loading && error && (
-        <div className="text-center py-20">
-          <p className="text-red-500 text-lg font-semibold">{error}</p>
+            <InfoCard
+              icon="/icons/target.svg"
+              title="Maqsadlari katta kompaniya"
+              text="RT Holdings katta maqsadlar sari intilayotgan va doimiy rivojlanishda bo'lgan kompaniya."
+            />
+
+            <img
+              src="/business.jpg"
+              className="aspect-square w-80 mt-12 rounded-[34px] object-cover"
+            />
+          </div>
+
         </div>
-      )}
 
-      {!loading && !error && (
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-            }),
-          ]}
-          className="w-full"
-        >
-          <div className="flex justify-end gap-3 mb-4">
-            <CarouselPrevious className="static translate-y-0" />
-            <CarouselNext className="static translate-y-0" />
-          </div>
-          <CarouselContent>
+      </div>
+      <div className="bg-[#4A76B2] rounded-[34px] absolute w-60 h-80 bottom-24 -right-20" />
+    </section>
+  );
+};
 
-            {comments.map((item, idx) => (
-              <CarouselItem
-                key={item._id || idx}
-                className="md:basis-1/2 lg:basis-1/2"
-              >
-                <div className="p-2">
-                  <div className="flex gap-5 p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 h-full">
+type Props = {
+  icon: string;
+  title: string;
+  text: string;
+};
 
-                    <img
-                      src={item.image || "/avatar.png"}
-                      alt="user"
-                      className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border"
-                    />
+const InfoCard = ({ icon, title, text }: Props) => {
+  return (
+    <div className="flex flex-col items-start gap-8">
 
-                    <div className="flex-1">
-                      <div className="mb-2">
-                        <h3 className="font-semibold text-[#1e3d38] text-lg">
-                          {item.name[i18n.language as keyof Lang]}
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          {item.job[i18n.language as keyof Lang]}
-                        </p>
-                      </div>
+      <div className="flex items-center gap-8">
+        <div className="w-24 h-24 rounded-[26px] bg-white shadow-xl flex items-center justify-center shrink-0">
+          <HandCoins size={40} color="#F19A1C" />
+        </div>
+        <h3 className="text-3xl font-bold">
+          {title}
+        </h3>
+      </div>
 
-                      <p className="text-gray-700 leading-relaxed text-xs md:text-base">
-                        {item.text[i18n.language as keyof Lang]}
-                      </p>
-                    </div>
+      <p className="mt-4 text-2xl text-[#2E2E2E]">
+        {text}
+      </p>
 
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-
-          </CarouselContent>
-
-        </Carousel>
-      )}
     </div>
   );
 };

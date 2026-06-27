@@ -19,7 +19,9 @@ export default function Companies() {
       <Navbar />
       {/* <div className="bg-[#1E242C] h-[10vh]" /> */}
       {/* <Top /> */}
-      <OurCompanies />
+      <div id="our-companies">
+        <OurCompanies />
+      </div>
       <CompaniesMap />
       {/* <BusinessProcessSection /> */}
       {/* <ServicesSection /> */}

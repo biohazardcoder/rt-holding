@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 export const About = () => {
@@ -35,9 +36,11 @@ export const About = () => {
                                                 {t("companyText2")}
                                         </p>
 
-                                        <button className="bg-[#F69419] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#F69419]/80 transition">
-                                                {t("button")}
-                                        </button>
+                                        <Link href={"/companies/#our-companies"}>
+                                                <button className="bg-[#F69419] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#F69419]/80 transition">
+                                                        {t("button")}
+                                                </button>
+                                        </Link>
 
                                         <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex flex-col md:flex-row md:items-center gap-10 ">
 

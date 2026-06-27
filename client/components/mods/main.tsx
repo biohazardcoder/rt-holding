@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const text = {
@@ -17,9 +18,11 @@ export const Main = () => {
         <h1 className="text-4xl md:text-[80px] font-bold leading-[1.1] whitespace-pre-wrap">
           {text[i18n.language as keyof typeof text]}
         </h1>
-        <button className="bg-[#F69419] text-white mt-4 px-4 py-2 md:px-8 md:py-4 rounded-full font-semibold md:text-3xl hover:bg-[#F69419]/80 transition">
-          {t("about.button")}
-        </button>
+        <Link href={"/#about-us"}>
+          <button className="bg-[#F69419] text-white mt-4 px-4 py-2 md:px-8 md:py-4 rounded-full font-semibold md:text-3xl hover:bg-[#F69419]/80 transition">
+            {t("about.button")}
+          </button>
+        </Link>
         {/* <p className="max-w-xl text-xs md:text-sm">
           {t("main-description")}
         </p> */}
