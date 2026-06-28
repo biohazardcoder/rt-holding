@@ -73,7 +73,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/30 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-4">
-        <span>©2013-2025 RT Holdings. {t("arr")}</span>
+        <span>©2013-2026 RT Holdings. {t("arr")}</span>
 
         <div className="flex gap-6">
           <Link href="#" className="hover:underline">Telegram</Link>

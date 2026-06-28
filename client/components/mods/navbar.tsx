@@ -145,7 +145,7 @@ export const Navbar = () => {
 
 
   const items = [
-    { label: "about.title", href: "/" },
+    { label: "about.title", href: "/#about-us" },
     { label: "companies", href: "/companies" },
     { label: "services", href: "/services" },
     { label: "team", href: "/team" },
@@ -173,7 +173,6 @@ export const Navbar = () => {
         <Link href={"/"}>
           <div className="flex items-center relative">
             <Image src="/image.png" alt="Logo" width={90} height={90} />
-            <div className="bg-white w-14 h-14 absolute top-[8px] left-5 -z-10 rounded-full" />
           </div>
         </Link>
 

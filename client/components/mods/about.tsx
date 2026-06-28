@@ -9,25 +9,25 @@ export const About = () => {
         const percent = 84;
         const second = 66;
         return (
-                <div className="bg-[#f7f7f7] py-16 px-[5%] md:px-[10%]">
-                        <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div className="bg-[#f7f7f7] py-16 px-[5%] md:px-[10%] relative overflow-hidden">
+                        <div className="bg-[#4A76B2] hidden md:block rounded-[34px] absolute w-140 h-120 bottom-0 -left-20" />
 
-                                <div className="relative">
-                                        <Image
-                                                src="/worker.jpg"
-                                                alt="worker"
-                                                width={300}
-                                                height={300}
-                                                className="rounded-2xl md:w-[80%] object-cover"
-                                        />
-                                </div>
+                        <div className="md:flex items-center gap-8">
 
-                                <div>
-                                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                <Image
+                                        src="/worker.jpg"
+                                        alt="worker"
+                                        width={600}
+                                        height={300}
+                                        className="rounded-2xl z-10 aspect-square object-cover"
+                                />
+
+                                <div className="z-50">
+                                        <h2 className="text-6xl mt-4 md:text-7xl font-bold mb-4">
                                                 {t("title")}
                                         </h2>
 
-                                        <p className="text-gray-700 mb-4">
+                                        <p className="text-gray-700 text-lg mb-4">
                                                 <span className="font-semibold">RT Holdings</span>{" "}
                                                 {t("companyText1")}
                                         </p>
@@ -42,22 +42,22 @@ export const About = () => {
                                                 </button>
                                         </Link>
 
-                                        <div className="mt-10 bg-white rounded-2xl shadow-md p-6 flex flex-col md:flex-row md:items-center gap-10 ">
+                                        <span className="mt-10 bg-white max-w-96 rounded-2xl shadow-md p-6 z-50 flex flex-col md:flex-row md:items-center gap-10 md:-ml-32">
 
-                                                <div className="flex items-center gap-3">
+                                                <span className="flex items-center gap-3">
 
 
-                                                        <div
-                                                                className="relative w-16 h-16 rounded-full"
+                                                        <span
+                                                                className="relative w-20 h-20 rounded-full"
                                                                 style={{
                                                                         background: `conic-gradient(#a855f7 ${percent}%, #ec4899 0)`,
                                                                 }}
                                                         >
-                                                                <div className="absolute inset-[6px] rounded-full bg-white flex items-center justify-center font-bold">
+                                                                <span className="absolute inset-[10px] rounded-full bg-white flex items-center justify-center font-bold">
                                                                         {percent}%
-                                                                </div>
-                                                        </div>
-                                                        <p className="font-medium text-xl md:text-base text-center">
+                                                                </span>
+                                                        </span>
+                                                        <p className="hidden md:block text-2xl md:text-lg font-semibold text-center">
                                                                 {t("stats.growth").split(" ").map((word, i) => (
                                                                         <span key={i}>
                                                                                 {word}{" "}
@@ -65,20 +65,23 @@ export const About = () => {
                                                                         </span>
                                                                 ))}
                                                         </p>
-                                                </div>
+                                                        <p className="block md:hidden text-2xl md:text-lg font-semibold text-center">
+                                                                {t("stats.growth")}
+                                                        </p>
+                                                </span>
 
-                                                <div className="flex items-center gap-3">
-                                                        <div
-                                                                className="relative w-16 h-16 rounded-full"
+                                                <span className="flex items-center gap-3 ">
+                                                        <span
+                                                                className="relative w-20 h-20 rounded-full"
                                                                 style={{
                                                                         background: `conic-gradient(#a855f7 ${second}%, #ec4899 0)`,
                                                                 }}
                                                         >
-                                                                <div className="absolute inset-[6px] rounded-full bg-white flex items-center justify-center font-bold">
+                                                                <span className="absolute inset-[10px] rounded-full bg-white flex items-center justify-center font-bold">
                                                                         {second}%
-                                                                </div>
-                                                        </div>
-                                                        <p className="font-medium text-xl md:text-base text-center">
+                                                                </span>
+                                                        </span>
+                                                        <p className="hidden md:block text-2xl md:text-lg font-semibold text-center">
                                                                 {t("stats.market").split(" ").map((word, i) => (
                                                                         <span key={i}>
                                                                                 {word}{" "}
@@ -86,9 +89,12 @@ export const About = () => {
                                                                         </span>
                                                                 ))}
                                                         </p>
-                                                </div>
+                                                        <p className=" block md:hidden text-2xl md:text-lg font-semibold text-center">
+                                                                {t("stats.market")}
+                                                        </p>
+                                                </span>
 
-                                        </div>
+                                        </span>
                                 </div>
                         </div>
                 </div>
