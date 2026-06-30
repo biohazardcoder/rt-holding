@@ -103,7 +103,7 @@ export const OurStory = () => {
                     alt={title[i18n.language as keyof Lang]}
                     width={420}
                     height={250}
-                    className="rounded-xl aspect-square object-cover"
+                    className="rounded-xl object-cover"
                   />
                 </div>
 
