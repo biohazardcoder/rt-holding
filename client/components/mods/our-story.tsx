@@ -120,7 +120,7 @@ export const OurStory = () => {
                     {title[i18n.language as keyof Lang]}
                   </span>
 
-                  <p className="text-gray-500 max-w-80 mt-4">
+                  <p className="text-gray-500 max-w-80 mt-4 whitespace-pre">
                     {text[i18n.language as keyof Lang]}
                   </p>
                 </div>
