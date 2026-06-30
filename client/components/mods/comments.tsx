@@ -65,7 +65,7 @@ export const Comments = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block bg-[#4A76B2] rounded-[34px] absolute w-60 h-80 bottom-24 -right-20" />
+      <div className="hidden lg:block bg-[#4A76B2] rounded-[34px] absolute w-60 h-80 bottom-24 -right-30" />
     </section>
   );
 };
