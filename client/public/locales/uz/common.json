@@ -251,5 +251,19 @@
                 "service": "Xizmat tanlanishi shart"
             }
         }
+    },
+    "comments": {
+        "card1": {
+            "title": "Ishonchli yetkazib beruvchi",
+            "text": "RT Holdings har doim va'da qilingan muddatda va sifatda xizmat ko'rsatadigan ishonchli hamkor."
+        },
+        "card2": {
+            "title": "Bir necha yillik hamkor",
+            "text": "Ko'p yillik hamkorlik davomida kompaniya o'zini barqaror va mas'uliyatli sherik sifatida ko'rsatib kelmoqda."
+        },
+        "card3": {
+            "title": "Maqsadlari katta kompaniya",
+            "text": "RT Holdings katta maqsadlar sari intilayotgan va doimiy rivojlanishda bo'lgan kompaniya."
+        }
     }
 }

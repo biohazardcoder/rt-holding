@@ -246,5 +246,19 @@
                 "service": "Service is required"
             }
         }
+    },
+    "comments": {
+        "card1": {
+            "title": "Reliable Supplier",
+            "text": "RT Holdings is a trusted partner that consistently delivers services on time and with the promised quality."
+        },
+        "card2": {
+            "title": "Years of Partnership",
+            "text": "Throughout many years of cooperation, the company has proven itself to be a stable and responsible partner."
+        },
+        "card3": {
+            "title": "A Company with Big Goals",
+            "text": "RT Holdings is a company striving toward ambitious goals while continuously growing and improving."
+        }
     }
 }

@@ -62,7 +62,7 @@ export const OurTeam = () => {
         <div className="bg-[#F5F5F7] py-8 pt-40 px-[5%] min-h-screen flex items-center justify-center">
             <div className="grid lg:grid-cols-5 gap-14 items-center">
                 <div className="md:col-span-2">
-                    <h2 className="text-6xl font-bold leading-tight whitespace-pre">
+                    <h2 className="text-4xl md:text-6xl font-bold leading-tight whitespace-pre">
                         {label[i18n.language as keyof typeof label]}
                     </h2>
 

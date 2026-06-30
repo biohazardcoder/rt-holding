@@ -2,6 +2,8 @@
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+
+
 const location = {
   uz: "Janubiy Koreya",
   en: "South Korea",
@@ -76,9 +78,32 @@ export default function Footer() {
         <span>©2013-2026 RT Holdings. {t("arr")}</span>
 
         <div className="flex gap-6">
-          <Link href="#" className="hover:underline">Telegram</Link>
+          {/* <Link href="#" className="hover:underline">Telegram</Link>
           <Link href="#" className="hover:underline">Instagram</Link>
-          <Link href="#" className="hover:underline">Whatsapp</Link>
+          <Link href="#" className="hover:underline">Whatsapp</Link> */}
+          <Link href="https://t.me/RT_Holdings" target="_blank"
+            rel="noopener noreferrer" className="hover:underline">Telegram
+          </Link>
+
+          <Link
+            href="https://www.instagram.com/rt_holdings?igsh=dWV1dzA3Y3BuZnQy&utm_source=qr"
+            target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram
+          </Link>
+
+          <Link
+            href="https://www.facebook.com/rt.holdings1?mibextid=LQQJ4d"
+            target="_blank" rel="noopener noreferrer" className="hover:underline"> Facebook
+          </Link>
+
+          <Link
+            href="https://youtube.com/@RT_HOLDINGS?si=edIv8pcEXDkWktsv"
+            target="_blank" rel="noopener noreferrer" className="hover:underline"> YouTube
+          </Link>
+
+          <Link
+            href="https://vt.tiktok.com/ZSCSxcH2X/"
+            target="_blank" rel="noopener noreferrer" className="hover:underline" > TikTok
+          </Link>
         </div>
       </div>
     </footer>

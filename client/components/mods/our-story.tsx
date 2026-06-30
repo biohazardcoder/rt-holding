@@ -11,6 +11,12 @@ interface Lang {
   uz: string;
 }
 
+const joinUs: Lang = {
+  en: "Join Us",
+  kr: "함께하세요",
+  ru: "Присоединяйтесь к нам",
+  uz: "Bizga qo'shiling",
+};
 export const OurStory = () => {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,15 +43,17 @@ export const OurStory = () => {
 
 
   return (
-    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] pb-16">
+    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] pb-40 relative">
       <div className="flex items-center flex-col">
         {/* <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
           {t("about.title")}
         </span> */}
 
-        <h1 className="text-center text-[#234F72] max-w-4xl text-xl md:text-6xl mt-4 font-semibold">
-          {t("about.title")}
-        </h1>
+        <div className="flex items-center justify-center">
+          <span className="text-2xl md:text-6xl font-semibold border-2 border-black rounded-full px-4">
+            {t("about.title")}
+          </span>
+        </div>
 
       </div>
 
@@ -76,7 +84,9 @@ export const OurStory = () => {
 
       {!loading && !error && (
         <div className="relative mt-20">
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 -top-12 w-4 h-4 bg-white border-4 border-gray-400 rounded-full -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 -top-8 h-[103%] w-0.5 bg-gray-300 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 -bottom-12 w-4 h-4 bg-white border-4 border-gray-400 rounded-full -translate-x-1/2" />
 
           <div className="flex flex-col gap-24">
             {stories.map(({ image, title, text, year }, index) => (
@@ -93,7 +103,7 @@ export const OurStory = () => {
                     alt={title[i18n.language as keyof Lang]}
                     width={420}
                     height={250}
-                    className="rounded-xl object-cover"
+                    className="rounded-xl aspect-square object-cover"
                   />
                 </div>
 
@@ -119,6 +129,16 @@ export const OurStory = () => {
           </div>
         </div>
       )}
+
+      {
+        !loading && !error && (
+          <div className="flex items-center justify-center absolute bottom-8 left-0 w-full">
+            <span className="text-2xl md:text-6xl font-semibold border-2 border-black rounded-full px-4">
+              {joinUs[i18n.language as keyof Lang]}
+            </span>
+          </div>
+        )
+      }
     </div>
   );
 };

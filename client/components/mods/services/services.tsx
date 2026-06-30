@@ -38,11 +38,7 @@ export const ServicesComponent = () => {
   return (
     <div>
       <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] py-8 flex flex-col items-center">
-        <span className="bg-[#434343] text-white py-2 px-3 font-semibold">
-          {t("badge")}
-        </span>
-
-        <h1 className="text-center text-3xl md:text-4xl mt-4 font-semibold">
+        <h1 className="text-center text-3xl md:text-4xl  font-semibold">
           {t("title")}
         </h1>
 

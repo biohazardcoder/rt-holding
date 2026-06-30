@@ -40,11 +40,11 @@ export default function CompaniesMap() {
             image: "/dream-express.png",
 
             images: [
-                "/companies/de5.png",
                 "/companies/de1.png",
+                "/companies/de4.png",
                 "/companies/de3.jpg",
                 "/companies/de2.jpg",
-                "/companies/de4.png",
+                "/companies/de5.png",
             ],
         },
         {
