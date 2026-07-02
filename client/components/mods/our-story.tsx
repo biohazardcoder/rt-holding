@@ -116,11 +116,11 @@ export const OurStory = () => {
                     {year}
                   </span> */}
 
-                  <span className="text-2xl md:text-6xl mt-2 font-semibold border-2 border-black rounded-full px-4">
+                  <span className="text-2xl md:text-6xl ml-6 mt-2 font-semibold border-2 border-black rounded-full px-4">
                     {title[i18n.language as keyof Lang]}
                   </span>
 
-                  <p className="text-gray-500 max-w-120  mt-4 whitespace-pre-wrap ">
+                  <p className="text-gray-500 max-w-110 ml-6 mt-6 whitespace-pre-wrap ">
                     {text[i18n.language as keyof Lang]}
                   </p>
                 </div>
