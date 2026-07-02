@@ -43,7 +43,7 @@ export const OurStory = () => {
 
 
   return (
-    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] pb-40 relative">
+    <div className="bg-[#f7f7f7] px-[5%] md:px-[10%] pb-40 pt-10 relative">
       <div className="flex items-center flex-col">
         {/* <span className="bg-[#434343] text-white py-2 px-3 font-semibold rounded">
           {t("about.title")}
@@ -92,7 +92,7 @@ export const OurStory = () => {
             {stories.map(({ image, title, text, year }, index) => (
               <div
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative"
+                className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center relative"
               >
                 <div
                   className={`flex justify-center ${index % 2 === 0 ? "md:order-1" : "md:order-2"
@@ -120,7 +120,7 @@ export const OurStory = () => {
                     {title[i18n.language as keyof Lang]}
                   </span>
 
-                  <p className="text-gray-500 max-w-80 mt-4 whitespace-pre">
+                  <p className="text-gray-500 max-w-120  mt-4 whitespace-pre-wrap ">
                     {text[i18n.language as keyof Lang]}
                   </p>
                 </div>

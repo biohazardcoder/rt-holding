@@ -36,7 +36,7 @@ export const Comments = () => {
           {/* CENTER */}
           <div className="flex flex-col gap-8 lg:gap-10">
             <img
-              src="/feedback/1.jpg"
+              src="/feedback/1.png"
               alt=""
               className="aspect-square w-full md:max-w-80 mx-auto rounded-[34px] object-cover"
             />
@@ -57,7 +57,7 @@ export const Comments = () => {
             />
 
             <img
-              src="/feedback/2.jpg"
+              src="/feedback/2.png"
               alt=""
               className="aspect-square w-full md:max-w-80 mx-auto lg:mt-12 rounded-[34px] object-cover"
             />
